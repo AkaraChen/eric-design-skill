@@ -1,0 +1,383 @@
+{
+  "meta": {
+    "name": "minshot",
+    "description": "Minshot Chinese landing — quiet native-macOS utility aesthetic: cool near-white ground, modest system typography, blue pill download CTA, one large real product screenshot, plain feature rows and stacked pricing panels. Measured DOM/computed CSS and full-page screenshots at 1280px and 390px viewport widths on 2026-09-07. Qualitative descriptions are interpretation; unobserved states remain explicitly unknown.",
+    "source_references": [
+      "https://minshot.fehey.com/zh",
+      "https://minshot.fehey.com/hero.webp",
+      "https://minshot.fehey.com/icon.png"
+    ],
+    "created_at": "2026-09-07"
+  },
+  "design_system": {
+    "color": {
+      "palette_type": "cool neutral base with one blue action accent",
+      "primary": {
+        "hex": "#fcfcfd",
+        "role": "dominant page ground"
+      },
+      "secondary": {
+        "hex": "#1c2024",
+        "role": "headings, primary text and navigation"
+      },
+      "accent": {
+        "hex": "#0076ff",
+        "role": "download CTA and feature icons; CTA gradient starts at #0a84ff"
+      },
+      "neutral": {
+        "scale": [
+          "#fcfcfd",
+          "#f9f9fb",
+          "#f0f0f3",
+          "#d9d9e0",
+          "#60646c",
+          "#1c2024"
+        ],
+        "usage": "Measured Radix gray tokens; supporting text and soft button labels use rgba(0,7,20,0.624), soft buttons rgba(0,0,51,0.06)."
+      },
+      "semantic": {
+        "success": "not observed on the inspected Chinese landing page",
+        "warning": "not observed on the inspected Chinese landing page",
+        "error": "not observed on the inspected Chinese landing page",
+        "info": "not observed on the inspected Chinese landing page"
+      },
+      "surface": {
+        "background": "#fcfcfd",
+        "card": "rgba(0,0,85,0.024) over #fcfcfd",
+        "elevated": "not observed on the inspected Chinese landing page"
+      },
+      "contrast_strategy": "Dark text on near-white; blue concentrates attention on download actions. Muted alpha text supplies secondary hierarchy; this is an observed palette, not a contrast audit."
+    },
+    "typography": {
+      "type_scale": {
+        "display": {
+          "size": "not observed",
+          "weight": "not observed",
+          "line_height": "not observed",
+          "tracking": "not observed"
+        },
+        "heading_1": {
+          "size": "24px",
+          "weight": "500",
+          "line_height": "30px",
+          "tracking": "normal"
+        },
+        "heading_2": {
+          "size": "18px",
+          "weight": "500",
+          "line_height": "24px",
+          "tracking": "normal"
+        },
+        "heading_3": {
+          "size": "not observed",
+          "weight": "not observed",
+          "line_height": "not observed",
+          "tracking": "not observed"
+        },
+        "body": {
+          "size": "15px",
+          "weight": "400",
+          "line_height": "24px for size-3 text; inherited theme line-height 22.5px",
+          "tracking": "normal"
+        },
+        "body_small": {
+          "size": "14px",
+          "weight": "500",
+          "line_height": "20px (follow-updates button)",
+          "tracking": "normal"
+        },
+        "caption": {
+          "size": "not observed",
+          "weight": "not observed",
+          "line_height": "not observed",
+          "tracking": "not observed"
+        },
+        "overline": {
+          "size": "not observed",
+          "weight": "not observed",
+          "line_height": "not observed",
+          "tracking": "not observed"
+        }
+      },
+      "font_families": {
+        "heading": "system-ui, \"PingFang SC\", \"Hiragino Sans GB\", \"Microsoft YaHei\", sans-serif",
+        "body": "system-ui, \"PingFang SC\", \"Hiragino Sans GB\", \"Microsoft YaHei\", sans-serif",
+        "mono": "not used in visible page content"
+      },
+      "font_style_notes": "Chinese locale overrides .font-heading with system sans, normal tracking and weight 500. The shared CSS declares new-spirit/Georgia serif for other locales and body loads Inter, but neither is the effective Chinese content font. Do not import the English serif identity into this profile."
+    },
+    "spacing": {
+      "base_unit": "4px",
+      "scale": "4, 8, 12, 16, 24, 32, 40, 48, 64px (Radix tokens)",
+      "content_density": "spacious sections, compact readable feature rows",
+      "section_rhythm": "64px main section gap; 40px between hero copy/CTA group and screenshot; 16px within hero copy; 24px heading-to-list gap and pricing panel padding; 12px feature row gaps; 8px pricing list gaps; 16px between pricing panels; navigation padding 48px top/16px bottom"
+    },
+    "layout": {
+      "grid_system": "centered width-limited container with left-aligned vertical flex content",
+      "max_content_width": "880px measured at 1280px viewport",
+      "columns": "one column for hero, features and both pricing cards on desktop and mobile",
+      "gutter": "24px mobile page inset; feature icon-to-text 12px, pricing check-to-text 8px",
+      "breakpoints": "Observed 1280px and 390px widths; mobile content 342px, no horizontal overflow at 390px. No column-switch breakpoint observed; keep fluid width with 880px cap.",
+      "alignment_tendency": "left-aligned copy, buttons and lists; brand left and links right in the top navigation"
+    },
+    "shape": {
+      "border_radius": {
+        "small": "6px app icon",
+        "medium": "12px screenshot clipping wrapper",
+        "large": "12px pricing panels",
+        "pill": "9999px buttons"
+      },
+      "border_usage": "no visible heavy borders; image/icon shadow contains a subtle outline",
+      "divider_style": "whitespace between sections; small dot separators in footer links"
+    },
+    "elevation": {
+      "shadow_style": "restrained soft layered shadows on app icon, screenshot and primary download button",
+      "levels": {
+        "low": "none on pricing cards and soft buttons",
+        "medium": "download: 0 1px 2px rgba(0,0,0,.08), 0 2px 4px rgba(0,0,0,.06), 0 4px 12px rgba(0,118,255,.15), inset 0 1px 0 rgba(255,255,255,.15)",
+        "high": "image/icon: 0 0 0 1px oklab(0.834355 -0.000572754 -0.0182446 / .294118), 0 2px 3px -2px rgba(0,0,51,.06), 0 3px 12px -4px rgba(0,0,0,.1), 0 4px 16px -8px rgba(0,0,0,.1)"
+      },
+      "depth_cues": "soft CTA highlight, faint tinted cards and real macOS window depth inside the static screenshot"
+    },
+    "iconography": {
+      "style": "thin outlined SVG, round caps and joins; blue feature icons and checks",
+      "stroke_weight": "1.5px in 24px SVG viewBox",
+      "size_scale": "20px feature icons; 16px download icon; 28px raster app icon",
+      "preferred_set": "inline SVG observed; package identity unverified — reuse the target project icon set"
+    },
+    "motion": {
+      "easing": "not applicable: inspected elements have 0s transition duration",
+      "duration_scale": {
+        "micro": "0s observed",
+        "normal": "not observed",
+        "macro": "not observed"
+      },
+      "entrance_pattern": "not observed on the inspected Chinese landing page",
+      "exit_pattern": "not observed on the inspected Chinese landing page",
+      "philosophy": "static and immediate; CSS hover gradient change, no ambient animation observed"
+    },
+    "components": {
+      "button_style": "40px-high pill, 15px/500 label, 16px horizontal padding and 12px icon gap. Primary gradient #0a84ff → #0076ff with white text; hover #1a8dff → #0a84ff. Secondary soft gray pill. Navigation soft button is 32px high, 14px label, 12px horizontal padding.",
+      "input_style": "not observed on the inspected Chinese landing page",
+      "card_style": "full-width stacked pricing panels, 12px radius, 24px padding, very faint neutral tint; no raised bento tiles",
+      "navigation_pattern": "non-sticky top row: 28px app icon plus wordmark left, two plain text links and a soft follow button right; same visible navigation at 390px",
+      "modal_style": "not observed on the inspected Chinese landing page",
+      "list_style": "single-column icon + medium-weight feature name + muted explanation; pricing uses compact checkmark rows",
+      "component_notes": "Sequence: navigation → modest left-aligned hero and download CTA → 16:9 real screenshot → eight feature rows → two stacked pricing plans → quiet footer. Screenshot source is /hero.webp, displayed at 880×495px on desktop; it is not a live editor or a page background."
+    }
+  },
+  "design_style": {
+    "aesthetic": {
+      "mood": [
+        "calm",
+        "practical",
+        "friendly",
+        "restrained"
+      ],
+      "visual_metaphor": "a small native Mac utility presented as a clear product note",
+      "era_influence": "contemporary macOS utility marketing",
+      "genre": "minimal indie desktop-tool landing",
+      "personality_traits": [
+        "direct",
+        "considerate",
+        "unpretentious"
+      ],
+      "adjectives": [
+        "quiet",
+        "airy",
+        "compact",
+        "product-led"
+      ]
+    },
+    "visual_language": {
+      "complexity": "minimal",
+      "ornamentation": "subtle CTA gradient and native app icon; product screenshot carries the visual richness",
+      "whitespace_usage": "wide outer margins with generous vertical pauses",
+      "visual_weight_distribution": "large screenshot anchors a narrow column; small blue actions punctuate neutral text",
+      "focal_strategy": "real product proof followed by scannable capabilities and clear pricing",
+      "contrast_level": "strong primary text; gentle surface contrast",
+      "texture_usage": "no page texture; screenshot contains its own background and window materials"
+    },
+    "composition": {
+      "hierarchy_method": "spacing, modest type size/weight steps and selective blue action emphasis",
+      "balance_type": "centered container with left-aligned contents",
+      "flow_direction": "linear top-to-bottom reading",
+      "grouping_strategy": "proximity for features, faint panels for plans",
+      "negative_space_role": "separates decisions without extra borders or decorative blocks"
+    },
+    "imagery": {
+      "photo_treatment": "actual product screenshot, no stock photography observed",
+      "illustration_style": "small native app icon; no illustration system observed",
+      "graphic_elements": "blue outline icons, checkmarks and pill actions",
+      "pattern_usage": "none observed",
+      "image_shape": "16:9 screenshot clipped by a 12px-radius wrapper"
+    },
+    "interaction_feel": {
+      "feedback_style": "simple link and button feedback",
+      "hover_behavior": "download gradient brightens via CSS :hover; no transform in its custom rule",
+      "transition_personality": "immediate; all inspected transition durations 0s",
+      "loading_style": "not observed on the inspected Chinese landing page",
+      "microinteraction_density": "low"
+    },
+    "brand_voice_in_ui": {
+      "tone": "plain, friendly and specific about what the tool does",
+      "formality": "conversational Chinese with familiar macOS terminology",
+      "cta_style": "short verb plus destination or outcome; download is the dominant action",
+      "empty_state_approach": "not observed on the inspected Chinese landing page",
+      "error_tone": "not observed on the inspected Chinese landing page"
+    }
+  },
+  "visual_effects": {
+    "overview": {
+      "effect_intensity": "subtle-accent",
+      "performance_tier": "lightweight",
+      "fallback_strategy": "static content already carries the design; reduced-motion behavior was not separately verified",
+      "primary_technology": "CSS and static image/SVG assets"
+    },
+    "background_effects": {
+      "type": "none",
+      "description": "flat #fcfcfd page; no animated or gradient background observed",
+      "technology": "CSS",
+      "params": {
+        "color_palette": [
+          "#fcfcfd"
+        ],
+        "speed": "0",
+        "density": "not applicable",
+        "opacity": "1",
+        "blend_mode": "normal"
+      }
+    },
+    "particle_systems": {
+      "enabled": false,
+      "type": "not observed",
+      "description": "not observed",
+      "technology": "not observed",
+      "params": {
+        "count": "not observed",
+        "shape": "not observed",
+        "size_range": "not observed",
+        "movement_pattern": "not observed",
+        "color_behavior": "not observed",
+        "interaction": "not observed",
+        "spawn_area": "not observed"
+      }
+    },
+    "3d_elements": {
+      "enabled": false,
+      "type": "not observed",
+      "description": "not observed",
+      "technology": "not observed",
+      "params": {
+        "renderer": "not observed",
+        "lighting": "not observed",
+        "camera": "not observed",
+        "materials": "not observed",
+        "geometry": "not observed",
+        "post_processing": [],
+        "interaction_model": "not observed"
+      }
+    },
+    "shader_effects": {
+      "enabled": false,
+      "type": "not observed",
+      "description": "not observed",
+      "technology": "not observed",
+      "params": {
+        "uniforms": "not observed",
+        "vertex_manipulation": "not observed",
+        "fragment_output": "not observed",
+        "noise_type": "not observed",
+        "distortion": "not observed"
+      }
+    },
+    "scroll_effects": {
+      "parallax": {
+        "enabled": false,
+        "layers": "not observed",
+        "depth_range": "not observed",
+        "speed_curve": "not observed"
+      },
+      "scroll_triggered_animations": {
+        "enabled": false,
+        "trigger_points": "not observed",
+        "animation_type": "not observed",
+        "scrub_behavior": "not observed"
+      },
+      "scroll_morphing": {
+        "enabled": false,
+        "description": "not observed"
+      }
+    },
+    "text_effects": {
+      "type": "none",
+      "description": "plain static text",
+      "technology": "CSS",
+      "params": {
+        "split_strategy": "none",
+        "animation_per_unit": "none",
+        "stagger": "none",
+        "effect_style": "static"
+      }
+    },
+    "cursor_effects": {
+      "enabled": false,
+      "type": "not observed",
+      "description": "not observed",
+      "params": {
+        "shape": "not observed",
+        "size": "not observed",
+        "blend_mode": "not observed",
+        "trail": "not observed",
+        "interaction_zone": "not observed"
+      }
+    },
+    "image_effects": {
+      "type": "none",
+      "description": "static /hero.webp with a rounded clipping wrapper; rich gradients and glass-like app UI are baked into the image",
+      "technology": "HTML image and CSS",
+      "params": {
+        "filter_pipeline": "none observed",
+        "hover_transform": "none observed",
+        "reveal_animation": "none observed",
+        "distortion_type": "none"
+      }
+    },
+    "glassmorphism_neumorphism": {
+      "enabled": false,
+      "style": "none on the webpage; native material appearance exists inside the screenshot only",
+      "params": {
+        "blur_radius": "not observed",
+        "transparency": "not observed",
+        "border_treatment": "not observed",
+        "shadow_type": "not observed",
+        "light_source_angle": "not observed"
+      }
+    },
+    "canvas_drawings": {
+      "enabled": false,
+      "type": "not observed",
+      "description": "not observed",
+      "technology": "not observed",
+      "params": {
+        "draw_method": "not observed",
+        "animation_loop": "not observed",
+        "color_scheme": "not observed",
+        "responsiveness": "not observed",
+        "interaction": "not observed"
+      }
+    },
+    "svg_animations": {
+      "enabled": false,
+      "type": "not observed",
+      "description": "not observed",
+      "params": {
+        "animation_method": "not observed",
+        "path_morphing": "not observed",
+        "stroke_animation": "not observed",
+        "filter_effects": "not observed"
+      }
+    },
+    "composite_notes": "Inspected DOM contains zero canvas elements and zero SVG animate/animateTransform elements; document.getAnimations() returned zero. No particles, 3D scenes, shaders, cursor trails or scroll effects observed in desktop/mobile inspection. These are observations, not proof that every unused bundle lacks such code. The download gradient, inset highlight and layered shadow are CSS; never recreate the baked-in screenshot materials with WebGL. Unknown states and absent semantic tokens must come from the destination design system, not invented Minshot values."
+  }
+}

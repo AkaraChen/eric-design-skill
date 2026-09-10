@@ -1,0 +1,4 @@
+interface:
+  display_name: "Eric UI"
+  short_description: "Build useful, restrained product UI"
+  default_prompt: "Use $eric-ui to make this product UI useful, clear, and appropriately private."

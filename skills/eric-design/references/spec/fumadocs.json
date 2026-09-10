@@ -1,0 +1,155 @@
+{
+  "source": [
+    "https://www.fumadocs.dev/ (static HTML + compiled CSS fetched 2026-08-03; browser extension unavailable, so extraction is from markup/tokens plus downloaded hero imagery, not live rendering)",
+    "also fetched: /docs, /docs/ui, /docs/ui/theme, /docs/ui/blocks, /docs/headless, /docs/mdx, /docs/cli, /blog, /showcase (/sponsors is 404)"
+  ],
+  "extracted": "2026-08-03",
+  "design_system": {
+    "color": {
+      "palette_type": "two-layer system: a strictly neutral gray docs UI (the fd-* token layer every Fumadocs site inherits) topped by a warm citrus 'landing' brand layer (orange/olive light, pale-yellow/tangerine dark) used only on fumadocs.dev's own marketing surfaces",
+      "docs_ui_light": {
+        "background": "#f5f5f5",
+        "foreground": "#0a0a0a",
+        "card": "#f1f1f1",
+        "card_foreground": "#0a0a0a",
+        "muted": "#f5f5f5",
+        "muted_foreground": "#737373",
+        "secondary": "#ededed",
+        "popover": "#fafafa",
+        "border": "#cccccc80",
+        "primary": "#171717",
+        "ring": "#a3a3a3",
+        "note": "app-shell gray, not white — content sits on #f5f5f5 with translucent 50%-alpha borders; primary is near-black ink"
+      },
+      "docs_ui_dark": {
+        "background": "#121212",
+        "foreground": "#ebebeb",
+        "card": "#191919",
+        "muted": "#212121",
+        "muted_foreground": "#b3b3b3cc",
+        "secondary": "#212121",
+        "popover": "#1e1e1e",
+        "border": "#6663",
+        "primary": "#fafafa",
+        "accent": "#6868684d",
+        "overlay": "#0003",
+        "sidebar_overrides": "the sidebar re-scopes tokens (#292929 muted, #2e2e2e secondary, #b8b8b8 muted-foreground) — surfaces brighten one step inside the nav rail",
+        "note": "material-style #121212 dark, translucent alpha borders and accents throughout"
+      },
+      "landing_brand": {
+        "light": { "brand": "#dd7627", "brand_hover_200": "#ff8c00", "brand_foreground": "white", "brand_secondary": "#c6bb58", "brand_secondary_foreground": "#97890c", "landing_text": "#59592a", "landing_text_200": "#a8a866" },
+        "dark": { "brand": "#fff383", "brand_hover_200": "#fff7c8", "brand_foreground": "black", "brand_secondary": "#fc7744", "brand_secondary_foreground": "#521700", "landing_text": "#e4e2d0", "landing_text_200": "#b7af7e" },
+        "note": "landing copy is olive-khaki, not gray — body text itself carries the brand warmth; brand flips hue by theme (burnt orange in light, pale butter yellow in dark) with the other citrus as secondary"
+      },
+      "section_accent_theming": "distinctive mechanism: --color-fd-primary is swapped per docs area via CSS vars — UI docs get blue (--ui-color #297bff light / #a9ceff dark), Headless gets violet (--headless-color #4b2ce8 / #a9f), Framework gets amber (--framework-color #cc8b00 / #fff383), and the landing sets it to var(--color-brand); one token swap re-themes sidebar active states, links, and accents per section",
+      "semantic": {
+        "info": "oklch(62.3% .214 259.815) blue",
+        "warning": "oklch(76.9% .188 70.08) amber",
+        "error": "oklch(63.7% .237 25.331) red",
+        "success": "oklch(72.3% .219 149.579) green",
+        "idea": "oklch(70.5% .209 60.849) orange",
+        "diff": "code-diff tokens: add #0eb4641a bg / #0ac864 symbol, remove #c80a641f bg / #e60a64 symbol"
+      },
+      "contrast_strategy": "docs: quiet gray-on-gray layering with alpha borders, near-black/near-white primary; landing: olive text on light gray with saturated citrus reserved for headings, badges, and pill CTAs"
+    },
+    "typography": {
+      "heading_font": "Geist (next/font variable) — same face for everything",
+      "body_font": "Geist",
+      "mono_font": "JetBrains Mono (next/font) — code blocks, terminal demos, and marketing section labels; KaTeX fonts loaded for math",
+      "heading_scale": {
+        "h1_hero": "text-4xl → text-5xl (36→48px) / weight 500 / leading-tighter — modest for a landing hero",
+        "h2_section": "text-3xl–4xl / weight 500 / tracking-tight / text-brand / centered ('Docs for Engineers.', 'Not Just Engineers.', 'Open Source Forever.')",
+        "h2_mono_variant": "some section h2s go JetBrains Mono UPPERCASE: 'TRY IT OUT' as a bordered rounded-xl badge (font-bold, border-2 border-brand/50), 'BUILD YOUR DOCS' at extrabold — terminal-flavored section markers",
+        "h3_feature": "text-xl → 2xl / weight 500 / tracking-tight",
+        "docs_h1": "1.75em / weight 600 (docs pages stay small and functional)"
+      },
+      "body_scale": "docs body is dominated by text-sm (14px) — 117 uses on /docs vs 1 text-lg; landing lead paragraphs run text-2xl–4xl font-light for the big claim, then text-sm elsewhere",
+      "weights": "400/500 backbone; 300 (font-light) for oversized landing statements; 600–800 only in mono uppercase moments",
+      "font_style_notes": "single neutral grotesque (Geist) + JetBrains Mono as the personality font; headings differentiate via brand color and mono/uppercase treatment rather than size extremes"
+    },
+    "spacing": {
+      "base_unit": "4px (Tailwind --spacing .25rem)",
+      "content_density": "docs: compact 14px UI with comfortable prose; landing: airy grid gaps (gap-10, mt-12/20)",
+      "section_rhythm": "landing sections stack in a 2-col lg grid with generous gaps; docs use standard prose rhythm"
+    },
+    "layout": {
+      "grid_system": "landing: max-w-[1400px] frame with 1–2 col feature grid; --spacing-page token = 1436px; docs: Fumadocs three-column (sidebar tree / prose / TOC), --fd-layout-width 1400px",
+      "hero_pattern": "hero is a giant framed panel: min-h-600px, 70vh, rounded-2xl, 1px border, overflow-hidden, containing badge + h1 + pill CTA pair + a faux CLI/terminal sequence ('pnpm create fumadocs-app' → framework picker → localhost:3000 'New App launched!') over a dithered photo background",
+      "landing_structure": "framed hero → testimonial marquee (shadcn, Anthony Shew, Aiden Bai, David Blass quotes, DOM repeated 4x for seamless loop) → theme previews (Docs/Notebook/OpenAPI tabs) → 'Anybody can write.' MDX feature tour with live code samples (Writer/Developer/Automation tabs) → per-audience sections with brand-colored centered h2s → showcase logos → open-source/sponsors → mono uppercase 'BUILD YOUR DOCS' CTA",
+      "docs_layout": "the reference Fumadocs UI itself: icon-annotated sidebar groups, breadcrumbless h1 + one-line description, 'Copy Markdown' + 'Open' buttons above content, 2x2 card grid for sub-products, info callout with left accent, right-rail 'On this page' with nested indent lines",
+      "alignment": "landing alternates centered (hero, section h2s) and left-aligned feature columns; docs strictly left"
+    },
+    "shape": {
+      "radius_scale": "rounded-full for all landing CTAs and badges (pill-first); rounded-xl/2xl (12/16px) for frames, cards, code panels; docs components on Tailwind defaults (--radius-sm .25rem → --radius-2xl 1rem)",
+      "border_usage": "1px translucent borders everywhere (#cccccc80 light / #6663 dark) — the alpha-border approach lets one token work on any surface; border-2 with /50 opacity for the mono badge h2s",
+      "rule": "marketing is pill+16px, docs UI is 6–12px — softer and rounder than the Langfuse/Vercel school"
+    },
+    "elevation": {
+      "shadow_style": "shadow-lg is the workhorse on landing cards/frames; docs UI nearly flat, relying on surface steps (#121212 → #191919 → #212121) and alpha borders",
+      "depth_cues": "surface tone + translucent borders first; linear-gradient fade masks (white→transparent) blend section edges instead of hard cuts"
+    },
+    "iconography": {
+      "style": "Lucide stroke icons at size-4 (16px) in nav, sidebar group labels, and feature cards",
+      "preferred_set": "lucide"
+    },
+    "motion": {
+      "philosophy": "functional transitions plus a few crafted loops; no GSAP/Three.js/Framer on the landing (verified absent)",
+      "keyframes_observed": "fumari-marquee / fumari-marquee-vertical (40s duration testimonial loop, horizontal + vertical variants), circuit_1 (element sliding translateY -20→100px) + circuit_1_x_energy (a pulse that stays invisible 46% of the loop, flashes visible, then travels 212px and fades — an energy packet running along a circuit trace), fd-sidebar/popover/dialog/fade in-out pairs, enter/exit (tw-animate), accordion equivalents",
+      "durations": "UI transitions via transition-colors defaults; marquee 40s; docs panels use fd-* enter/exit animations"
+    },
+    "components": {
+      "button_primary_landing": "pill: px-5 py-3 rounded-full font-medium tracking-tight bg-brand text-brand-foreground hover:bg-brand-200 (orange→brighter orange light; butter-yellow→paler dark)",
+      "button_secondary_landing": "same pill geometry, border + bg-fd-secondary, hover:bg-fd-accent",
+      "hero_badge": "text-xs text-brand rounded-full border border-brand/50 p-2 — tagline chip above the h1",
+      "search": "⌘K search trigger in header; Algolia/Orama-backed dialog in docs",
+      "terminal_demo": "faux CLI walkthrough as hero imagery: JetBrains Mono, clack-style prompts (◇ Project name, ◆ Choose a framework with radio list Next.js/Waku/Tanstack Start/React Router), then a browser chrome frame 'localhost:3000 — New App launched!'",
+      "code_blocks": "Shiki-highlighted, tabbed codeblock groups (tab=\"Tab 1\"), Twoslash type-info popovers, [!code ++] diff decorations with the fd-diff tokens, filename headers, copy buttons",
+      "testimonial_cards": "quote + avatar + name + role rows inside the 40s marquee",
+      "docs_cards": "2x2 grid of icon + bold title + text-sm description cards on card surface with alpha border",
+      "callouts": "left-accent info/warn/error/success/idea boxes using the oklch semantic set",
+      "theme_tabs": "Docs / Notebook / OpenAPI theme preview switcher — the product demos itself as the component library"
+    }
+  },
+  "design_style": {
+    "mood": "crafted, warm, indie, developer-cozy, quietly playful",
+    "personality": "a solo-craftsman open-source project that presents like a boutique product — 'beautifully designed by Fuma Nama' is in the hero copy; personality comes from citrus color, mono uppercase badges, a dithered-photo hero, and celebrity-developer testimonials rather than corporate polish",
+    "genre": "open-source dev-tool landing in the shadcn-era style ('The shadcn/ui for docs' is a literal section heading): neutral gray component UI + one strong brand accent + composability as the core pitch",
+    "visual_language": "two voices deliberately separated — the docs UI is a disciplined neutral-gray shadcn-style system (alpha borders, #121212 dark, text-sm everywhere) while the landing wraps it in warm olive body text, citrus pills, halftone-print imagery, and JetBrains Mono accents; the product screenshot IS the main imagery",
+    "signature_imagery": "duotone halftone-dithered photography — the hero background is a real photo (streetlamp against clouds and trees) reduced to amber-on-navy dot dithering like a risograph/newsprint print; retro print texture against a clean UI",
+    "composition": "everything framed: hero in a rounded-2xl border frame, demos in browser/terminal chrome, screenshots in cards; sections join via white→transparent gradient fade masks; testimonial proof runs as an infinite marquee",
+    "copy_voice": "personal and direct ('the React.js docs framework you love', 'Build excellent documentation, your style.', 'Anybody can write.'); problem-empathy openers ('You know how you end up rebuilding a full docs site every time…'); proof by named peers (shadcn, Vercel, Million.js, ArkType creators) rather than corporate logos",
+    "interaction_feel": "standard fast color transitions; the delight lives in ambient loops (marquee, circuit energy pulses) and the CLI storytelling, not in hover theatrics"
+  },
+  "visual_effects": {
+    "overview": {
+      "effect_intensity": "subtle-accent",
+      "performance_tier": "lightweight — pure CSS animations and pre-rendered imagery; no canvas, no WebGL, no JS animation libraries (verified: zero <canvas>, no three/gsap/rive/lottie/framer in payload)",
+      "primary_technology": "CSS keyframes + dithered PNG assets",
+      "composite_notes": "Extraction was from static HTML/CSS plus downloaded assets (hero bg viewed as image); runtime pacing of the circuit pulse and marquee inferred from keyframe definitions. The aesthetic trick is cheap-but-distinctive: dithered duotone photos and CSS-only loops instead of runtime rendering."
+    },
+    "dithered_imagery": {
+      "enabled": true,
+      "details": "signature effect: photographic backgrounds pre-processed into 2-color halftone dot dithering (amber #dd7627-family on navy) — retro print/risograph texture; shipped as static PNG (bg-2.png, 2208x1242) inside the hero frame, likely theme-variant"
+    },
+    "marquee_loops": {
+      "enabled": true,
+      "details": "fumari-marquee component: 40s infinite testimonial scroll with horizontal and vertical variants, content repeated 4x in DOM for seamless wrap"
+    },
+    "circuit_animation": {
+      "enabled": true,
+      "details": "CSS-only 'circuit board' decoration: circuit_1 slides a trace element vertically while circuit_1_x_energy runs a glow pulse along a 212px path with long invisible dwell (0–46% opacity 0) — reads as electricity traveling through PCB traces"
+    },
+    "gradient_fade_masks": {
+      "enabled": true,
+      "details": "sections blend via linear-gradient(to bottom, white 40%, transparent 90%) style overlay fades rather than hard borders"
+    },
+    "scroll_effects": { "enabled": false, "note": "no parallax or scroll-driven animation" },
+    "webgl_3d": { "enabled": false },
+    "particles": { "enabled": false },
+    "shaders": { "enabled": false },
+    "cursor_effects": { "enabled": false },
+    "glassmorphism": { "enabled": false, "note": "translucency is limited to alpha borders/accents, no frosted blur panels" },
+    "text_effects": { "enabled": false, "note": "headings static; emphasis via text-brand color spans inside sentences" },
+    "svg_animations": { "enabled": false, "note": "SVGs are static logos and Lucide icons; the animated circuit is DOM elements + CSS keyframes" }
+  }
+}

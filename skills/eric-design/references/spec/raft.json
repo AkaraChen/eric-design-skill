@@ -1,0 +1,221 @@
+{
+  "meta": {
+    "name": "raft",
+    "description": "Raft (raft.build) — neo-brutalist landing for a human+AI-agent chat workspace: hard black borders and offset shadows, Space Grotesk/Space Mono, candy accent palette on white, playful sticker rotation and float animations.",
+    "source_references": ["https://raft.build/"],
+    "created_at": "2026-07-11"
+  },
+  "design_system": {
+    "color": {
+      "palette_type": "candy multi-accent on monochrome ink — black-on-white base with a rotating set of flat saturated accents",
+      "primary": { "hex": "#ffd440", "role": "brand yellow (--primary-400 = brutal-yellow): logo tiles, highlight blocks, icon chips" },
+      "secondary": { "hex": "#141111", "role": "ink: text, 2px borders, and all offset shadows (near-black with warm cast)" },
+      "accent": { "hex": "#fe7da8", "role": "brutal-pink (--accent-400): primary CTA fill ('Get started'), key highlights" },
+      "neutral": {
+        "scale": ["#ffffff", "#fffaef", "oklch(97.4% .002 67.9)", "oklch(89.6% .008 73.73)", "oklch(78.9% .014 71.29)", "oklch(56.9% .01 67.63)", "oklch(35.4% .007 67.62)", "oklch(18.7% .003 67.68)"],
+        "usage": "white page ground dominates; brutal-cream #fffaef tints select sections; warm 'brutal-stone' oklch ramp for muted text and quiet fills; black/45 for mono eyebrow labels"
+      },
+      "semantic": {
+        "success": "oklch(71.4% .176 153.079)",
+        "warning": "oklch(70% .202 44.441)",
+        "error": "#f97264",
+        "info": "#27ccf3"
+      },
+      "surface": {
+        "background": "#ffffff",
+        "card": "#ffffff",
+        "elevated": "#ffffff (elevation via hard offset shadow, not tint)"
+      },
+      "contrast_strategy": "maximum: pure black ink and 2px black borders on white/candy fills; every accent used at full flat saturation, never as a tint gradient. Supporting accents: cyan #27ccf3, lime #a9d877, orange #f8a16f, red #f97264, lavender #bbafe6. Dark-mode token set exists (layer-page oklch 14.5%)"
+    },
+    "typography": {
+      "type_scale": {
+        "display":   { "size": "3.75rem (text-6xl)", "weight": "700", "line_height": "1.1 (leading-tight)", "tracking": "0" },
+        "heading_1": { "size": "3rem", "weight": "700", "line_height": "1.1", "tracking": "0" },
+        "heading_2": { "size": "1.875–2.25rem (text-3xl/4xl)", "weight": "700", "line_height": "1.2", "tracking": "0" },
+        "heading_3": { "size": "1.5rem", "weight": "700", "line_height": "1.33", "tracking": "0" },
+        "body":      { "size": "1rem", "weight": "400", "line_height": "1.5", "tracking": "0" },
+        "body_small": { "size": "0.875rem", "weight": "400–600", "line_height": "1.43", "tracking": "0" },
+        "caption":   { "size": "0.75rem", "weight": "700", "line_height": "1.33", "tracking": "0" },
+        "overline":  { "size": "11px, Space Mono", "weight": "700", "line_height": "1.4", "tracking": "0.05em (tracking-wider), uppercase, black/45" }
+      },
+      "font_families": {
+        "heading": "Space Grotesk, system-ui, sans-serif (--font-display)",
+        "body": "Space Grotesk / system sans",
+        "mono": "Space Mono, ui-monospace, monospace"
+      },
+      "font_style_notes": "Geometric-quirky grotesque pairing from the same family: Space Grotesk bold for nearly everything (104 uses of font-display), Space Mono bold uppercase for eyebrows, badges, and chat metadata. Weight ramp reaches 900 (font-weight-black) for stickers. No serif anywhere."
+    },
+    "spacing": {
+      "base_unit": "0.25rem Tailwind spacing token",
+      "scale": "4, 8, 12, 16, 24, 32, 40, 56, 80 px in practice",
+      "content_density": "comfortable — brutalist elements are chunky but sections breathe",
+      "section_rhythm": "uniform vertical bands on white; section intros centered with mono eyebrow + bold Space Grotesk headline"
+    },
+    "layout": {
+      "grid_system": "centered container, CSS-grid feature card rows",
+      "max_content_width": "~1152px (max-w-6xl class family); testimonial masonry ~3 columns",
+      "columns": "3-col feature cards, 2–3 col testimonial masonry, single centered hero",
+      "gutter": "24–32px",
+      "breakpoints": "mobile-first; md (768px) and lg (1024px) shifts",
+      "alignment_tendency": "centered hero and section heads; left-aligned card content; scattered rotated stickers break the grid deliberately"
+    },
+    "shape": {
+      "border_radius": {
+        "small": "0 (rounded-none is the signature — 19 explicit uses)",
+        "medium": "0",
+        "large": "0 (token scale sm 4px / md 6px / lg 8px exists but marketing chrome stays square)",
+        "pill": "not used; avatars are square tiles"
+      },
+      "border_usage": "bold 2px solid black borders on everything interactive: buttons, cards, avatar tiles, badges, chat window",
+      "divider_style": "2px black rules; sections otherwise separated by whitespace"
+    },
+    "elevation": {
+      "shadow_style": "hard offset, zero blur — the neo-brutalist paper-cutout stack",
+      "levels": {
+        "low": "2px 2px 0 #141111 (shadow-brutal-sm)",
+        "medium": "4px 4px 0 #141111 (shadow-brutal)",
+        "high": "6px 6px 0 #141111 (shadow-brutal-lg)"
+      },
+      "depth_cues": "offset shadows + physical press: active state translates +1px/+1px and shrinks shadow to 1px 1px 0, as if pushing the element into the page; hover lifts -1px"
+    },
+    "iconography": {
+      "style": "small outlined icons at 1.5–2px stroke inside square colored chips with 2px black borders",
+      "stroke_weight": "1.5px default, 2px for emphasis",
+      "size_scale": "14 / 16 px inline; 28–32px square chips",
+      "preferred_set": "in-house/lucide-style strokes; icons sit on brutal-yellow/cyan tiles"
+    },
+    "motion": {
+      "easing": "ease-in-out for ambient float; snappy linear-ish 100ms for interaction",
+      "duration_scale": {
+        "micro": "100ms (all button/hover transitions)",
+        "normal": "n/a — jumps straight from micro to ambient",
+        "macro": "4–6s float loops, continuous logo marquee"
+      },
+      "entrance_pattern": "elements mostly render static; ambient float (translateY 0→-6px→0, 4s/6s infinite) on stickers",
+      "exit_pattern": "none observed",
+      "philosophy": "toy-like physicality: hover lifts and grows shadow, click physically depresses; decorative stickers bob and stay rotated (rotate-3/6/12)"
+    },
+    "components": {
+      "button_style": "square, 2px black border, flat candy fill (pink CTA, white secondary), bold Space Grotesk label, hard shadow; hover -1px lift, active +1px press with shadow collapse",
+      "input_style": "square 2px-border fields matching buttons",
+      "card_style": "white square cards with 2px black border and 4px offset shadow; icon chip top-left on colored tile",
+      "navigation_pattern": "simple top bar with mono language switcher; links plain bold text",
+      "modal_style": "square panel, 2px border, brutal shadow (inferred from token set)",
+      "list_style": "chat-message lists inside a faux Slack-like channel window with square avatar tiles",
+      "component_notes": "Signature component is the hero chat window: an 'engineering #42' channel where human and agent avatars (square, 2px border, on cyan/yellow tiles) exchange timestamped messages. Badges are square mono-font chips. Trusted-logos strip runs as an infinite marquee."
+    }
+  },
+  "design_style": {
+    "aesthetic": {
+      "mood": ["playful", "energetic", "irreverent", "confident"],
+      "visual_metaphor": "paper cutouts and stickers on a zine page; 'millennial web chat nostalgia' (a testimonial's own words)",
+      "era_influence": "2023+ neo-brutalism with early-web IRC/forum nostalgia",
+      "genre": "neo-brutalist dev-tool landing",
+      "personality_traits": ["cheeky", "hands-on", "unpretentious", "hacker-friendly"],
+      "adjectives": ["chunky", "flat", "candy-colored", "bold", "toy-like"]
+    },
+    "visual_language": {
+      "complexity": "moderate — simple flat shapes, but many accent colors and scattered stickers",
+      "ornamentation": "decorative: rotated floating stickers, colored icon tiles, marquee, candy badges",
+      "whitespace_usage": "generous white ground keeps the loud elements readable",
+      "visual_weight_distribution": "chunky bordered blocks distributed evenly; rotation breaks monotony",
+      "focal_strategy": "hero statement + live chat-window demo as proof, then distributed card interest",
+      "contrast_level": "maximum — pure black on white and full-saturation fills",
+      "texture_usage": "none; everything is flat vector color"
+    },
+    "composition": {
+      "hierarchy_method": "weight and border/shadow chunkiness; color marks interactivity",
+      "balance_type": "symmetric skeleton with asymmetric sticker accents (rotate-3/6/12)",
+      "flow_direction": "vertical scroll, single column of bands",
+      "grouping_strategy": "hard 2px borders group everything explicitly; no subtle proximity grouping",
+      "negative_space_role": "white paper ground that stickers and cards sit on"
+    },
+    "imagery": {
+      "photo_treatment": "candid, deliberately unpolished personal photos in square tiles — team includes a white cat ('dd-cat') and casual iPhone selfies; one testimonial avatar is an anime-style illustration; all object-cover in square 2px-bordered frames",
+      "illustration_style": "no illustration system; the logo is a hand-drawn-feel angular raft mark",
+      "graphic_elements": "rotated sticker badges, square icon chips on candy fills, marquee logo strip, faux chat window",
+      "pattern_usage": "none",
+      "image_shape": "squares only — square avatars, square cards, square chips; zero border-radius"
+    },
+    "interaction_feel": {
+      "feedback_style": "physical and immediate: lift on hover, depress on click",
+      "hover_behavior": "translateY(-1px) + shadow grows one step",
+      "transition_personality": "snappy (100ms), toy-mechanical",
+      "loading_style": "cursor-wait states on buttons; opacity holds",
+      "microinteraction_density": "medium — every interactive element has the lift/press behavior; ambient float on decor"
+    },
+    "brand_voice_in_ui": {
+      "tone": "playful direct: 'Build with Raft. Build with fun.'",
+      "formality": "casual, dev-to-dev",
+      "cta_style": "direct imperative: 'Get started', 'Build with Raft'",
+      "empty_state_approach": "chat-metaphor placeholder copy (inferred from product framing)",
+      "error_tone": "brutal-red flat fills, plain language"
+    }
+  },
+  "visual_effects": {
+    "overview": {
+      "effect_intensity": "subtle-accent",
+      "performance_tier": "lightweight",
+      "fallback_strategy": "all effects are CSS keyframes; degrade to static with reduced motion",
+      "primary_technology": "CSS only"
+    },
+    "background_effects": {
+      "type": "none",
+      "description": "flat white ground with occasional brutal-cream section tint; no gradients anywhere — flat color is the point",
+      "technology": "CSS",
+      "params": { "color_palette": ["#ffffff", "#fffaef"], "speed": "n/a", "density": "n/a", "opacity": "1", "blend_mode": "normal" }
+    },
+    "particle_systems": {
+      "enabled": false, "type": "none", "description": "not present", "technology": "n/a",
+      "params": { "count": "0", "shape": "n/a", "size_range": "n/a", "movement_pattern": "n/a", "color_behavior": "n/a", "interaction": "none", "spawn_area": "n/a" }
+    },
+    "3d_elements": {
+      "enabled": false, "type": "none", "description": "not present", "technology": "n/a",
+      "params": { "renderer": "n/a", "lighting": "n/a", "camera": "n/a", "materials": "n/a", "geometry": "n/a", "post_processing": [], "interaction_model": "n/a" }
+    },
+    "shader_effects": {
+      "enabled": false, "type": "none", "description": "not present", "technology": "n/a",
+      "params": { "uniforms": "n/a", "vertex_manipulation": "n/a", "fragment_output": "n/a", "noise_type": "n/a", "distortion": "n/a" }
+    },
+    "scroll_effects": {
+      "parallax": { "enabled": false, "layers": "0", "depth_range": "n/a", "speed_curve": "n/a" },
+      "scroll_triggered_animations": {
+        "enabled": false,
+        "trigger_points": "none — content is static on scroll",
+        "animation_type": "none",
+        "scrub_behavior": "none"
+      },
+      "scroll_morphing": { "enabled": false, "description": "not present" }
+    },
+    "text_effects": {
+      "type": "none",
+      "description": "headline emphasis via flat color blocks/stickers behind or beside text, not text animation",
+      "technology": "CSS",
+      "params": { "split_strategy": "none", "animation_per_unit": "none", "stagger": "none", "effect_style": "static" }
+    },
+    "cursor_effects": {
+      "enabled": false, "type": "none", "description": "default cursor",
+      "params": { "shape": "n/a", "size": "n/a", "blend_mode": "n/a", "trail": "none", "interaction_zone": "n/a" }
+    },
+    "image_effects": {
+      "type": "none",
+      "description": "photos sit static in square bordered tiles",
+      "technology": "CSS",
+      "params": { "filter_pipeline": "none", "hover_transform": "none", "reveal_animation": "none", "distortion_type": "none" }
+    },
+    "glassmorphism_neumorphism": {
+      "enabled": false, "style": "none — antithetical to the aesthetic; all surfaces opaque and flat",
+      "params": { "blur_radius": "n/a", "transparency": "n/a", "border_treatment": "n/a", "shadow_type": "n/a", "light_source_angle": "n/a" }
+    },
+    "canvas_drawings": {
+      "enabled": false, "type": "none", "description": "not present", "technology": "n/a",
+      "params": { "draw_method": "n/a", "animation_loop": "n/a", "color_scheme": "n/a", "responsiveness": "n/a", "interaction": "none" }
+    },
+    "svg_animations": {
+      "enabled": false, "type": "none", "description": "SVGs (logo, trusted-logo marks) are static",
+      "params": { "animation_method": "none", "path_morphing": "none", "stroke_animation": "none", "filter_effects": "none" }
+    },
+    "composite_notes": "Three CSS keyframes carry all motion: float (translateY 0/-6px/0, 4s and 6s variants) bobbing the rotated hero stickers, trusted-logo-marquee for the infinite customer strip, and pulse. The defining 'effect' is really the interaction model — hard offset shadows (2/4/6px, zero blur, #141111) that grow on hover (-1px lift) and collapse to 1px on press (+1px translate), making every element feel like a physical button. No canvas, WebGL, or animation libraries."
+  }
+}

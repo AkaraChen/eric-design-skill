@@ -1,0 +1,142 @@
+{
+  "source": "https://openknowledge.ai/",
+  "extracted": "2026-07-11",
+  "design_system": {
+    "color": {
+      "primary": "#3784ff",
+      "primary_strong": "#1b60f5",
+      "primary_foreground": "#ffffff",
+      "accent": "#d5e5ff",
+      "accent_foreground": "#29325c",
+      "background": "#fbf9f4",
+      "surface": "#fcfcfa",
+      "card": "#ffffff",
+      "foreground": "#1a1a1a",
+      "muted": "#f0ece3",
+      "muted_foreground": "#71717a",
+      "border": "#e4e3e0",
+      "border_strong": "#d4d4d0",
+      "destructive": "#fb2c36",
+      "success": "#009767",
+      "presence": "#7c6df0",
+      "warm_family": {
+        "golden_sun_100": "#ffefd9",
+        "golden_sun_200": "#fcdfb6",
+        "white_cream": "#fff5e1",
+        "note": "warm amber tints used for callout/highlight surfaces against the cream base"
+      },
+      "ink": "#231f20",
+      "dot_grid": "#c4c8cc",
+      "azure_scale": ["#eef6ff", "#d9eaff", "#bcdbff", "#8ec6ff", "#59a5ff", "#3784ff", "#1b60f5", "#144be1", "#173db6", "#19388f", "#142357"],
+      "neutral_scale": ["#fafaf9", "#f5f5f4", "#e7e5e4", "#d6d3d1", "#a6a09b", "#79716b", "#57534d", "#44403b", "#292524", "#1c1917", "#0c0a09"],
+      "dark_mode": {
+        "background": "#0c0c0c",
+        "card": "#171717",
+        "foreground": "#f0f0ee",
+        "primary": "#69a3ff",
+        "primary_strong": "#93c5fd",
+        "border": "#1e1e1e",
+        "success": "#00d294"
+      },
+      "temperature": "warm neutrals (stone/cream), cool single-hue blue accent"
+    },
+    "typography": {
+      "heading_font": "DM Sans (geometric humanist sans)",
+      "body_font": "DM Sans, fallback Inter",
+      "mono_font": "JetBrains Mono",
+      "heading_weight": "300 (light) — large headlines are font-light with tracking-tight",
+      "body_weight": "400-500",
+      "scale": "Tailwind default ramp: 0.75 / 0.875 / 1 / 1.125 / 1.25 / 1.5 / 2.25 / 3 / 3.75rem; hero at text-5xl to 6xl",
+      "eyebrow_style": "JetBrains Mono, uppercase, tracking-wide, muted or primary blue",
+      "letter_spacing": "-0.025em on headings; buttons use custom -0.64px",
+      "line_height": "1.25 tight headings, 1.5 body, 115% on buttons",
+      "numerals": "tabular-nums for metrics"
+    },
+    "spacing": {
+      "base_unit": "0.25rem (Tailwind spacing token)",
+      "density": "airy — generous section gaps, roomy card padding",
+      "section_rhythm": "consistent large vertical bands, each with mono eyebrow + light headline"
+    },
+    "layout": {
+      "max_width": "content columns around 42rem (2xl) for text; wider demo panels",
+      "grid": "1-col mobile to 2-3 col feature grids",
+      "structure": "hero with product demo window, alternating feature sections, CTA, minimal footer",
+      "alignment": "mostly centered hero, left-aligned section content"
+    },
+    "shape": {
+      "radius_scale": "sm 4px / md 6px / lg 8px / xl 12px / 2xl 16px",
+      "buttons": "pill (rounded-full, custom 43.2px pill radius; secondary 10px)",
+      "cards": "rounded-xl/2xl with 1px hairline borders",
+      "glass_panels": "28px radius",
+      "dominant": "rounded-full is the most-used radius class — pills everywhere"
+    },
+    "elevation": {
+      "philosophy": "hairline borders first, shadows second; all shadows soft and low-alpha",
+      "tokens": {
+        "shadow_hairline": "0 1px 2px rgba(15,23,42,0.05)",
+        "shadow_toolbar": "0 1px 2px rgba(15,23,42,0.04), 0 2px 6px -2px rgba(15,23,42,0.06)",
+        "shadow_panel": "0 18px 48px -24px rgba(35,31,32,0.18)",
+        "shadow_window": "0 0 48px -16px rgba(35,31,32,0.18)",
+        "shadow_glass": "6px 6px 24px rgba(153,173,205,0.20)"
+      }
+    },
+    "motion": {
+      "default_duration": "150ms; UI transitions 200-500ms; long reveals 1400ms",
+      "easing": "cubic-bezier(0.4,0,0.2,1) default; ease-out for entrances",
+      "button_hover": "hover:-translate-y-0.5 + shadow-lg lift; active:scale-98 press",
+      "reveals": "ok-reveal-in: fade + 4px translateY; ok-block-reveal: fade + 7px translateY"
+    },
+    "components": {
+      "primary_button": "pill, uppercase label, bg primary, white text, lift on hover",
+      "cards": "white on cream, hairline border, soft panel shadow",
+      "chips_badges": "small rounded-full tags; doc/data/code chip color variants",
+      "product_windows": "faux app windows with toolbars, tabs, and timeline UI as hero imagery",
+      "inputs": "rounded-full with inset pill button, ring-2 primary focus states"
+    }
+  },
+  "design_style": {
+    "mood": "calm, crafted, trustworthy — a warm 'paper' take on developer tooling",
+    "personality": "understated confidence; open-source ethos signaled through mono type and plain-file metaphors",
+    "genre": "modern dev-tool / AI-product landing page (Linear/Vercel lineage) but warm-paper instead of dark",
+    "visual_language": "cream paper background + dot grid = engineering notebook; azure blue as the single vivid accent; product UI itself is the hero imagery",
+    "composition": "eyebrow, light oversized headline, short declarative subhead, live product demo; repeated per section",
+    "imagery": "no photography; real product UI (editor windows, agent chat transcripts, timelines) is the primary imagery, staged over soft dawn-sky mesh-gradient image backdrops (sky blue #b3d4f7 to warm peach #f8e7dd to pale mint — the morning-mist/golden-sun palette as atmosphere); flat crystal-blue #d5e5ff elongated-hexagon shapes with a blurred echo layer flank the CTA; partner-tool logos as static SVGs",
+    "ornamentation": "minimal — dot grid texture, hairline rules, occasional warm-amber callout tint, plus atmospheric dawn-sky gradient backdrops and flat crystal-blue hexagon accents reserved for hero/CTA moments",
+    "whitespace_philosophy": "generous; whitespace does the separating, borders do the grouping",
+    "copy_voice": "short, plain, benefit-led sentences; mono uppercase section labels",
+    "interaction_feel": "snappy and physical — quick 120-200ms color transitions, subtle lift/press on buttons"
+  },
+  "visual_effects": {
+    "overview": {
+      "effect_intensity": "low-medium",
+      "performance_tier": "lightweight — CSS/DOM only, no WebGL/Canvas/Three.js detected",
+      "composite_notes": "Signature effects: (1) dot-grid paper background, (2) soft dawn-sky mesh-gradient image backdrops behind hero and pillar demo boxes (static webp assets: hero-box-background.webp 2696x808, pillar gradients — blue to peach to mint washes), (3) glassmorphic overlay panels (20px backdrop blur, 28px radius, translucent #fffefe2e fill, cool blue shadow) floating over those gradients, (4) staggered fade-up reveals, (5) odometer-style rolling-digit ticker demo, (6) faux multi-agent chat windows cycling between Claude/Cursor/Codex tabs, (7) flat #d5e5ff hexagon SVG shapes with feGaussianBlur echo flanking the CTA."
+    },
+    "glassmorphism": {
+      "enabled": true,
+      "details": "backdrop-blur 20px, rgba white fill #fffefe2e, 1px card-tinted border, radius 28px, shadow 6px 6px 24px rgba(153,173,205,0.2)"
+    },
+    "scroll_effects": {
+      "enabled": true,
+      "details": "fade + small translateY entrance reveals (4-7px), 300-1400ms, staggered per block"
+    },
+    "micro_interactions": {
+      "enabled": true,
+      "details": "button lift on hover (-2px + shadow), scale-98 press, 120ms hover tint on toolbar buttons"
+    },
+    "animated_ui_demos": {
+      "enabled": true,
+      "details": "rolling-digit ticker (translateY digit strips), tabbed agent-conversation player, animated timeline feed — all DOM/CSS driven"
+    },
+    "background_gradients": {
+      "enabled": true,
+      "details": "static mesh-gradient image assets (webp), not CSS gradients: dawn-sky wash from #b3d4f7 sky blue through #f8e7dd warm peach to pale mint/teal; used behind hero product window and pillar sections; glass panels blur over them"
+    },
+    "canvas_2d": { "enabled": false },
+    "webgl_3d": { "enabled": false },
+    "particles": { "enabled": false },
+    "shaders": { "enabled": false },
+    "cursor_effects": { "enabled": false },
+    "svg_animations": { "enabled": false, "note": "SVGs are static logos/icons; Mermaid diagrams rendered in-product demos" }
+  }
+}

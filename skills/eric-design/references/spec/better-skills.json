@@ -1,0 +1,180 @@
+{
+  "meta": {
+    "name": "Better Skills — better-skills.dev",
+    "description": "Developer-tool marketing site with a blueprint-schematic aesthetic: hairline engineering grid, dot-matrix pixel display type, and a strict white + near-black + single amber palette. Built with Next.js + Tailwind/shadcn tokens; Geist font family with five custom GeistPixel dot-matrix variants.",
+    "source_references": [
+      "https://better-skills.dev/ (browsed live 2026-08-02, 1440px + 390px viewports — single-page marketing site with 8 numbered sections: Hero, How It Works, Features, What Is A Skill, The Problem, How We Solve It, Developer Experience, Pricing, Get Started)",
+      "https://better-skills.dev/login (OAuth sign-in, same design language)",
+      "CSS chunks /_next/static/chunks/*.css (design tokens, GeistPixel @font-face, keyframes) and live computed styles"
+    ],
+    "created_at": "2026-08-02",
+    "generation_note": "The site is a light-only single page (html class forced 'light'; full dark theme tokens exist in CSS but are unused on the landing). The signature is the combination of three systems: (1) a blueprint 'drawing sheet' frame — full-width hairline divider bars marked [ 01 / 08 ] · SECTION-NAME with crosshair registration squares at grid intersections; (2) dot-matrix display type (custom GeistPixel fonts) where the amber-highlighted clause of every heading carries the emphasis; (3) scattered pixel-square confetti that flickers via a steps() CSS animation. Everything else is deliberately flat: no shadows, no gradients, no canvas/WebGL."
+  },
+  "design_system": {
+    "color": {
+      "palette_type": "monochromatic neutral (white/near-black) + single amber accent — custom amber scale, not Tailwind defaults",
+      "primary": { "hex": "#F99C00", "role": "amber-500; CTAs, heading accent words, icons, check marks, numbers, active states" },
+      "secondary": { "hex": "#F4F4F5", "role": "secondary surface (zinc-100); rarely used on the mostly-white page" },
+      "accent": { "hex": "#F99C00", "role": "same amber doubles as accent; amber-300 #FFD236 for lighter pixel glyphs, amber-600 #DD7400 / amber-700 #B75000 for deeper shades, amber-950 #461901 as text on amber buttons" },
+      "amber_scale": { "300": "#FFD236", "500": "#F99C00", "600": "#DD7400", "700": "#B75000", "950": "#461901" },
+      "neutral": {
+        "scale": ["#FFFFFF", "#FAFAFA", "#F5F5F5", "#E5E5E5", "#A1A1A1", "#737373", "#0A0A0A"],
+        "usage": "white page; #E5E5E5 hairline borders and blueprint grid lines; #737373 secondary/body-muted text; #A1A1A1 faint labels and pixel-square confetti gray; #0A0A0A headings and primary text"
+      },
+      "semantic": { "success": "amber check glyphs stand in for success in feature lists (no green observed)", "warning": "n/a", "error": "#DF2225 (destructive token, unseen in UI)", "info": "n/a" },
+      "surface": { "background": "#FFFFFF", "card": "#FFFFFF with 1px #E5E5E5 border", "elevated": "#FFFFFF — elevation communicated by borders, not shadow or tint" },
+      "dark_tokens_exist_but_unused": "full .dark scale shipped (bg #0A0A0A, card #171717, border #2F2F2F, muted-fg #A1A1A1, amber primary unchanged); landing forces light",
+      "contrast_strategy": "near-black on white for structure and headings; #737373 gray for supporting copy; amber reserved strictly for emphasis — accent words in headings, CTAs, icons, ordinal numbers — never for large fills or backgrounds beyond buttons and pixel glyphs"
+    },
+    "typography": {
+      "type_scale": {
+        "display": { "size": "72px", "weight": "500-600", "line_height": "77.76px (1.08)", "tracking": "-1.8px", "font": "mixed — black clause in GeistPixelLine, amber clause in GeistPixelSquare; letter 'o' in hero replaced by hexagon logo glyph ('Sec⬡nd Brain')" },
+        "heading_1": { "size": "72px (hero, see display)", "weight": "500", "line_height": "1.08", "tracking": "-1.8px" },
+        "heading_2": { "size": "44px", "weight": "500", "line_height": "55px (1.25)", "tracking": "-1.1px", "font": "GeistPixelSquare for all section h2s; accent clause colored amber" },
+        "heading_3": { "size": "~20px", "weight": "600", "line_height": "~28px", "tracking": "0", "font": "Geist (sans) for card titles, with the key word switched to amber GeistPixelSquare" },
+        "body": { "size": "16px", "weight": "400", "line_height": "24px (1.5)", "tracking": "0", "font": "Geist" },
+        "body_small": { "size": "14-15px", "weight": "400", "line_height": "~22px", "tracking": "0", "font": "Geist, #737373 — card body copy and sub-headlines" },
+        "caption": { "size": "12-13px", "weight": "400-500", "line_height": "~16px", "tracking": "+0.05em", "font": "Geist Mono uppercase — eyebrows '// SECTION \\\\', card labels ('TERMINAL', 'SECOND BRAIN'), panel headers" },
+        "overline": { "size": "12-13px", "weight": "500", "line_height": "~16px", "tracking": "+0.05em", "font": "Geist Mono — section sheet markers '[ 01 / 08 ] · HOW IT WORKS' with amber ordinal and small amber caret block; corner tags '[ SKILL ] [ SYNC ] [ .MD ] [ GRAPH ]'" }
+      },
+      "font_families": {
+        "heading": "GeistPixelSquare / GeistPixelLine (custom dot-matrix variants of Geist Mono, woff2, weight 500) — five variants shipped: Square, Grid, Circle, Triangle, Line; fallback Geist Mono → ui-monospace stack",
+        "body": "Geist (variable 100-900) with 'Geist Fallback' (metric-adjusted Arial)",
+        "mono": "Geist Mono (variable) for code, labels, markers; Fira Mono (400/500) also loaded for select mono text (pricing feature lists)"
+      },
+      "font_style_notes": "Three-voice system: dot-matrix pixel type for display headings (retro LED/printer feel), clean geometric-hygienic Geist for product copy, Geist Mono for engineering annotations. Headings mix voices inline: Geist sans/pixel black clause + amber pixel clause. Product UI (login) drops pixel type entirely for bold Geist."
+    },
+    "spacing": {
+      "base_unit": "4px (Tailwind scale); --radius token .625rem",
+      "scale": "Tailwind default 0.25rem steps; sections padded generously (~120-160px vertical rhythm)",
+      "content_density": "spacious — large empty regions around a narrow centered column; cards airy with ~32px padding",
+      "section_rhythm": "each of the 8 sections is a 'drawing sheet': full-width hairline divider bar with sheet marker '[ NN / 08 ] · NAME', then a wide quiet band containing eyebrow + heading + sub + content; alternating tall content sections and near-empty breathing bands"
+    },
+    "layout": {
+      "grid_system": "centered single column inside a full-bleed blueprint grid — faint hairline verticals/horizontals with outlined-square crosshairs at intersections spanning the whole viewport",
+      "max_content_width": "~1152px centered content column; hero ~90vh; login card ~530px",
+      "columns": "3-col card grids (steps, problem, features 3x2), 2x2 (solve-it cards), 2-col centered pricing, 2-col split for skill-package and terminal sections (copy left, panel right)",
+      "gutter": "~24-32px; feature grid uses shared hairline dividers instead of gaps",
+      "breakpoints": "mobile ~390px: nav collapses to wordmark + Sign In, hero stacks centered, grids go single column, install command truncates with ellipsis",
+      "alignment_tendency": "centered headings and hero; left-aligned card content; strict underlying grid with symmetric margins"
+    },
+    "shape": {
+      "border_radius": { "small": "~2-4px (buttons, badges, command bar)", "medium": "~4-6px (cards, panels, OAuth buttons)", "large": "not used", "pill": "not used — geometry stays rectilinear to match the pixel/blueprint language (base token .625rem exists but marketing surfaces render near-square)" },
+      "border_usage": "ubiquitous 1px hairlines #E5E5E5 — every card, panel, divider, and the background grid itself; amber used on small border accents (badge, caret)",
+      "divider_style": "full-width hairline bars doubling as sheet markers, with outlined-square crosshair nodes at intersections and a small amber caret before the section ordinal; card-internal hairlines with tiny square handles"
+    },
+    "elevation": {
+      "shadow_style": "none — the page is deliberately flat",
+      "levels": { "low": "none", "medium": "none", "high": "none" },
+      "depth_cues": "hairline borders, grid layering, and tonal steps (white / #FAFAFA / gray text) only; overlapping pixel squares provide the only sense of layering"
+    },
+    "iconography": {
+      "style": "small amber stroke glyphs (globe, terminal, sync arrows, shield) + folder/file icons in the vault tree (amber file glyph for SKILL.md) + pixel-art mosaics (amber/gray square clusters, incl. a pixel robot) as illustration; hexagon logo mark; amber checks in lists",
+      "stroke_weight": "~1.5-2px",
+      "size_scale": "16px inline icons, ~120px pixel-art compositions, 20px logo",
+      "preferred_set": "custom inline SVG (115 SVGs on the page); agent logos (Claude Code, Cursor, Windsurf, Codex, Gemini) as brand tiles in the terminal section"
+    },
+    "motion": {
+      "easing": "linear/steps for ambient pixel flicker; standard ease-out for reveals",
+      "duration_scale": { "micro": "150-250ms hovers", "normal": "~300-500ms scroll reveals", "macro": "continuous ambient loops (ascii-flicker, ping-sequence)" },
+      "entrance_pattern": "IntersectionObserver/useInView-triggered fade + slight translate as sections enter the viewport (content is hidden until scrolled into view; CSS 'enter/exit' keyframes)",
+      "exit_pattern": "none observed — once revealed, content stays",
+      "philosophy": "minimal functional + ambient texture: one quiet trick (flickering pixel cells via steps(3) opacity keyframes) instead of showy animation; no WebGL, no scroll-scrubbing, no parallax"
+    },
+    "components": {
+      "button_style": "primary: #F99C00 amber fill, #461901 dark-brown label, ~2-4px radius, arrow → suffix ('Get Started →'); secondary: white fill, 1px #E5E5E5 border, black label ('See on GitHub'); login OAuth buttons: full-width white bordered rows with brand icon",
+      "input_style": "install-command bar: 1px bordered white box, Geist Mono text, amber '$' prompt, trailing copy icon button; truncated with ellipsis on mobile",
+      "card_style": "white, 1px hairline border, ~4px radius, flat; header zone with pixel-art mosaic or amber icon + uppercase mono label, Geist semibold title with amber pixel-font keyword, gray 14-15px body; amber mono ordinal (01-04) top-right on step/solve cards",
+      "navigation_pattern": "top white bar: hexagon logo + 'BETTER-SKILLS.' Geist Mono wordmark left, centered Geist gray links (Features/Pricing/Docs/GitHub), amber Sign In button right; no dropdowns; mobile collapses to wordmark + button",
+      "modal_style": "none observed",
+      "list_style": "pricing features: amber ✓ + Fira Mono 14px items separated by hairlines; vault explorer: indented file tree with folder icons and mono filenames",
+      "component_notes": "badge: bordered chip with amber ✦ + 'Open source'; section eyebrows as '// NAME \\\\' mono; sheet-marker divider bars; skill-graph panel = bordered frame with '// SKILL GRAPH' + '11 SKILLS' mono header and an SVG node-link diagram (amber primary nodes, gray secondary nodes, mono labels); terminal panel with square window-dots and 'TERMINAL' header; footer = wordmark + 3 mono-caps link columns + bottom hairline with © 2026 BETTER-SKILLS, Inc."
+    }
+  },
+  "design_style": {
+    "aesthetic": {
+      "mood": ["precise", "engineered", "retro-technical", "quiet", "nerdy-playful"],
+      "visual_metaphor": "an engineering blueprint / EDA drawing sheet crossed with a dot-matrix LED board — registration crosshairs, sheet numbers [ 01 / 08 ], mono annotations, and pixel typography",
+      "era_influence": "1980s CAD/blueprint drafting + dot-matrix print/LED signage, executed with 2020s Vercel-style restraint (Geist, flat, hairlines)",
+      "genre": "developer-tool / open-source SaaS marketing",
+      "personality_traits": ["meticulous", "systems-minded", "understated", "geeky-charming"],
+      "adjectives": ["flat", "grid-bound", "annotated", "amber-lit", "pixelated", "airy"]
+    },
+    "visual_language": {
+      "complexity": "minimal-to-moderate — few elements per viewport, each heavily stylized",
+      "ornamentation": "subtle accents: pixel-square confetti, crosshair registration marks, mono brackets, hexagon glyph — ornaments are systematic, never decorative flourishes",
+      "whitespace_usage": "abundant — entire sections are mostly empty grid; whitespace is the dominant material",
+      "visual_weight_distribution": "weight concentrated in the centered heading + one content cluster per section; edges stay empty grid",
+      "focal_strategy": "single focal point per viewport — the dot-matrix heading with its amber clause",
+      "contrast_level": "high type contrast (near-black on white) but low element contrast (hairlines, gray text); amber acts as the single high-chroma signal",
+      "texture_usage": "blueprint hairline grid + flickering pixel cells as the only texture"
+    },
+    "composition": {
+      "hierarchy_method": "typographic hierarchy + color: dot-matrix scale for sections, amber to mark the operative word; sheet markers pace the scroll like numbered drawing sheets",
+      "balance_type": "symmetric around a centered axis, with asymmetric split panels (copy left / artifact right) inside sections",
+      "flow_direction": "strict vertical chapter flow (01→08), each chapter announced by its divider bar",
+      "grouping_strategy": "hairline-bounded cards and panels; shared-divider grids for feature sets",
+      "negative_space_role": "structural — empty grid bands separate chapters and make the annotations readable"
+    },
+    "imagery": {
+      "photo_treatment": "no photography anywhere",
+      "illustration_style": "pixel-art mosaics built from amber + gray squares (incl. a pixel robot for 'Agent'), SVG node-link skill graph, file-tree and terminal UI vignettes",
+      "graphic_elements": "crosshair squares, bracketed mono tags '[ SKILL ]', amber caret blocks, hexagon logo, agent brand tiles",
+      "pattern_usage": "blueprint grid as global background pattern; pixel confetti clusters at section corners",
+      "image_shape": "squares and rectilinear panels only — no circles, blobs, or organic shapes (except graph nodes)"
+    },
+    "interaction_feel": {
+      "feedback_style": "quiet — standard hover states; copy affordance on the install command",
+      "hover_behavior": "subtle color/darken shifts on buttons and links",
+      "transition_personality": "fade-subtle with gentle rise on scroll",
+      "loading_style": "not observed (static marketing page)",
+      "microinteraction_density": "low — the ambient pixel flicker is the only persistent motion"
+    },
+    "brand_voice_in_ui": {
+      "tone": "assured, developer-fluent, economy of words ('Define once. Reuse as a skill.', 'Install once. Stay in sync.')",
+      "formality": "casual-professional; sentence-case headings, no exclamation except community line",
+      "cta_style": "direct imperative with arrow suffix ('Get Started →', 'Talk to Founders')",
+      "empty_state_approach": "n/a (marketing page)",
+      "error_tone": "n/a (not observed)"
+    }
+  },
+  "visual_effects": {
+    "overview": {
+      "effect_intensity": "subtle-accent — ambient pixel flicker + scroll reveals; nothing immersive",
+      "performance_tier": "lightweight — CSS keyframes + SVG + IntersectionObserver; zero canvas elements, no WebGL context, no GSAP/Three/Lenis/framer-motion detected",
+      "fallback_strategy": "graceful by construction — effects are pure CSS/SVG; content readable with animations disabled",
+      "primary_technology": "CSS keyframes (ascii-flicker, enter/exit, ping-sequence, pulse, rotate-sequence) + inline SVG + IntersectionObserver/useInView reveals"
+    },
+    "background_effects": {
+      "type": "generative-art (blueprint grid) + flickering pixel field",
+      "description": "global hairline blueprint grid with outlined-square crosshairs at intersections; scattered amber/gray pixel-square clusters whose cells flicker opacity via steps(3) keyframes",
+      "technology": "CSS backgrounds/SVG + 'ascii-flicker' keyframes (opacity oscillates ~0.02→0.06, steps(3,end), infinite)",
+      "params": { "color_palette": ["#E5E5E5 grid lines", "#F99C00 amber cells", "#A1A1A1/#E5E5E5 gray cells"], "speed": "slow stepped flicker", "density": "sparse clusters at hero edges and section corners", "opacity": "0.02-0.06 flicker range for cells; grid ~hairline", "blend_mode": "normal" }
+    },
+    "particle_systems": { "enabled": false, "type": "none", "description": "pixel squares are static-position cells with opacity flicker, not a moving particle system", "technology": "CSS", "params": { "count": "~dozens of cells", "shape": "square", "size_range": "~4-10px", "movement_pattern": "none (opacity only)", "color_behavior": "fixed amber or gray", "interaction": "none", "spawn_area": "section corners and hero edges" } },
+    "3d_elements": { "enabled": false, "type": "none", "description": "", "technology": "", "params": { "renderer": "", "lighting": "", "camera": "", "materials": "", "geometry": "", "post_processing": "", "interaction_model": "" } },
+    "shader_effects": { "enabled": false, "type": "none", "description": "", "technology": "", "params": { "uniforms": "", "vertex_manipulation": "", "fragment_output": "", "noise_type": "", "distortion": "" } },
+    "scroll_effects": {
+      "parallax": { "enabled": false, "layers": "0", "depth_range": "", "speed_curve": "" },
+      "scroll_triggered_animations": { "enabled": true, "trigger_points": "on section/panel entering viewport", "animation_type": "fade-up (opacity + small translate)", "scrub_behavior": "none — triggered once, not scrubbed" },
+      "scroll_morphing": { "enabled": false, "description": "" }
+    },
+    "text_effects": {
+      "type": "custom-font display treatment",
+      "description": "dot-matrix pixel typeface (GeistPixel variants) does the work of a text effect; hero mixes GeistPixelLine (black clause) + GeistPixelSquare (amber clause) and substitutes the letter 'o' with the hexagon logo image; amber keyword swap inside card titles and h2s",
+      "technology": "custom woff2 @font-face (GeistPixel_Square/Grid/Circle/Triangle/Line) + inline <img> glyph substitution",
+      "params": { "split_strategy": "by-clause (black vs amber spans)", "animation_per_unit": "none", "stagger": "none", "effect_style": "dot-matrix / LED-board rendering" }
+    },
+    "cursor_effects": { "enabled": false, "type": "none", "description": "", "params": { "shape": "", "size": "", "blend_mode": "", "trail": "", "interaction_zone": "" } },
+    "image_effects": { "type": "none", "description": "no photographic imagery; pixel-art and logos are static", "technology": "", "params": { "filter_pipeline": "", "hover_transform": "", "reveal_animation": "", "distortion_type": "" } },
+    "glassmorphism_neumorphism": { "enabled": false, "style": "none", "params": { "blur_radius": "", "transparency": "", "border_treatment": "", "shadow_type": "", "light_source_angle": "" } },
+    "canvas_drawings": { "enabled": false, "type": "none", "description": "no <canvas> elements on the page", "technology": "", "params": { "draw_method": "", "animation_loop": "", "color_scheme": "", "responsiveness": "", "interaction": "" } },
+    "svg_animations": {
+      "enabled": true,
+      "type": "data-visualization (skill graph) + decorative pixel mosaics",
+      "description": "115 inline SVGs: the skill-graph node-link diagram (amber/gray nodes, mono labels) inside a bordered panel, pixel-art mosaics, icons, and crosshair/grid ornaments; ambient sequences via CSS keyframes (ping-sequence, rotate-sequence) rather than SMIL",
+      "params": { "animation_method": "CSS keyframes on SVG/div cells", "path_morphing": "none", "stroke_animation": "none observed", "filter_effects": "none" }
+    },
+    "composite_notes": "The entire effects budget goes into one coherent illusion: the page is a drafting sheet that is faintly alive. The hairline grid, sheet-number dividers, and crosshairs are static; the pixel cells flicker with a stepped opacity animation (ascii-flicker), which reads as electronic rather than organic. Dot-matrix type carries the retro-electronics theme so no additional text animation is needed. Everything is CSS/SVG — no runtime graphics libraries — keeping the page fast and the aesthetic crisp at any DPI."
+  }
+}

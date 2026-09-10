@@ -1,0 +1,102 @@
+{
+  "source": [
+    "https://ara.so/ (fetched 2026-08-03; site is agent-friendly — every page has a .md twin plus /llms.txt — so extraction combines the markdown site map, both CSS bundles (marketing + app), and downloaded imagery; hero DOM is client-rendered so runtime visuals not observed)",
+    "assets read: marketing-*.css (210KB), styles-*.css (982KB app tokens), /index.md, /llms.txt, tonalist-landscapes/ imagery"
+  ],
+  "extracted": "2026-08-03",
+  "product_context": "Ara — 'The Multiplayer Coding Agent' / autonomous software engineer for GitHub: connect a repo, assign issues, cloud agents open evidence-backed PRs with screen recordings and logs; positions itself as a 'software factory'",
+  "design_system": {
+    "color": {
+      "palette_type": "two token systems: marketing pages on sage-tinted paper with ink text and quiet status hues; the app on an editor-chrome metaphor (chrome/sidebar/editor tokens) with a color-mix opacity ladder",
+      "marketing": {
+        "bg": "#f4f5f1 (sage-tinted off-white)",
+        "panel": "#ffffff",
+        "ink": "#171918",
+        "muted": "#606762 (green-gray)",
+        "line": "#d8ddd5",
+        "soft": "#eef1eb",
+        "status": "green #128347/#e4f3e9, red #bd3030/#fde8e8, amber #9b6500/#fff2d2; 'blue' is literally #202124 near-black — the marketing layer refuses a blue accent",
+        "shadow": "0 18px 48px rgba(24,31,27,.08) — one soft ambient shadow token",
+        "note": "every neutral is green-tinted (paper, lines, muted text) — a faint botanical cast over an otherwise monochrome page"
+      },
+      "app": {
+        "metaphor": "tokens named after an IDE: --chrome #ffffff, --sidebar #f3f3f3, --editor #ffffff (dark: #181818/#1f1f1f/#181818), --base #141414 ink",
+        "opacity_ladder": "text and borders derived from one --base via color-mix: text 100/74/60%, borders 20/12/8% — the whole neutral system is one color at different alphas",
+        "brand": "#ce5e25 burnt orange (--ara-orange #f97316 secondary)",
+        "accent": "#2778c1 blue (dark #5da1e5), purple #7565cc; --ara-blue-gradient layers radial washes of the accent for feature surfaces",
+        "status": "success #007041, danger #be1744, warn #a46700 — all with color-mix soft variants",
+        "diff_tokens": "GitHub-style diff palette (#e6ffec/#ffebe9 add/del backgrounds, #2da44e/#cf222e bars) — PR review is core UI",
+        "half_pixel": "--shell-divider-border: .5px solid — hairline app dividers"
+      },
+      "contrast_strategy": "near-black ink on tinted paper; marketing stays essentially monochrome-green, app reserves orange for brand and blue for interactive accents"
+    },
+    "typography": {
+      "heading_font": "Helvetica Now Display — the whole site runs on one licensed Helvetica revival at weight 400–450",
+      "body_font": "Helvetica Now Display",
+      "mono_font": "Geist Mono Variable",
+      "heading_scale": "modest and light: hero h1 38px, section h2 34px/1.12, statement h2 48px/400/1.06, pricing price 42–50px at weight 450; no heavy weights anywhere — hierarchy by size and space, not boldness",
+      "font_style_notes": "neo-grotesque restraint: regular-weight Helvetica headlines with near-zero tracking (-.02em max) give a Swiss-document tone; Geist Mono carries terminal/evidence artifacts"
+    },
+    "spacing": {
+      "content_density": "marketing comfortable with hairline-separated sections (hero has border-bottom 1px var(--line)); app compact (280px sidebar, 480px detail panel tokens)",
+      "section_rhythm": "hero capped at min(680px, 100vh-104px) — controlled, not full-bleed dramatic"
+    },
+    "layout": {
+      "grid_system": "hero: asymmetric 2-col grid (.9fr copy / .62fr visual); centered statement sections (max 920–980px); app: fixed-width sidebar + detail panel shell",
+      "structure_from_sitemap": "large product surface: Sessions, CLI/Devices, Web & Mobile, Slack, Jira/Linear, Automations, Review, QA, Security, Code Review, AutoWiki, Software Factory, Computers, Analytics, Agent Readiness, Model Routing, Repo Memory + enterprise/use-cases/blog — a many-page marketing site with one shared template",
+      "agent_native_site": "the site itself is built for AI consumption: /llms.txt, /llms-full.txt, .md twin for every URL, Accept: text/markdown supported — the medium repeats the product pitch",
+      "alignment": "left-aligned hero copy, centered statement sections"
+    },
+    "shape": {
+      "radius_scale": "8px is the workhorse (106 uses), 999px pills for all CTAs (68), 14px for painting-backed feature cards, 5–9px middles; buttons are full pills (46px tall, ink fill, panel-white text)",
+      "border_usage": "1px var(--line) hairlines on cards and section splits; .5px shell dividers in-app"
+    },
+    "elevation": {
+      "shadow_style": "single soft ambient token on marketing (0 18px 48px at 8% ink); app menus 0 8px 22px; flat otherwise",
+      "depth_cues": "paper/panel two-level surfaces + hairlines; paintings supply all the visual depth"
+    },
+    "motion": {
+      "philosophy": "minimal, purposeful: 4 keyframes total in 210KB of marketing CSS",
+      "keyframes_observed": "home-hero-content-in (entrance), home-mini-spin (loader), marketing-logo-marquee (customer logo loop), pricing-connector-swap; tooltip fades 70ms in / 250ms out",
+      "libraries": "no GSAP/Three/framer detected"
+    },
+    "components": {
+      "button_primary": "pill, min-height 46px, ink (#171918) fill, panel-white label, weight 400",
+      "painting_cards": "signature component: feature/CTA cards backgrounded by 19th-century paintings under a subtle darkening gradient (linear-gradient(180deg,#0808080a,#08080866)), 8–14px radius, 1px line border, white text",
+      "evidence_artifacts": "product surfaces render PR diffs (GitHub diff tokens), terminal transcripts (Geist Mono), screen-recording frames — proof-of-work as UI",
+      "pricing": "tier cards with 42–50px light-weight prices; workflow cards with 40px statement strong text",
+      "logo_marquee": "customer logos in a CSS marquee loop"
+    }
+  },
+  "design_style": {
+    "mood": "calm, museum-quiet, industrial-pastoral, trustworthy, unhurried",
+    "personality": "a 'software factory' that decorates with Hudson River School landscapes — the tension IS the brand: autonomous industrial tooling presented with the stillness of 19th-century American tonalist painting; Swiss-neutral Helvetica typography stays out of the paintings' way",
+    "genre": "AI dev-tool marketing, painterly-pastoral school — the emerging counter-aesthetic to terminal-dark AI branding (Cursor's 2025+ warm rebrand is the same school); Ara commits hardest by using real catalogued paintings",
+    "visual_language": "sage-tinted monochrome paper, hairline rules, regular-weight type — then full-color oil paintings (Whittredge's Second Beach Newport, Inness's Lackawanna Valley and Tiber views, Kensett's Genesee, Heade's Rio de Janeiro Bay — an actual /tonalist-landscapes/ collection, numbered like a catalog) as hero art and card backdrops with gentle scrims; filter saturate(.96) contrast(1.04) tunes them",
+    "composition": "asymmetric hero (copy left, product visual right) over a bordered baseline; statement sections centered at 48px/400; paintings appear wherever emotion is needed, product evidence (diffs, transcripts, recordings) wherever proof is needed",
+    "copy_voice": "declarative single-sentence value props with a literary cadence: 'Your backlog ships itself', 'Every fix ships with proof it works', 'The ticket walks itself to review', 'Notes from the software factory', 'Evidence, not a claim'; lowercase 'ara' sometimes; zero exclamation marks",
+    "interaction_feel": "quiet — fast tooltip fades, one marquee, entrance animation on the hero; the site reads more than it moves"
+  },
+  "visual_effects": {
+    "overview": {
+      "effect_intensity": "subtle-accent",
+      "performance_tier": "lightweight — CSS-only animation, JPEG paintings; no canvas/WebGL/JS animation libraries",
+      "primary_technology": "CSS + art direction",
+      "composite_notes": "Homepage body is client-rendered (main-*.js), so live hero behavior unverified; token CSS, class inventory, and the .md site map give high-confidence structure. The signature 'effect' is curatorial, not technical: a numbered collection of public-domain tonalist landscape paintings."
+    },
+    "painting_backdrops": {
+      "enabled": true,
+      "details": "feature cards and hero art set on /tonalist-landscapes/NN-artist-title.jpg backgrounds (Whittredge, Inness, Kensett, Heade) under 4–40% black gradient scrims, saturate(.96) contrast(1.04); an art-collection-as-design-system"
+    },
+    "logo_marquee": { "enabled": true, "details": "marketing-logo-marquee CSS loop for customer logos" },
+    "blue_gradient_washes": { "enabled": true, "details": "app feature surfaces use --ara-blue-gradient: two radial accent washes + a diagonal veil, all color-mix derived from one accent" },
+    "scroll_effects": { "enabled": false },
+    "webgl_3d": { "enabled": false },
+    "particles": { "enabled": false },
+    "shaders": { "enabled": false },
+    "cursor_effects": { "enabled": false },
+    "glassmorphism": { "enabled": false },
+    "text_effects": { "enabled": false },
+    "svg_animations": { "enabled": false, "note": "home-mini-spin loader only" }
+  }
+}

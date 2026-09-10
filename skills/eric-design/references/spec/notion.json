@@ -1,0 +1,221 @@
+{
+  "meta": {
+    "name": "notion",
+    "description": "Notion marketing site (notion.com) — warm-white AI-workspace landing: bold Inter-class headlines, hand-drawn ink illustration, single vivid blue CTA, product UI as imagery.",
+    "source_references": ["https://www.notion.com/"],
+    "created_at": "2026-07-11"
+  },
+  "design_system": {
+    "color": {
+      "palette_type": "monochromatic neutrals + single blue accent, with a full multi-hue primitive ramp reserved for illustration and badges",
+      "primary": { "hex": "#097fe8", "role": "CTA buttons, links, highlight pill fills (blue-500; hover lightens to #62aef0)" },
+      "secondary": { "hex": "#191918", "role": "headline text, dark sections, logo ink (gray-900)" },
+      "accent": { "hex": "#e6f3fe", "role": "highlight pill/chip backgrounds behind key words (blue-200)" },
+      "neutral": {
+        "scale": ["#ffffff", "#f9f9f8", "#f6f5f4", "#dfdcd9", "#a39e98", "#78736f", "#615d59", "#494744", "#31302e", "#191918"],
+        "usage": "warm-biased grays: #fff page ground, gray-100/200 section tints and cards, gray-500 muted text, gray-900 ink; alpha-black/white ramps (5%–95%) for borders and overlays"
+      },
+      "semantic": {
+        "success": "#1aae39",
+        "warning": "#ff8a33",
+        "error": "#f64932",
+        "info": "#097fe8"
+      },
+      "surface": {
+        "background": "#ffffff",
+        "card": "#f6f5f4",
+        "elevated": "#ffffff"
+      },
+      "contrast_strategy": "high contrast dark-on-light; near-black ink on white with only the blue accent saturated; dark inverted sections use alpha-white text ramps"
+    },
+    "typography": {
+      "type_scale": {
+        "display":   { "size": "4.75rem (up to 6rem)", "weight": "700", "line_height": "1.05", "tracking": "-0.02em" },
+        "heading_1": { "size": "3.375rem", "weight": "700", "line_height": "1.05", "tracking": "-0.015em" },
+        "heading_2": { "size": "2.625rem", "weight": "700", "line_height": "1.14", "tracking": "-0.01em" },
+        "heading_3": { "size": "2rem", "weight": "600", "line_height": "1.25", "tracking": "-0.005em" },
+        "body":      { "size": "1.125rem", "weight": "400", "line_height": "1.55", "tracking": "0" },
+        "body_small": { "size": "0.9375rem", "weight": "400", "line_height": "1.5", "tracking": "0" },
+        "caption":   { "size": "0.875rem", "weight": "400", "line_height": "1.43", "tracking": "0" },
+        "overline":  { "size": "0.75rem", "weight": "500", "line_height": "1.33", "tracking": "0.02em" }
+      },
+      "font_families": {
+        "heading": "NotionInter, Inter, -apple-system, sans-serif",
+        "body": "NotionInter, Inter, -apple-system, sans-serif",
+        "mono": "iA Writer Mono, Nitti, Menlo, monospace"
+      },
+      "font_style_notes": "One grotesque family (custom Inter build) carries everything; personality comes from weight contrast — heavy 700 headlines against regular body. Lyon Text serif and Permanent Marker handwriting exist as product/editorial voices, not marketing chrome. Token ramp: font-size-50 (0.75rem) → font-size-1100 (6rem)."
+    },
+    "spacing": {
+      "base_unit": "4px (dimension-spacing tokens: 16/20/24/28/30/32/40/48/56/64/80/100)",
+      "scale": "4, 8, 12, 16, 20, 24, 28, 32, 40, 48, 56, 64, 80, 100 px",
+      "content_density": "comfortable — roomy sections, but feature grids pack tighter than the hero",
+      "section_rhythm": "large uniform vertical bands; alternating white and gray-100/gray-200 tinted sections; occasional dark inverted band"
+    },
+    "layout": {
+      "grid_system": "centered container with CSS-grid feature card rows",
+      "max_content_width": "~1200px marketing container; hero text narrower (~900px) and centered",
+      "columns": "12-col conceptual; card rows render as 2–4 columns",
+      "gutter": "24–32px",
+      "breakpoints": "mobile-first; major shifts near 768px and 1024px",
+      "alignment_tendency": "centered hero and section intros; left-aligned inside cards"
+    },
+    "shape": {
+      "border_radius": {
+        "small": "4–5px (border-radius-200/300)",
+        "medium": "8–10px (border-radius-500/600)",
+        "large": "12–16px (border-radius-700/900)",
+        "pill": "9999px (border-radius-round) — highlight chips, badges, avatar rings"
+      },
+      "border_usage": "subtle 1px alpha-black borders on cards and inputs; bold 2–3px colored circle strokes around illustration avatars",
+      "divider_style": "hairline alpha-black-200; sections mostly separated by background-tint changes instead of rules"
+    },
+    "elevation": {
+      "shadow_style": "soft layered, extremely low alpha",
+      "levels": {
+        "low": "0 0.7px 1.5px rgba(0,0,0,0.015), 0 3px 9px rgba(0,0,0,0.03) (shadow-100)",
+        "medium": "3-layer stack, 1–8px blurs at 1–2% alpha (shadow-200)",
+        "high": "3-layer stack up to ~18px blur, ≤2% alpha per layer (shadow-300)"
+      },
+      "depth_cues": "background-tint changes and borders first; shadows only float product-UI windows and dropdowns"
+    },
+    "iconography": {
+      "style": "outlined UI icons plus hand-drawn ink spot illustrations",
+      "stroke_weight": "1.5px UI icons; variable brush weight in illustrations",
+      "size_scale": "16 / 20 / 24 px UI; 48–96px illustration medallions",
+      "preferred_set": "Notion's in-house icon set; do not substitute a generic library when reproducing"
+    },
+    "motion": {
+      "easing": "ease-out for fades in, ease-in for fades out, cubic-bezier(0.76,0,0.24,1)/quint for transforms (motion-timing-function tokens)",
+      "duration_scale": {
+        "micro": "100–150ms (fade-in 150ms)",
+        "normal": "200–300ms (transforms 300ms)",
+        "macro": "600ms+ scroll-driven sequences and marquee loops"
+      },
+      "entrance_pattern": "fade-in + slide-down for nav/menus; staggered enter animations in agent demo panels",
+      "exit_pattern": "fade-out 200ms ease-in",
+      "philosophy": "minimal functional chrome motion, plus choreographed self-playing product demos (agent tasks, notification counters, logo marquee)"
+    },
+    "components": {
+      "button_style": "solid blue-500 pill-or-8px-radius primary with white text (hover blue-400); white secondary with blue text; ghost buttons on dark sections use alpha-white fills",
+      "input_style": "quiet 1px-border fields, 8px radius; search-first patterns",
+      "card_style": "gray-100/200 tinted cards, 12–16px radius, 1px alpha border, hairline shadow, screenshot or illustration up top",
+      "navigation_pattern": "sticky top nav with mega-menu dropdowns; nav background fades in on scroll with a shadow keyframe",
+      "modal_style": "white sheet, 12px radius, shadow-300, dimmed alpha-black overlay",
+      "list_style": "arrow-suffixed link lists ('Docs → ', 'Projects → '); checklists inside product mock UI",
+      "component_notes": "Badges come in bold/light/muted/outline variants driven by --color-accent-strong, which is re-themed per campaign section (blue, orange, purple, teal…). Product-UI windows with traffic lights serve as the imagery."
+    }
+  },
+  "design_style": {
+    "aesthetic": {
+      "mood": ["confident", "friendly", "crisp", "playful-professional"],
+      "visual_metaphor": "paper document workspace — white sheet, ink drawings, blue pen highlights",
+      "era_influence": "2020s SaaS minimalism crossed with mid-century New Yorker cartoon linework",
+      "genre": "AI-workspace SaaS marketing",
+      "personality_traits": ["direct", "witty", "meticulous", "human"],
+      "adjectives": ["clean", "bold", "hand-touched", "editorial", "trustworthy"]
+    },
+    "visual_language": {
+      "complexity": "moderate — simple chrome, dense self-playing product demos",
+      "ornamentation": "subtle accents: highlight pills behind key words, colored circle strokes, hand-drawn faces",
+      "whitespace_usage": "generous around headlines; section tints keep whitespace from feeling empty",
+      "visual_weight_distribution": "heavy centered headline blocks, weight balanced by illustration clusters below",
+      "focal_strategy": "single hero statement, then distributed interest across card grids",
+      "contrast_level": "high — near-black 700-weight type on white",
+      "texture_usage": "ink-brush texture inside illustrations only; UI surfaces are flat"
+    },
+    "composition": {
+      "hierarchy_method": "scale + weight contrast; one accent color marks the action",
+      "balance_type": "symmetric hero, mosaic card rows below",
+      "flow_direction": "vertical scroll with alternating tinted bands",
+      "grouping_strategy": "cards group features; arrow links chain related items",
+      "negative_space_role": "frames the oversized headline; gives illustrations air"
+    },
+    "imagery": {
+      "photo_treatment": "customer-story photos only, small and card-framed; no hero photography",
+      "illustration_style": "two related sets: (1) small hand-drawn ink spot icons of anthropomorphized objects with dotted eyes — alarm clock, light bulb, signpost, speech bubble, globe, puzzle piece — on transparent grounds (~80-100px PNGs); (2) hero medallions: perfect circles holding black-ink faces and objects with halftone/screentone shading, ring strokes or solid fills in flat blue #62aef0-ish, red #f64932-ish, and yellow — New Yorker-cartoon linework meets flat spot color",
+      "graphic_elements": "highlight pills behind words, blue dot bullets, arrow glyphs, avatar medallions, logo marquee",
+      "pattern_usage": "none — flat grounds and tinted bands instead of patterns",
+      "image_shape": "rounded-rectangle product windows (12–16px) and perfect-circle illustration medallions"
+    },
+    "interaction_feel": {
+      "feedback_style": "quiet — color shifts and small fades, no bouncy physics",
+      "hover_behavior": "buttons lighten one ramp step; links gain underline or arrow shift",
+      "transition_personality": "snappy, precise, self-assured",
+      "loading_style": "skeleton tints and fade-ins",
+      "microinteraction_density": "low in chrome, high inside the scripted product demos"
+    },
+    "brand_voice_in_ui": {
+      "tone": "plainspoken and benefit-first with a wink ('Perfectly written by AI', 'Less tracking. More progress.')",
+      "formality": "casual-professional",
+      "cta_style": "direct imperative: 'Get Notion free', 'Request a demo'",
+      "empty_state_approach": "helpful suggestion with illustration (product convention)",
+      "error_tone": "calm, instructive"
+    }
+  },
+  "visual_effects": {
+    "overview": {
+      "effect_intensity": "subtle-accent",
+      "performance_tier": "lightweight",
+      "fallback_strategy": "effects are plain CSS keyframes; reduced-motion users get static frames",
+      "primary_technology": "CSS only (keyframes + scroll-triggered class toggles)"
+    },
+    "background_effects": {
+      "type": "none",
+      "description": "flat white and gray-tint section bands; dark inverted band for contrast",
+      "technology": "CSS",
+      "params": { "color_palette": ["#ffffff", "#f6f5f4", "#191918"], "speed": "n/a", "density": "n/a", "opacity": "1", "blend_mode": "normal" }
+    },
+    "particle_systems": {
+      "enabled": false, "type": "none", "description": "not present", "technology": "n/a",
+      "params": { "count": "0", "shape": "n/a", "size_range": "n/a", "movement_pattern": "n/a", "color_behavior": "n/a", "interaction": "none", "spawn_area": "n/a" }
+    },
+    "3d_elements": {
+      "enabled": false, "type": "none", "description": "not present", "technology": "n/a",
+      "params": { "renderer": "n/a", "lighting": "n/a", "camera": "n/a", "materials": "n/a", "geometry": "n/a", "post_processing": [], "interaction_model": "n/a" }
+    },
+    "shader_effects": {
+      "enabled": false, "type": "none", "description": "not present", "technology": "n/a",
+      "params": { "uniforms": "n/a", "vertex_manipulation": "n/a", "fragment_output": "n/a", "noise_type": "n/a", "distortion": "n/a" }
+    },
+    "scroll_effects": {
+      "parallax": { "enabled": false, "layers": "0", "depth_range": "n/a", "speed_curve": "n/a" },
+      "scroll_triggered_animations": {
+        "enabled": true,
+        "trigger_points": "nav on first scroll; demo panels on viewport entry",
+        "animation_type": "fade-up entrances; nav background/shadow fade-in; scripted agent-task sequences (Agent_*Enter/Scroll keyframes); animated notification counters",
+        "scrub_behavior": "discrete class-toggled animations, not scrubbed"
+      },
+      "scroll_morphing": { "enabled": false, "description": "not present" }
+    },
+    "text_effects": {
+      "type": "none",
+      "description": "headline emphasis is static — blue-200 pill highlight behind a key word with a blue dot, echoing an inline mention chip",
+      "technology": "CSS",
+      "params": { "split_strategy": "none", "animation_per_unit": "none", "stagger": "none", "effect_style": "static highlight pill" }
+    },
+    "cursor_effects": {
+      "enabled": false, "type": "none", "description": "default cursor",
+      "params": { "shape": "n/a", "size": "n/a", "blend_mode": "n/a", "trail": "none", "interaction_zone": "n/a" }
+    },
+    "image_effects": {
+      "type": "none",
+      "description": "product screenshots sit static in rounded windows; customer video behind a play button",
+      "technology": "CSS",
+      "params": { "filter_pipeline": "none", "hover_transform": "none", "reveal_animation": "fade-in", "distortion_type": "none" }
+    },
+    "glassmorphism_neumorphism": {
+      "enabled": false, "style": "none",
+      "params": { "blur_radius": "n/a", "transparency": "n/a", "border_treatment": "n/a", "shadow_type": "n/a", "light_source_angle": "n/a" }
+    },
+    "canvas_drawings": {
+      "enabled": false, "type": "none", "description": "not present", "technology": "n/a",
+      "params": { "draw_method": "n/a", "animation_loop": "n/a", "color_scheme": "n/a", "responsiveness": "n/a", "interaction": "none" }
+    },
+    "svg_animations": {
+      "enabled": false, "type": "none", "description": "SVGs are static logos, icons, and ink illustrations",
+      "params": { "animation_method": "none", "path_morphing": "none", "stroke_animation": "none", "filter_effects": "none" }
+    },
+    "composite_notes": "The site's liveliness comes from scripted, looping product demos built in DOM/CSS: agent task lists that type and check themselves off (Agent_* keyframes), rolling notification counters, and a customer-logo marquee (Marquee_marqueeFrames). Campaign sub-sections re-theme the token layer (--color-accent-strong swaps to orange/purple/teal, and a dev-platform section goes full DOS-terminal with neon-on-dark). Everything degrades gracefully — no canvas, WebGL, or animation libraries detected in the homepage payload."
+  }
+}

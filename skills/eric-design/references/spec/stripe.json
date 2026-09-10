@@ -1,0 +1,171 @@
+{
+  "source": [
+    "https://stripe.com/ (browsed live 2026-07-21, 1440px viewport — new 'HDS' design-system generation)",
+    "https://stripe.com/payments (redirect from /en-us/payments — classic Stripe marketing generation)",
+    "https://docs.stripe.com/ (Sail design system, product UI)",
+    "https://stripe.com/blog"
+  ],
+  "extracted": "2026-07-21",
+  "generation_note": "Stripe is mid-migration between two design generations that coexist: the homepage runs the new 'HDS' system (hds-heading classes, weight-300 display type, #533AFD accent, flowing ribbon hero); /payments and /blog still run the classic generation (Gradient__canvas diagonal mesh hero, #635BFF/#9966FF accents, weight-500 navy titles, pill CTAs); docs runs the separate Sail product-UI system (system fonts, 905 root CSS variables). The shared DNA underneath: dark navy + blurple + multi-hue gradient spectacle on a white page.",
+  "design_system": {
+    "color": {
+      "palette_type": "navy + blurple two-anchor palette with a full multi-hue gradient spectrum (orange/pink/purple/cyan) reserved for hero canvases and illustration",
+      "primary_navy": "#0A2540",
+      "primary_navy_deep": "#031323",
+      "heading_navy_new": "#061B31",
+      "blurple_classic": "#635BFF",
+      "blurple_new_cta": "#533AFD",
+      "purple_link_marketing": "#9966FF",
+      "purple_soft": "#7F7DFC",
+      "body_gray": "#425466",
+      "body_gray_blog": "#3C4F69",
+      "secondary_text_new": "#64748D",
+      "background": "#FFFFFF",
+      "background_tint_cool": "#F8FAFD",
+      "background_tint_classic": "#F6F9FC",
+      "background_tint_blue": "#E5EDF5",
+      "tint_blurple": ["#E2E4FF", "#E8E9FF"],
+      "tint_warm": "#FFE0D1",
+      "docs": {
+        "text": "#3C4257",
+        "heading": "#414552",
+        "link": "#5469D4",
+        "terminal_bg": "#2A2F45",
+        "note": "docs shifts blurple toward a calmer indigo (#5469D4 links) and desaturates text grays; Sail exposes ~905 :root custom properties (--sail-*)"
+      },
+      "gradient_spectrum": "hero gradients sweep orange #FFB23E → coral/pink #FF5996 → magenta → blurple #635BFF → cyan #11EFE3; the same spectrum recurs in blog illustration cards, docs' dotted-grid ornament, and 'Recent highlights' tiles (saturated cyan→blue→navy→purple)",
+      "surface_strategy": "white page; sections alternate #FFFFFF with cool tints (#F6F9FC / #F8FAFD); full-bleed dark navy bands (#0A2540→#031323) carry stats, developer content, and enterprise messaging; gradient color is spent almost entirely on the hero canvas and illustration thumbnails",
+      "contrast_strategy": "dark navy on white for structure; blurple strictly signals interactivity (links, CTAs, category eyebrows); light-on-dark navy sections use white text with blurple/purple glow accents; gradient text only inside the hero headline"
+    },
+    "typography": {
+      "heading_font": "Söhne (sohne-var, variable) — fallback 'SF Pro Display' on new pages, 'Helvetica Neue'/Arial on classic pages",
+      "body_font": "Söhne (sohne-var) on all marketing pages; docs use the native system-ui stack (-apple-system, Segoe UI, Roboto…) at 14px",
+      "mono_font": "Menlo / Consolas (docs code, 13px); Source Code Pro appears in classic terminal demos",
+      "scale_observed": {
+        "hero_display_new": "48px / weight 300 / lh 55.2px (1.15) / ls -0.96px — homepage h1, entire paragraph-length headline set as display type",
+        "hero_display_classic": "56px / weight 500 / lh 68px / ls -1.12px — /payments h1, navy #0A2540",
+        "section_h2_new": "32px / weight 300 / lh 35.2px / ls -0.64px — homepage sections; first clause navy #061B31, trailing clause #64748D as inline two-tone",
+        "docs_h1": "32px / weight 700 / lh 40px — product UI goes bold where marketing goes light",
+        "eyebrow_classic": "18px / weight 500 / ls +0.2px / purple #9966FF — h2 used as small purple kicker above navy titles",
+        "body_marketing": "18px / weight 300 / lh 28px / ls +0.2px / #425466",
+        "body_blog_card": "14-15px / weight 300 / lh 1.4-1.6",
+        "ui_text": "15px / weight 425 / ls +0.2px — Stripe's signature in-between weight for links, buttons, category labels, nav",
+        "docs_body": "14px system-ui / #3C4257"
+      },
+      "weight_discipline": "the split is generational: new HDS sets giant type at featherweight 300 and lets scale carry hierarchy; classic marketing uses 500 titles + 300 body; docs use 700/400. The 425 'book-medium' variable weight for interactive text is constant across all generations",
+      "tracking_rule": "negative tracking scales with size (-2% at display sizes); small UI text tracks slightly open (+0.2px)",
+      "signature_moves": "paragraph-as-headline (whole value prop set at display size, second sentence in muted color or animated gradient); inline two-tone headings (navy clause + gray clause in one h2)"
+    },
+    "spacing": {
+      "base_unit": "4px",
+      "content_density": "spacious on marketing (near-full-viewport hero, generous section bands), comfortable-compact on docs (14px type, 28px-tall search field)",
+      "section_rhythm": "marketing sections are large color-alternating bands (~120px+ vertical padding); classic pages interleave diagonal-edged bands; docs are a dense continuous column"
+    },
+    "layout": {
+      "max_content_width": "~1080-1152px centered column with generous side margins at 1440px",
+      "grid": "12-col; marketing favors 3-col feature/card rows and asymmetric two-col hero (text left ~60%, visual right); docs: top nav + centered content with right-floating illustration",
+      "homepage_structure": "white nav → hero (left: display headline + CTA pair; right/behind: WebGL ribbon; above: live 'Global GDP running on Stripe' ticker) → dark logo bar (Nvidia, Ford, Coinbase, Google, Shopify…) → white product-tour section with phone/dashboard screenshot cards → dark navy 'backbone of global commerce' stats band with purple aurora horizon glow → segmented audience sections (enterprise / startups / SaaS) as card grids with warm-gradient thumbnails → testimonial → dark developer section with giant blurple metrics (500M+, 10K+, 150K+) → CTA band → mega footer (5-col sitemap)",
+      "payments_structure": "diagonal-clipped gradient hero → logo bar → alternating feature sections, each = purple eyebrow + navy title + 18px gray body + product screenshot composition → full-width customer-logo case panels (OpenAI, Slack, shopify) as dark/gradient bands → navy developer band → pricing → resources",
+      "diagonal_sections": "classic pages cut section boundaries and hero backgrounds on a consistent shallow diagonal (~6-10deg skew) — a Stripe trademark; the new homepage drops this for straight bands",
+      "alignment_tendency": "left-aligned headings and hero; cards on strict grid; docs centered column"
+    },
+    "shape": {
+      "border_radius": "small 4px (new-gen buttons, code chips) / 6px (cards, search, docs) / 8px occasional / pill 16.5px-height-derived on classic CTAs / 50% avatars",
+      "radius_rule": "the new generation squares off (4px buttons at 48px height); the classic generation rounds fully (pill 'Start now' buttons); both keep card radii small (4-6px, rarely 8px) — Stripe never goes soft/bubbly on containers",
+      "border_usage": "minimal — hierarchy via background tints and shadows, not strokes; 1px hairlines on secondary buttons and logo-bar dividers",
+      "divider_style": "section color-change or diagonal cut instead of rules"
+    },
+    "elevation": {
+      "shadow_style": "layered, violet-tinted, soft and large — shadows are colored with the navy/violet brand cast rather than pure black",
+      "tokens_observed": {
+        "card_float": "0 16px 32px rgba(50,50,93,0.12)",
+        "screenshot_lift": "0 15px 35px rgba(23,23,23,0.08)",
+        "subtle": "0 3px 6px rgba(23,23,23,0.06)",
+        "classic_recipe": "the historical Stripe stack — 0 13px 27px -5px rgba(50,50,93,.25), 0 8px 16px -8px rgba(0,0,0,.3) — still visible on floating product screenshots"
+      },
+      "depth_cues": "floating product screenshots at slight perspective tilt, overlapping card compositions, dark panels inset in light sections; docs tilt the test-card illustration a few degrees"
+    },
+    "iconography": {
+      "style": "small filled-or-duotone geometric glyphs in blurple/navy; chevron '>' suffix on nearly every text link; product icons are multi-color gradient-filled shapes",
+      "size_scale": "16-20px inline, 40px product tiles"
+    },
+    "motion": {
+      "philosophy": "one continuous ambient hero animation per page (the gradient canvas) + numeric liveness (GDP ticker counting); UI transitions themselves stay quick and conventional",
+      "easing_durations": "~150-250ms hover states; hero canvas runs continuously at low speed",
+      "entrance_pattern": "subtle fade/translate on scroll for section content; product screenshot compositions animate panel-by-panel",
+      "signature": "animated gradient text in the homepage h1 — the second sentence's color cycles through the brand spectrum (sampled mid-animation as green→blue→purple)"
+    },
+    "components": {
+      "button_primary_new": "#533AFD fill, white 16px/400 label, 4px radius, 48px height, chevron suffix ('Get started >')",
+      "button_primary_classic": "pill (full-round), near-black navy #031323 fill, white 15px/425 label, compact (~30px), chevron suffix ('Start now >')",
+      "button_secondary": "white fill + 1px border, blurple label (homepage 'Sign up with Google'); on dark bands: translucent white pill",
+      "nav": "white bar, 15px/425 links with dropdown chevrons, logo left, 'Sign in' ghost + 'Contact sales' blurple solid right; dropdowns are white floating panels with layered shadow",
+      "text_link": "blurple (#9966FF classic / #635BFF blog / #5469D4 docs), weight 425-500, always with '>' or '→' suffix on marketing",
+      "cards": "white, 4-6px radius, layered violet shadow, illustration/screenshot thumbnail on top (often a warm-gradient scene), title + 14-15px weight-300 body + 'Read more >' link",
+      "stat_display": "oversized numerals (2x, 500M+, 99.999%) in blurple or gradient fill on navy/tint panels, with small caption below",
+      "eyebrow_pattern": "purple 18px/500 kicker above every classic section title — the classic Stripe section signature",
+      "code_blocks": "dark navy #2A2F45 terminal panels, 13px Menlo, syntax in cyan/green/orange on dark; rounded 4-8px; floating in light sections with copy affordance",
+      "docs_search": "6px-radius white field with '/' keycap hint + separate 'Ask AI ✦' button",
+      "blog_cards": "white page, blurple category eyebrow (15px/425), navy title, 48px circular author avatars with name/role meta, gradient illustration hero cards",
+      "footer": "light, 5-column sitemap of 15px links, country selector"
+    }
+  },
+  "design_style": {
+    "mood": "confident, polished, optimistic, technical-yet-warm, expensive",
+    "personality": "the fintech gold standard — engineering credibility (terminals, API JSON, uptime stats) wrapped in vivid painterly gradient color; serious navy suit with an iridescent lining",
+    "genre": "premium fintech/developer-platform marketing — the archetype half the SaaS industry imitates",
+    "visual_language": "white pages structured by navy type and cool-tint bands; color is spent in one place per viewport — a huge multi-hue gradient canvas, a gradient illustration card, or a glowing stat — never sprinkled; product screenshots (dashboard, checkout, phone) are the primary imagery, floated with tilted perspective and violet shadows",
+    "composition": "asymmetric hero (display headline left, ambient gradient canvas behind/right); alternating light/dark full-bleed bands pace the scroll like chapters; classic pages cut band edges on a shallow diagonal; feature sections pair eyebrow+title+body column with a layered screenshot composition, sides alternating",
+    "imagery": "no photography of people on core pages; real product UI screenshots, abstract gradient ribbons/meshes, flat-but-dimensional illustration with gradient fills, customer logos in original colors (homepage) or monochrome (classic strips)",
+    "ornamentation": "restrained but present: dotted-grid corner ornaments (docs), diagonal cuts, aurora glows on navy, gradient hairline accents — every ornament uses the brand spectrum",
+    "whitespace_philosophy": "generous but not extreme — denser than Vercel/Linear minimalism; Stripe fills sections with evidence (screenshots, stats, logos) rather than emptiness",
+    "copy_voice": "assured, quantified, benefit-led ('Financial infrastructure to grow your revenue', 'from your first transaction to your billionth'); metrics as proof everywhere (1.68% of global GDP, 99.999% uptime); sentence-case headings; CTAs are short verb phrases with chevrons",
+    "interaction_feel": "smooth and premium; ambient motion in the hero, quick conventional hovers elsewhere; live-updating numbers create a sense of a running machine"
+  },
+  "visual_effects": {
+    "overview": {
+      "effect_intensity": "moderate — one signature WebGL gradient animation per marketing page, ambient not interactive",
+      "performance_tier": "heavy on marketing heroes (WebGL canvas, verified webgl context on both / and /payments), lightweight elsewhere (CSS/DOM); docs are effect-free static UI",
+      "fallback_strategy": "static gradient image where WebGL unavailable; content never depends on the canvas",
+      "primary_technology": "custom WebGL fragment-shader gradients on <canvas> (no Three.js/GSAP/PIXI globals detected)"
+    },
+    "webgl_gradient_canvas": {
+      "enabled": true,
+      "details": "THE Stripe signature. Homepage: 'hero-wave-animation__canvas' — a flowing 3D ribbon of orange→pink→violet→blue sweeping diagonally across the full hero, painterly and silk-like. /payments: 'Gradient__canvas isLoaded' — the classic animated mesh gradient (blurple/cyan/coral/magenta blobs slowly morphing), clipped by the diagonal hero edge. Both are continuous slow ambient loops, pointer-events none, behind content"
+    },
+    "gradient_text": {
+      "enabled": true,
+      "details": "homepage h1: first sentence solid navy, remainder background-clip gradient text whose colors animate through the brand spectrum; classic pages use static gradient text on select stats"
+    },
+    "live_data_liveness": {
+      "enabled": true,
+      "details": "'Global GDP running on Stripe: 1.68460731%' ticker counts continuously in the hero; stat numerals (2x, 500M+) reinforce the running-machine feel"
+    },
+    "diagonal_clip_sections": {
+      "enabled": true,
+      "details": "classic pages: hero canvas and section bands clipped on a shallow diagonal (transform: skewY on background layers) — straight-edged on the new homepage"
+    },
+    "aurora_glow_on_dark": {
+      "enabled": true,
+      "details": "dark navy bands get a soft purple/blurple radial horizon glow (homepage 'backbone of global commerce' stats band) — a light source rising behind a dark horizon"
+    },
+    "floating_screenshot_compositions": {
+      "enabled": true,
+      "details": "product UI screenshots layered/overlapped at slight tilt with large violet-tinted shadows; docs tilt a 'test cards' credit-card illustration; blog hero cards carry full-bleed gradient artwork"
+    },
+    "scroll_effects": {
+      "enabled": true,
+      "details": "gentle fade/translate section reveals; no parallax, no scroll-scrubbing"
+    },
+    "dotted_grid_ornament": {
+      "enabled": true,
+      "details": "docs only: page corners carry a dot-grid pattern whose dots are tinted by the brand gradient spectrum, fading toward the content"
+    },
+    "particles": { "enabled": false },
+    "3d_elements": { "enabled": false, "note": "the ribbon reads 3D but is a shader gradient, not geometry" },
+    "cursor_effects": { "enabled": false },
+    "glassmorphism": { "enabled": false, "note": "one rgba(255,255,255,0.65) overlay panel observed; no frosted-blur language" },
+    "svg_animations": { "enabled": false, "note": "SVGs are static logos and icons" },
+    "composite_notes": "Stripe's formula: spend the entire effects budget on one breathtaking ambient WebGL gradient in the hero, then earn trust below it with static evidence — screenshots, stats, logos, terminals. Color discipline is the real trick: a 5-hue gradient spectrum that would be garish anywhere else stays premium because the rest of the page is navy-on-white with tiny doses of blurple."
+  }
+}

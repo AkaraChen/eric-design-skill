@@ -1,0 +1,232 @@
+{
+  "source": [
+    "https://zed.dev/ (browsed live 2026-08-02, light + dark, 1440px viewport, full-page scroll-through)",
+    "also browsed: /ai, /blog, /blog/hidden-gems-part-4, /docs, /pricing, /extensions, /download, 404 page, Product/Resources nav dropdowns, footer",
+    "verified via live computed-style probes, Tailwind v4 CSS bundle token extraction, and JS bundle shader-source inspection (28 GLSL #version 300 es programs)"
+  ],
+  "extracted": "2026-08-02",
+  "design_system": {
+    "color": {
+      "palette_type": "two custom neutral families (warm 'cream' paper + cool 'offgray' ink) crossed with a single saturated 'Zed blue'; Tailwind default scales held in reserve for semantic state; dark mode flips to a cool blue-charcoal",
+      "primary_accent": "#1348dc (--color-accent-blue; verified: hero h1 color, primary button fill, footer block, links, blue serif headlines)",
+      "accent_dark_variant": "rgb(5,55,148) — inset bottom-edge shadow on primary buttons; blue-400 #54a2ff / blue-300 #90c5ff take over headline/link roles in dark mode",
+      "paper_neutrals": {
+        "cream_base": "#7f7866 (--cream)",
+        "cream_50": "#f5f4f3", "cream_100": "#d1cfc8", "cream_200": "#b9b5ab", "cream_300": "#aaa599", "cream_700": "#5c574a", "cream_900": "#38352d",
+        "observed": "marketing body bg is cream-100 at 20% opacity over white → a warm paper off-white ≈ #f7f6f4; pure white is never the page color"
+      },
+      "ink_neutrals": {
+        "offgray_base": "#727a89 (--offgray, cool slate)",
+        "scale": ["#e3e4e7 (50)", "#ced1d6 (100)", "#c0c3ca (200)", "#abafb8 (300)", "#878e9b (400)", "#727a89 (500)", "#626976 (600)", "#535964 (700)", "#474c55 (800)", "#35383f (900)", "#212328 (950)", "#0d0d0f (1000)"],
+        "usage": "body text = offgray-700 #535964 (verified oklch(0.359 0.0155 262.9)); muted/meta text = offgray-500; hairline borders = offgray at 20% alpha; dark-mode body text = offgray-300 #abafb8; headings are pure black or accent blue, never gray"
+      },
+      "blue_tints": "blue-50 #eff6ff … blue-500 #3080ff … blue-950 #162456 (Tailwind scale); blue-50/blue-100 fills ghost buttons ('Download Now' on /download), selected segmented-control tabs, 'Newest' badges, focused inputs",
+      "semantic": "success green-500 #00c758, warning amber-500 #f99c00, error = Tailwind red scale, info = blue; note: pricing feature checkmarks render in accent blue, not green — blue does most positive-signal work",
+      "dark_mode": {
+        "background": "hsl(218, 13%, 7.5%) — verified body class dark:bg-[hsl(218,13%,7.5%)]; a blue-tinted charcoal, not pure black",
+        "text": "offgray-300 #abafb8 body, near-white headings",
+        "accent": "blue lightens (hero serif headline renders ~blue-300/400); shader canvases dim from opacity-15 to opacity-8"
+      },
+      "surface_hierarchy": "paper cream page → white/cream-50 hairline-bordered cards → blue-50 tinted interactive fills → solid #1348dc primary surfaces (buttons, footer)",
+      "contrast_strategy": "dark slate ink on warm paper at comfortable AA contrast; hierarchy by ink weight (black heading → offgray-700 body → offgray-500 meta); blue reserved for headlines, links, CTAs, and the footer block — never decoration on body text; customer logo clouds are grayscale"
+    },
+    "typography": {
+      "heading_font": "IBM Plex Serif VARIABLE — loaded as 'plexSerif'; used for every display headline, section statement, blog/docs page title, price numerals, version numbers; variable weights observed 340–390 (thin, editorial)",
+      "body_font": "iA Writer Quattro S — loaded as 'writer'; a QUASI-PROPORTIONAL TYPEWRITER face that sets all UI text: nav, buttons, body copy, feature lists, blog prose, docs body (verified: body font-family 'writer' 16px/24px; blog/docs prose 14px/20px)",
+      "mono_font": "Lilex ('zed-mono', an IBM Plex Mono derivative with ligatures) for code; ui-monospace/SFMono stack for kbd keycaps and small meta (verified kbd: 11px, ls -0.35px)",
+      "sans_font": "IBM Plex Sans loaded as 'plexSans' — used inside product-UI/theme-preview mockups rather than marketing chrome",
+      "scale_observed": {
+        "hero_h1": "48px Plex Serif italic, weight 340, lh 57.6px, ls -0.96px, accent blue (verified)",
+        "section_h2": "25.6px Plex Serif, weight 390, lh 32px — black or blue (verified)",
+        "blog_post_h1": "32px Plex Serif, blue (verified)",
+        "docs_h1": "~32px Plex Serif blue ('Getting Started'); docs h2 black serif with hairline underline",
+        "price_display": "Plex Serif blue, ~36px ($0/$10/$30)",
+        "body": "16px/24px writer 400 (marketing); 14px/20px writer (blog, docs, feature lists)",
+        "nav_buttons": "16px writer 400; CTA buttons 14px writer with ls -0.35px (verified)",
+        "meta_kbd": "11px ui-monospace, ls -0.35px, offgray-500"
+      },
+      "tailwind_scale": "xs 12 / sm 14 / base 16 / lg 18 / xl 20 / 2xl 24 / 3xl 30 / 5xl 48 / 6xl 60 (rem-based)",
+      "tracking": "tightens on small UI text (-0.35px at 11–14px) and display serif (-0.96px at 48px); Tailwind tracking tokens -0.025em…0.1em available; uppercase mono labels get wide tracking",
+      "font_style_notes": "the signature pairing: elegant variable-weight Plex Serif (often italic, often blue) for statements + typewriter-flavored iA Writer Quattro for everything else — 'editorial romance set by a machine'. Serif italic = brand voice moments; serif roman = section statements; writer = the product's engineering texture"
+    },
+    "spacing": {
+      "base_unit": "4px (--spacing: .25rem, Tailwind v4)",
+      "scale": "4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 96px",
+      "content_density": "comfortable-compact inside a strict frame — text blocks are narrow and information-dense, but every band gets generous vertical air (hero sections run min-h ~448px)",
+      "section_rhythm": "the page frame does the rhythm: full-width hairline rules separate bands; ~80-96px vertical padding per marketing section; tight 8-16px stacks inside feature cells"
+    },
+    "layout": {
+      "grid_system": "everything lives inside 'the page': a centered 1280px-max frame with visible 1px hairline left/right borders; ruler tick marks run down the outer margins like a drafting sheet; inner content column is 1120px (verified: container-max-w = 1120px centered in 1280px frame)",
+      "max_content_width": "1280px frame / 1120px content / 740px blog+docs prose (--blog-content-width)",
+      "columns": "3-col feature rows (Fast/Agentic/Collaborative) split by hairlines; 2-col then 3-col screenshot grids; 4-col extension cards; 5-col footer link block; alternating text+screenshot feature rows",
+      "gutter": "80px frame-to-content gutters at desktop; cards 16-24px gaps",
+      "breakpoints": "sm 640px (Tailwind default set; mobile collapses the frame to full-bleed)",
+      "alignment_tendency": "centered hero statements (serif headline + subcopy + CTA pair) inside a strict left-aligned grid; docs = classic 3-pane (left sidebar nav / 740px prose / right 'On This Page' rail)",
+      "signature_chrome": "sticky top nav with Z logo + text links + search/⌘P + 'Sign up S'/'Download D' keycap buttons; centered text-only announcement bar ('Early Access: DeltaDB… →') on a hairline-separated strip; pages close with a SOLID ACCENT-BLUE footer block (white 5-col links) — the loudest surface on the site"
+    },
+    "shape": {
+      "border_radius": "xs 2px (kbd keycaps) / sm 4px (buttons — verified) / md 6px / lg 8px / xl 12px (cards, code blocks, inputs) / 2xl 16px; app icon ~24px continuous corner; pills reserved for toggles/badges and the 'Watch Demo' floater",
+      "border_usage": "hairline 1px offgray-at-20%-alpha borders EVERYWHERE — the page frame, section rules, card frames, button outlines, input borders; borders and tonal steps do all the structural work",
+      "divider_style": "1px hairlines, often full-bleed across the frame; docs h2s get hairline underlines; the frame's corner intersections get tiny crosshair/tick details"
+    },
+    "elevation": {
+      "shadow_style": "nearly flat; depth comes from hairlines and tonal layers, with two deliberate exceptions",
+      "levels": {
+        "low": "primary button: inset 0 -2px 0 0 rgb(5,55,148) (a darker blue bottom edge — a physical KEYCAP press feel) + 0 1px 3px rgb(230,239,254) soft blue halo (verified computed)",
+        "medium": "cards/inputs sit flat on hairlines; segmented control selected tab gets a white raised chip",
+        "high": "product screenshots and the Z app icon float with soft diffused shadows (shadow-xl, offgray-500/20; app icon on a thick rounded squircle)"
+      },
+      "depth_cues": "hairline borders > tonal surface steps > rare soft shadows; the keycap inset edge is the one tactile skeuomorph"
+    },
+    "iconography": {
+      "style": "small 16px stroke line icons (download arrows, search magnifier, platform glyphs, author/download-count meta icons) + keyboard glyphs (⌘ S D C) as first-class iconography",
+      "stroke_weight": "~1.5px, round caps; icon set is minimal and functional",
+      "size_scale": "11-16px inline with text; 24px in feature cells",
+      "preferred_set": "custom inline SVGs; the Zed 'Z-in-a-blueprint-square' logo mark recurs (nav, footer, loading states)"
+    },
+    "motion": {
+      "easing": "cubic-bezier(.4,0,.2,1) default (Tailwind ease-in-out); 150ms default duration",
+      "duration_scale": "micro 150ms state changes / normal 300-400ms (page-frame transform runs 400ms) / macro = continuous ambient shader loops",
+      "entrance_pattern": "fade-up utility (--animate-fade-up) on scroll-revealed sections; content bands materialize as you approach",
+      "exit_pattern": "simple fades; nothing theatrical",
+      "philosophy": "functional and instant like the editor itself; ambient motion is delegated to the low-opacity WebGL backgrounds (plus spin-slow 32s/50s decorative rotations) so the content layer stays perfectly still"
+    },
+    "components": {
+      "button_primary": "solid #1348dc, white 14px writer text, 4px radius, inset darker-blue bottom edge + blue halo shadow = a keyboard keycap; ALWAYS pairs the label with a kbd shortcut hint ('Download now D')",
+      "button_secondary": "paper/white fill, hairline border, dark text, keycap hint ('Clone source C'); blue-tinted variant (blue-50 fill, blue text) for download actions and selected tabs",
+      "kbd_keycaps": "11px mono glyphs in 2px-radius white/50 chips with 1px border — appear inside nav buttons, CTAs, search field (⌘P), docs shortcuts (Cmd+O); the site's most repeated component motif",
+      "nav": "64px sticky bar inside the frame; text links with chevron dropdowns; right side: search icon + ⌘P keycap, ghost 'Sign up S', solid 'Download D'",
+      "segmented_control": "hairline-bordered pill container, white raised selected segment ('Stable/Preview' on /download)",
+      "cards": "flat paper/white cards, 1px hairline, 8-12px radius; blog cards carry near-black generative-art covers + title + excerpt + avatar/author + mono date; extension cards = name + download count + description + author in a 4-col grid; pricing cards = mono uppercase plan label, serif blue price, blue-check feature list, CTA at bottom (Pro card gets a soft blue glow ring)",
+      "blog_index": "category sidebar ('CATEGORIES' mono overline, blue-text active item) + post rows separated by hairlines with tiny author avatar and right-aligned mono dates",
+      "docs": "3-pane layout; serif blue page title; writer body; kbd-styled shortcuts inline; hairline-boxed code blocks with copy affordance; right 'On This Page' rail; llms.txt / markdown-version links for agents",
+      "inputs": "white fields, hairline border, 8-12px radius, italic placeholder (newsletter email); ⌘K/S keycap hints in search boxes",
+      "footer": "solid #1348dc block across the frame, white writer-font links in 5 columns (Product/Resources/Company/Social), copyright + legal line; preceded by a centered 'Daily drive with Zed' serif CTA band",
+      "announcement_bar": "centered single line, blue text link with →, hairline separated; in dark mode becomes a navy strip"
+    }
+  },
+  "design_style": {
+    "aesthetic": {
+      "mood": ["crafted", "editorial", "precise", "quietly playful", "engineering-notebook"],
+      "visual_metaphor": "a draftsman's sheet: the whole site is one sheet of grid paper pinned inside a hairline frame with ruler ticks, typeset by a typewriter, annotated in blue serif ink",
+      "era_influence": "contemporary dev-tool minimalism (Linear/Raycast lineage) crossed with print editorial typography and CAD/blueprint drafting furniture",
+      "genre": "developer-tool marketing with an editorial serif twist — 'typewriter chic'",
+      "personality_traits": ["meticulous", "confident", "witty", "restrained", "keyboard-obsessed"],
+      "adjectives": ["papery", "hairline-ruled", "blue-inked", "tactile", "typeset"]
+    },
+    "visual_language": {
+      "complexity": "minimal surface, rich subtext — flat hairline layouts carrying five custom fonts and live shader grain",
+      "ornamentation": "subtle accents only: ruler ticks, grid-paper margins, keycap chips, faint animated shader wash; nothing decorative exceeds ~15% opacity",
+      "whitespace_usage": "structured air — generous vertical bands compressed into a strict 1120px column; whitespace is framed, never boundless",
+      "visual_weight_distribution": "light paper fields punctuated by dark product screenshots and one heavy blue footer; serif headlines act as thin ink accents rather than black masses",
+      "focal_strategy": "single centered statement per band (serif headline → one-line subcopy → keycap CTA pair), then hairline-gridded proof (screenshots, quotes, tables)",
+      "contrast_level": "moderate; ink-on-paper body with high-contrast blue accents and near-black imagery blocks",
+      "texture_usage": "paper grain + blueprint grid + shader noise at very low opacity; texture replaces color as the site's richness budget"
+    },
+    "composition": {
+      "hierarchy_method": "typographic hierarchy first (serif display > writer body > mono meta), then hairline structure; color is the final accent, not the organizer",
+      "balance_type": "symmetric centered heroes over asymmetric alternating feature rows",
+      "flow_direction": "strict vertical scroll through hairline-banded chapters; the frame's side rules keep the eye railed",
+      "grouping_strategy": "hairline-divided cells and bands instead of floating cards; related items share a ruled cell",
+      "negative_space_role": "margins are ACTIVE space — they carry the ruler ticks, grid paper, and shader wash that make the frame feel drafted"
+    },
+    "imagery": {
+      "photo_treatment": "no photography; people appear only as small round avatars in testimonials",
+      "illustration_style": "vector-drafting line art — the 404 page draws its digits as blue pen-tool vector networks with node handles on grid paper",
+      "graphic_elements": "real product screenshots (dark editor UI) as the hero proof; near-black generative shader-art blog covers (pixel grids, chrome diamond, glowing badges); grayscale customer logo clouds; the Z app icon squircle",
+      "pattern_usage": "grid-paper and ruler ticks as recurring drafting patterns; stepped-noise/pixel patterns inside generative covers",
+      "image_shape": "sharp-rectangle screenshots with slight rounding inside hairline frames; cover art is always dark against the light page"
+    },
+    "interaction_feel": {
+      "feedback_style": "physical and keyboard-native — buttons are keycaps with a bottom edge that reads as pressable; every primary action advertises its shortcut",
+      "hover_behavior": "subtle tonal steps and blue ink shifts; links underline/darken; nothing scales or bounces",
+      "transition_personality": "snappy 150ms ease; page-frame transitions glide at 400ms; ambient shaders drift continuously underneath",
+      "loading_style": "minimal; content is static HTML-first, effects layer in after",
+      "microinteraction_density": "low count, high intent — copy-to-clipboard on install commands, segmented release toggles, keycap hints everywhere"
+    },
+    "brand_voice_in_ui": {
+      "tone": "witty, confident, craft-obsessed engineer-speak: 'Your last next editor', 'Built with ultimate care', 'Code at the speed of thought', 'Daily drive with Zed'",
+      "formality": "casual-precise; sentence case everywhere, no exclamation marks, no superlative spam — speed claims are stated as fact",
+      "cta_style": "direct imperative pairs with keyboard shortcuts: 'Download now D', 'Clone source C', 'Get Started'",
+      "empty_state_approach": "the 404 is a designed object — blue vector-node '404' artwork + 'Page Not Found' serif + a helpful 'let us know' link",
+      "error_tone": "plain, helpful, link-forward"
+    }
+  },
+  "visual_effects": {
+    "overview": {
+      "effect_intensity": "subtle-accent — real WebGL2 shader work, deliberately turned down to a whisper (5–15% opacity, edge-masked)",
+      "performance_tier": "heavy-under-the-hood: four full-bleed WebGL2 GLSL canvases plus one Canvas-2D element on the homepage; presented as lightweight ambience",
+      "fallback_strategy": "effects are decorative-only: all content is readable HTML/CSS without them; dark mode dims canvases further (opacity-15 → dark:opacity-8)",
+      "primary_technology": "WebGL2 fragment shaders (#version 300 es, u_time-driven; Paper-Shaders-style programs — mesh gradient with swirl+grain, neuro-noise flow, voronoi cells, stepped simplex noise, polygon dot-grid) + CSS animation utilities"
+    },
+    "background_effects": {
+      "type": "generative-art shader washes",
+      "description": "large WebGL2 canvases absolutely positioned behind hero/section content at opacity-5/12/15 with bottom fade masks (mask-b-from-20% mask-b-to-80%); they render drifting grainy gradients/noise in paper-and-blue tones, giving the 'paper' its living grain",
+      "technology": "WebGL2 GLSL (28 shader programs bundled; uniforms include u_time, u_swirl, u_grainMixer/u_grainOverlay, u_stepsPerColor, u_softness, u_spreading)",
+      "params": {
+        "color_palette": "cream/offgray/blue family sampled from the page theme",
+        "speed": "slow continuous drift (u_time)",
+        "density": "fine film-grain + large soft noise fields",
+        "opacity": "5–15% (8% in dark mode)",
+        "blend_mode": "normal at low alpha over the paper background"
+      }
+    },
+    "particle_systems": {
+      "enabled": true,
+      "type": "custom — falling digits field",
+      "description": "/ai hero shows a sparse rain of faint monospaced numerals drifting down behind the headline ('AI coding at native speed') — matrix-rain turned papery and near-invisible",
+      "technology": "canvas-rendered (part of the shader/canvas layer)",
+      "params": {
+        "count": "sparse, dozens",
+        "shape": "single mono digits",
+        "size_range": "small text scale",
+        "movement_pattern": "slow vertical fall",
+        "color_behavior": "offgray/blue at very low alpha",
+        "interaction": "none",
+        "spawn_area": "full hero band"
+      }
+    },
+    "3d_elements": { "enabled": false, "type": "none", "description": "no 3D models or WebGL geometry scenes; depth is faked with soft shadows on screenshots and the app icon", "technology": "none", "params": { "renderer": "none", "lighting": "n/a", "camera": "n/a", "materials": "n/a", "geometry": "n/a", "post_processing": "none", "interaction_model": "none" } },
+    "shader_effects": {
+      "enabled": true,
+      "type": "custom-GLSL ambient programs (mesh-gradient, neuro-noise, voronoi, stepped-noise, dot-grid)",
+      "description": "the shader library doubles as the blog-cover art generator: near-black covers with glowing stepped pixel grids, chrome-gem gradients, and badge lockups are rendered variants of the same noise/stepped-color programs",
+      "technology": "WebGL2, GLSL ES 3.00, value/simplex noise, fwidth-antialiased stepped color quantization",
+      "params": {
+        "uniforms": "u_time, u_colors[], u_colorsCount, u_swirl, u_distortion, u_grainMixer, u_grainOverlay, u_stepsPerColor, u_softness, u_size, u_spreading, u_dotSize, u_gapX/u_gapY",
+        "vertex_manipulation": "none (fullscreen quad)",
+        "fragment_output": "grain-modulated multi-color gradients and stepped noise fields",
+        "noise_type": "value noise + simplex (fbm-style layering)",
+        "distortion": "swirl/rotation domains, voronoi cell jitter"
+      }
+    },
+    "scroll_effects": {
+      "parallax": { "enabled": false, "layers": "1", "depth_range": "none", "speed_curve": "n/a" },
+      "scroll_triggered_animations": {
+        "enabled": true,
+        "trigger_points": "section bands as they enter the viewport",
+        "animation_type": "fade-up (--animate-fade-up, ease, ~1s max)",
+        "scrub_behavior": "none — triggered once, no scroll-scrubbing"
+      },
+      "scroll_morphing": { "enabled": false, "description": "no scroll-driven morphs; the page frame itself can transform/border-radius over 400ms (mobile menu sheet behavior), not scroll-linked" }
+    },
+    "text_effects": { "type": "none", "description": "headlines are static ink; the typography itself (serif italic + typewriter body) carries the expressiveness", "technology": "none", "params": { "split_strategy": "n/a", "animation_per_unit": "n/a", "stagger": "n/a", "effect_style": "none" } },
+    "cursor_effects": { "enabled": false, "type": "none", "description": "standard cursors; keyboard shortcuts are the site's power-user channel instead of cursor theatrics", "params": { "shape": "n/a", "size": "n/a", "blend_mode": "n/a", "trail": "none", "interaction_zone": "n/a" } },
+    "image_effects": { "type": "none", "description": "screenshots and covers sit still inside their hairline frames; no hover distortion or reveal clips", "technology": "none", "params": { "filter_pipeline": "none", "hover_transform": "none", "reveal_animation": "none", "distortion_type": "none" } },
+    "glassmorphism_neumorphism": { "enabled": false, "style": "none", "params": { "blur_radius": "n/a", "transparency": "n/a", "border_treatment": "n/a", "shadow_type": "n/a", "light_source_angle": "n/a" } },
+    "canvas_drawings": {
+      "enabled": true,
+      "type": "small 2D canvas accents",
+      "description": "one 142x142 Canvas-2D element (pointer-events-none, opacity-15) sits as a decorative mark; the heavy lifting is all WebGL2",
+      "technology": "Canvas 2D",
+      "params": { "draw_method": "2D paths", "animation_loop": "subtle/none observed; CSS spin-slow (32s/50s) utilities exist for decorative rotation", "color_scheme": "theme ink at low alpha", "responsiveness": "fixed pixel buffer", "interaction": "none (pointer-events-none)" }
+    },
+    "svg_animations": {
+      "enabled": true,
+      "type": "decorative-loop + vector line art",
+      "description": "the 404 page's '404' is drawn as an interactive-style vector network (blue stroke paths with diamond node handles, Figma-pen-tool aesthetic) over grid paper; logo and icons are static SVG",
+      "params": { "animation_method": "CSS", "path_morphing": "none", "stroke_animation": "none observed (static strokes)", "filter_effects": "none" }
+    },
+    "composite_notes": "Zed's effect strategy is inversion: the marketing layer is dead-calm paper while GPU shaders hum underneath at 5-15% opacity — an apt metaphor for an editor whose brand is 'native speed you can feel but not see'. The same GLSL noise/stepped-color programs generate the dark blog covers, so one shader system serves both ambient backgrounds and published artwork. Signature non-shader effects are physical, not digital: keycap buttons with inset bottom edges, kbd shortcut chips on every CTA, ruler ticks and grid-paper margins, and the vector-node 404. When recreating this DNA, spend the budget on typography fidelity (Plex Serif variable italic + iA Writer Quattro) and the hairline page frame before adding any shader; a static grain PNG at 10% opacity captures 90% of the effect."
+  }
+}

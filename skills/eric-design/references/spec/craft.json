@@ -1,0 +1,140 @@
+{
+  "source": [
+    "https://www.craft.do/ (browsed live 2026-07-12, 1440px viewport, full-page scroll-through)",
+    "also browsed: /imagine, /pricing, /learn, /templates, /download, /about, /blog, /write, Product mega-menu, footer"
+  ],
+  "extracted": "2026-07-12",
+  "design_system": {
+    "color": {
+      "palette_type": "warm paper neutrals + a pastel 'construction paper' family; near-black ink; color arrives as big tinted section panels, not as accents on text",
+      "background_page": "#fcf9f7 (warm cream — every page)",
+      "ink": "#030302 (near-black, used for text, logo, solid buttons)",
+      "ink_muted": "rgba(3,3,2,0.75) — body copy runs at 75% opacity ink",
+      "panel_pastels": {
+        "sky_blue": "hero/pricing/download/imagine panels — light azure with paper grain, roughly #a8d3f0-#bfe0f5",
+        "periwinkle": "#b8caf5 (verified computed) — WRITE section, /write hero",
+        "mint_green": "#a9d9a8-range — IMAGINE section, 'Let's get started' CTA panel",
+        "butter_yellow": "#f7e39b-range — PLAN section, legal-pad torn paper",
+        "pastel_pink / lilac": "template panels, torn-paper scraps, note-card mockups",
+        "note": "each pastel panel carries a visible paper-grain texture; in-panel cards shift to a lighter tint of the same hue"
+      },
+      "brand_orange": "#f5a623 solid base for the promo banner, deepening to burnt orange at the edges with glowing dot ornaments; darker orange #b96d1e-range promo pills",
+      "black_surfaces": "footer and 'Craft Plus' pricing card are pure black rounded panels with white text and white blobby logo",
+      "semantic_note": "no traditional semantic palette on the marketing site; system blue appears only inside product-UI mockups (checkboxes, 'Today' chips)",
+      "contrast_strategy": "near-black ink on cream or pastel; large surfaces carry the color while text stays black/white; muted 75%-opacity ink for supporting copy"
+    },
+    "typography": {
+      "display_font": "Untitled Serif (Klim) — 'UntitledSerifFont'; ALL headlines h1/h2, prices, quotes; loads Source Serif 4 + Noto Serif SC as fallbacks",
+      "body_font": "Untitled Sans (Klim) — 'UntitledSansFont'; body, nav, buttons, labels; Inter + Noto Sans SC fallbacks",
+      "mono_font": "none — no monospace anywhere; caps labels are Untitled Sans",
+      "scale_observed": {
+        "h1_home": "66px / 400 / lh 66px / ls -1.98px (-0.03em), serif",
+        "h1_subpages": "54px serif 400",
+        "h2": "54px / 400 / lh 59.4px / ls -1.08px (-0.02em), serif — identical across every section",
+        "quotes": "32px serif italic 400",
+        "body": "16px / 400 / lh 22.4px (1.4), sans, 75%-opacity ink",
+        "buttons": "16px / 500 sans",
+        "caps_labels": "13-14px sans 500, uppercase, letterspaced (section eyebrows WRITE/PLAN/IMAGINE/ORGANIZE, persona names, PLUS/FAMILY/TEAM, footer column titles)"
+      },
+      "weight_discipline": "serif never exceeds 400 — hierarchy comes from size and italic, not weight; sans uses 400/500 only",
+      "italic_as_voice": "serif italic is the signature move: highlighted words inside roman headlines ('it's for *your* things', '*Imagine* the possibilities'), whole second lines ('Master Craft / *in under an hour*'), every testimonial quote, persona descriptions, and the sale banner ('*Summer Sale → Get 40% off…*')",
+      "logo": "'CRAFT' as fat blobby black hand-drawn letterforms (image/svg wordmark, not a set font); white version on black surfaces"
+    },
+    "spacing": {
+      "density": "airy marketing rhythm; near-viewport-height panels with big cream gaps between them; in-panel cards get generous 24-32px padding",
+      "page_gutter": "full-bleed panels are inset ~20px from the viewport edge on all sides (page reads as stacked rounded 'sheets' on a cream desk)",
+      "section_rhythm": "cream background sections (awards, quotes, template carousel) alternate with saturated paper panels"
+    },
+    "layout": {
+      "max_content_width": "~1200-1280px content inside full-width panels; centered",
+      "page_anatomy_home": "orange sale banner → floating pill nav → sky-blue collage hero panel → cream section: serif claim + 5 icon features (Docs/Tasks/Calendar/Whiteboards/Daily Notes) → 'How people use Craft' persona card carousel → periwinkle WRITE panel → serif italic quote → green IMAGINE panel (MCP/API integration tiles) → yellow PLAN panel (Calendar/Tasks/Journal/Reminders cards) → awards row → quote → ORGANIZE trio of pastel cards → 'Make it unmistakably yours' → template card carousel → quote → 'Stay in the loop' community → pricing preview (white Free card + black Plus card) → green 'Let's get started' CTA panel → black rounded footer",
+      "section_panel_pattern": "each capability gets a full-width rounded pastel panel: caps eyebrow + serif heading + sans body + tinted glassy pill 'Learn more' on the left, product-UI mockup cards on the right (sides alternate)",
+      "nav": "floating white pill (26px radius, blur(4px) glass, subtle shadow) containing blobby logo + text links + 'Log in' + black pill CTA; it stays pinned and its glass tints to whatever panel scrolls beneath",
+      "mega_menu": "nav pill expands into a large frosted-glass rounded panel: grid of translucent tile buttons (Plan/Write/Organize/Customize with sketchy icons + one-line serif-adjacent descriptions) plus a right rail (What's New, Imagine, Help and Support, Blog)",
+      "footer": "black 32px-radius panel: caps column titles over hairline rules (PRODUCT/COMMUNITY/SUPPORT/COMPANY/DOWNLOAD), white 16px links, locale switcher, boxed social icons",
+      "alignment": "headlines centered on hero/subpages; panel content left-aligned; testimonial quotes left with right-floated avatar + name + hairline rule"
+    },
+    "shape": {
+      "radius_scale": "pill (9999px) for every button/chip/badge; 24px for cards; 26px nav pill; 32px for the big section panels and footer",
+      "buttons": "all pills: primary = solid near-black #030302 with white 16px/500 label (36-48px tall); secondary = glassy translucent white ('glass sticker') with soft drop shadow + inner highlight, tinted by the panel behind it; black pills also used as small utility buttons (Download/App Store rows)",
+      "torn_edges": "torn/ripped paper silhouettes are a core shape motif — panel bottoms and collage scraps have irregular deckled edges (image assets), deliberately breaking the rounded-rect system",
+      "border_usage": "almost none — separation via surface color, soft shadows, and hairline rules under caps labels; dotted hairlines between download rows"
+    },
+    "elevation": {
+      "philosophy": "soft, toy-like depth: panels sit on the cream page like stacked paper sheets with wide soft shadows; buttons look like puffy glass stickers with highlight + shadow; mockup cards float with gentle diffuse shadows",
+      "no_hard_borders": "depth is always shadow/tint, never outline"
+    },
+    "motion": {
+      "observed": "gentle and sparse: carousels (personas, templates) slide horizontally; nav glass tints on scroll; hover lifts on pills; no scroll-jacking, no parallax, no reveal choreography detected; no framer-motion/lenis globals found",
+      "philosophy": "calm — the collage art carries the energy, the page itself barely moves"
+    },
+    "components": {
+      "sale_banner": "full-width orange gradient strip, serif italic message with '→', glowing dot ornaments at both ends",
+      "primary_cta": "'Try Craft Free' black pill, white 16px/500 text, 36px in nav / 48px+ in heroes; hero variant is a frosted glass pill on the collage",
+      "glass_button": "translucent panel-tinted pill ('Learn more', 'Continue on web', 'Contact us', 'Search Templates') with soft shadow — reads as a glass sticker on the paper panel",
+      "persona_cards": "rounded portrait photo cards on collage backgrounds (torn paper, halftone dots, colored fields) + caps name/role ('AARON, WRITER AND PODCASTER') + serif italic use-case line",
+      "quote_block": "32px serif italic quote in curly quotes + small round avatar + gray name + long hairline rule",
+      "pricing_cards": "white rounded Free card vs pure-black Plus card (white blobby CRAFT logo + white pill 'PLUS' badge); caps tier labels; serif prices (¥740) with gray strikethrough original; yearly/monthly segmented pill toggle; wide 'Bigger group?' bar card with sketchy group icon",
+      "integration_tiles": "white rounded tiles holding grids of real app icons (MCP connections, API integrations); pastel-tinted pill chips for starter templates ('Blog Publisher', 'Dream Journal')",
+      "awards_row": "3D-rendered award icons (App Store, Apple Design Awards, Webby, German Design Award) + bold sans caption + gray subline",
+      "filter_chips": "white pill chips with icon + label + chevron (Series/Features/Recommended) and a Grid/List segmented pill toggle",
+      "mockups": "faux Craft app windows everywhere: pastel note cards (pink/yellow/green/blue), checklists with blue checkboxes, calendar 'Today' cards, journal entries — always on-brand pastel, never gray screenshots",
+      "icons": "hand-sketched line icons (wobbly pencil strokes) for features: docs, tasks, calendar, whiteboards scribble-e, pencil, pencil-cup on /learn — no geometric icon set"
+    }
+  },
+  "design_style": {
+    "mood": "playful, warm, crafted, optimistic, human",
+    "personality": "a paper-craft scrapbook made by a meticulous studio — literally 'craft': torn construction paper, halftone clouds, sketchy pencil icons, sticker-like glass buttons; joy is the explicit pitch ('bringing the joy back to thinking')",
+    "genre": "consumer productivity-app marketing, anti-corporate; the deliberate opposite of grayscale dev-tool minimalism (contrast with vercel.json) — closer to a picture-book take on Notion's category",
+    "visual_language": "collage: torn paper scraps (periwinkle, gray, black, legal-pad yellow with green rules), paper-grain textures on every colored surface (paper-texture.webp + SVG feTurbulence noise), halftone-dot clouds drifting over cream pages, blue skies, polaroid photo piles (blog), 3D award trophies; serif type gives it an editorial, bookish warmth",
+    "composition": "stacked rounded 'paper sheets': the page is a cream desk on which full-width textured panels, carousels, and quote interludes are laid out in a steady vertical rhythm; centered serif headlines open pages, alternating left/right content fills panels",
+    "imagery": "illustrated collage art + real product-UI mockups recolored into brand pastels + genuine user photos (personas, testimonial avatars, team polaroids); app icons of integrated tools shown as-is; zero stock photography",
+    "ornamentation": "rich but handmade: torn edges, paper grain, halftone dots, sketchy icons, glowing banner dots, wavy tonal patterns inside green CTA panels — ornamental texture everywhere, yet the type system stays strict (serif 400 + sans 400/500 only)",
+    "whitespace_philosophy": "cream breathing room between saturated panels; panels themselves are dense with playful detail",
+    "copy_voice": "warm, second-person, benefit-led with wit ('Craft isn't just for one thing, it's for *your* things', 'Planning that doesn't feel like work', 'Your pace, your plan', 'Master Craft in under an hour'); italics do the emotional emphasis; CTAs are friendly invitations ('Try Craft Free', 'Let's get started')",
+    "interaction_feel": "soft and tactile — puffy glass pills that beg to be pressed, gentle hover lifts, sliding carousels; nothing snappy or mechanical"
+  },
+  "visual_effects": {
+    "overview": {
+      "effect_intensity": "moderate — but achieved through art assets and texture, not runtime rendering",
+      "performance_tier": "lightweight — no canvas, no WebGL, no video on any page checked (verified 0 canvas/video elements); effects are webp/SVG assets + CSS",
+      "composite_notes": "The signature look is layered static collage: paper-grain texture (paper-texture.webp) tiled over pastel panel colors, an inline SVG feTurbulence noise filter, halftone-dot cloud PNGs floating at section edges, torn-paper-edge image masks on panel boundaries, and glassmorphic UI chrome (nav pill, mega-menu, buttons) blurring whatever colorful panel scrolls beneath. Rich visual result, near-zero runtime cost."
+    },
+    "paper_texture": {
+      "enabled": true,
+      "details": "every colored panel carries visible paper grain: paper-texture.a0b2b1ca.webp background-image plus an SVG feTurbulence noise filter; cream page background also subtly warm-textured"
+    },
+    "torn_paper_collage": {
+      "enabled": true,
+      "details": "torn/deckle-edge paper scraps as hero art and panel-edge masks (periwinkle/gray/black/yellow-legal-pad on /, yellow+lilac+periwinkle spilling from the pricing panel); the CRAFT ghost letters watermark sits faintly in the hero sky"
+    },
+    "halftone_clouds": {
+      "enabled": true,
+      "details": "paper-cutout clouds with halftone dot shading drift at panel corners and over cream sections on every page — the recurring brand ornament"
+    },
+    "glassmorphism": {
+      "enabled": true,
+      "details": "floating nav pill: 26px radius, backdrop blur(4px), tints toward the section behind it; Product mega-menu is a large frosted rounded panel of translucent tiles; secondary buttons are translucent 'glass sticker' pills with inner highlight + soft shadow"
+    },
+    "gradient_banner": {
+      "enabled": true,
+      "details": "orange sale banner: solid #f5a623 core deepening toward burnt-orange edges with two glowing dot ornaments; serif italic copy"
+    },
+    "carousels": {
+      "enabled": true,
+      "details": "horizontal card carousels for personas ('How people use Craft') and community templates; arrow-button paging on /templates featured row"
+    },
+    "micro_interactions": {
+      "enabled": true,
+      "details": "hover lift/brighten on pill buttons; segmented pill toggles (Yearly/Monthly, Grid/List); nav glass re-tint on scroll"
+    },
+    "canvas_2d": { "enabled": false },
+    "webgl_3d": { "enabled": false, "note": "3D award trophies and puffy icons are pre-rendered images" },
+    "particles": { "enabled": false },
+    "shaders": { "enabled": false },
+    "scroll_effects": { "enabled": false, "note": "no parallax or scroll-driven animation detected; sections are statically laid out" },
+    "cursor_effects": { "enabled": false },
+    "text_effects": { "enabled": false, "note": "emphasis is typographic (serif italic), never animated" },
+    "svg_animations": { "enabled": false, "note": "SVG used for noise filter and sketchy icons, all static" }
+  }
+}

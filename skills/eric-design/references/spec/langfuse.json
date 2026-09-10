@@ -1,0 +1,181 @@
+{
+  "source": [
+    "https://langfuse.com/ (static HTML + compiled CSS fetched 2026-07-15; browser extension unavailable, so extraction is from markup/tokens, not live rendering)",
+    "https://langfuse.com/docs (same method; docs are Fumadocs-based)",
+    "also fetched: /pricing, /blog, /changelog, /customers, /careers, /academy, /about, /enterprise, /security, /self-hosting, /docs/observability/overview, /docs/prompt-management/overview"
+  ],
+  "extracted": "2026-07-15",
+  "design_system": {
+    "color": {
+      "palette_type": "warm paper monochrome — greige/cream neutrals with ink text; one reserved chartreuse CTA yellow, indigo links, and a small set of muted callout hues",
+      "primary": "#222220",
+      "secondary": "#3d3d38",
+      "tertiary": "#6b6b66",
+      "disabled_text": "#a7a7a0",
+      "links": "#4f39f6",
+      "cta_yellow": "#fbff81 — used as a HIGHLIGHTER, not a button fill: swiped behind uppercase mono labels via linear-gradient(transparent 60%, color-mix(in oklab, var(--surface-cta-primary) 75%, transparent) 60% 92%, transparent 92%) like a marker pen, and as thick (stroke-width 11) hand-drawn SVG underline/bracket strokes (seen on /academy)",
+      "beige_accent": "#f1ede1",
+      "surfaces_light": {
+        "surface_bg": "#f6f6f3",
+        "surface_1": "#edede8",
+        "surface_2": "#e5e5e1",
+        "surface_code": "#333333",
+        "surface_cta_primary": "#fbff81",
+        "surface_beige_accent": "#f1ede1",
+        "surface_button_grey": "#403d391a",
+        "note": "page body is warm off-white #f6f6f3 (hsl 0 0% 99% shadcn --background over it); panels step down through #edede8 / #e5e5e1; code blocks invert to near-black #333 with cream text #fffcf280"
+      },
+      "lines_light": {
+        "line_structure": "#cfcfc9",
+        "line_divider_dash": "#bebeb6",
+        "line_cta": "#404039",
+        "line_code_border": "#333333",
+        "note": "hairline greige borders (line-structure) do almost all separation; hover/focus promotes borders to the dark line-cta ink; dashed dividers (border-dashed border-line-divider-dash) confirmed on /careers — dashed underlines beneath f37Analog small labels and mono captions, plus tall vertical dashed rules (h-48/h-72 w-px) between columns"
+      },
+      "callouts": {
+        "info": "#b3abef",
+        "warning": "#e09d00",
+        "error": "#cc3314",
+        "success": "#538a2e",
+        "idea": "#119da4",
+        "note": "muted, slightly desaturated set — periwinkle info instead of blue; plus data-viz accents --muted-green (hsl 84 81% 44%), --muted-magenta (330 90% 70%), --muted-blue (239 84% 67%)"
+      },
+      "code_syntax": "on dark #333 code surfaces: orange #c17e2e, pink #d05376, blue #438aa5, secondary text #fffcf280 (translucent cream)",
+      "dark_mode": {
+        "surface_bg": "#171714",
+        "surface_1": "#1e1e1b",
+        "surface_2": "#252522",
+        "surface_code": "#0e0e0c",
+        "surface_cta_primary": "#4c4d23",
+        "text_primary": "#e8e8e4",
+        "text_secondary": "#b4b4ae",
+        "text_tertiary": "#7a7a74",
+        "text_disabled": "#4a4a45",
+        "links": "#7b8ff8",
+        "line_structure": "#2c2c29",
+        "line_cta": "#b8b6a0",
+        "code_syntax": "orange #e8935a, pink #e86b9a, blue #6ab8cc",
+        "note": "dark theme keeps the warm cast (greenish-brown blacks #171714, not neutral gray); CTA yellow darkens to olive #4c4d23; beige accent stays #f1ede1"
+      },
+      "shadcn_layer": "a standard shadcn/ui HSL token layer (--background/--foreground/--muted/--destructive etc.) coexists with the custom surface/line/text tokens; --radius is 0.5rem for shadcn components but marketing UI overrides to 2px",
+      "contrast_strategy": "soft-contrast warm ink-on-paper (#222220 on #f6f6f3) rather than pure black-on-white; hierarchy via 4-step text scale (primary/secondary/tertiary/disabled) and surface stepping, color reserved for links, callouts, and code"
+    },
+    "typography": {
+      "heading_font": "F37 Analog ('f37Analog' + fallback) — a squarish retro-technical serif/slab display face; always used with font-feature-settings 'dlig' on, font-variant-numeric: ordinal, not-italic",
+      "body_font": "Inter (variable) — workhorse weights are non-standard: 430 body, 450 buttons/labels, 580 emphasis",
+      "mono_font": "Geist Mono — code blocks, keycap hints, stats",
+      "heading_scale": {
+        "h1_hero": "44px → 54px (md) → 68px (xl) / weight 500 / line-height 105% / centered / [leading-trim:both] [text-edge:cap]",
+        "h2_section": "32px / weight 500 / f37Analog (one h2 CTA variant scales 32→44px)",
+        "h3": "17px–20px, font-sans medium or f37Analog at text-xl for card titles"
+      },
+      "body_scale": {
+        "body_13": "13px / weight 430 / tracking -0.26px — the dominant UI/body size (most-used size on both pages)",
+        "body_14": "14px / 430",
+        "small_12": "12px / weight 450 / lh 150% / tracking -0.06px — buttons, keycaps",
+        "caption_15": "15px occasional lead text (pricing plan descriptions)",
+        "micro_mono": "9–10px Geist Mono / tracking +0.02em (positive!) — annotation captions: relative timestamps ('2 days ago'), place/date labels ('Berlin', 'March 2023'), 'View All' links; often paired with a dashed bottom border like a filled-in form field"
+      },
+      "label_variant": "f37Analog also appears small: text-sm/medium/leading-110% labels with dashed underlines (careers team roster, annotated figures) — the display face doubles as a caption face",
+      "font_style_notes": "distinctive pairing: warm retro display serif (F37 Analog with discretionary ligatures) over small, tightly-tracked Inter at odd optical weights (430/450/580); headings often break lines mid-phrase with inline emphasis; leading-trim used to cap-align hero type"
+    },
+    "spacing": {
+      "base_unit": "4px (Tailwind)",
+      "content_density": "compact-comfortable — 13px UI type, 26–32px control heights, tight gaps (6px icon gaps)",
+      "section_rhythm": "homepage is a continuous ruled document: sections separated by hairline line-structure borders rather than large empty bands; denser than typical dev-tool marketing"
+    },
+    "layout": {
+      "grid_system": "bordered-panel layout — content areas are hairline-ruled cells (p-px wrappers with bg-line-structure acting as borders), like a printed spec sheet",
+      "homepage_structure": "top banner (hiring) → nav with mega-menu panels → hero (centered stacked f37Analog headline 'Open Source AI Engineering Platform' + lead + Start free/Documentation buttons with keycap shortcuts) → 'Used by' stats marquee (19 of Fortune 50 / 10B+ observations / 100k engineers, looped 3x) → alternating feature sections with 32px h2s → integrated-platform grid (Observability/Evaluation/Prompt Management/Playground) → integrations wall (SVG logo grid) → enterprise section → 'Why use Langfuse?' accordion list → CTA section → FAQ accordion → footer",
+      "sticky_rail": "desktop-only 240px sticky right rail: 'Community Stats' (GitHub stars 31.2k, contributors, Q&A threads, latest release) + changelog feed + self-hosting guide links — the marketing page carries live project telemetry",
+      "docs_layout": "Fumadocs three-column: left sidebar tree, article column, right TOC; same token system as marketing (13px/430 Inter, f37Analog only for page h1s)",
+      "docs_shell_reuse": "content-heavy marketing pages (/about, /enterprise, /security, /self-hosting, /academy) render inside the docs shell (same scroll-m-28 h1s) instead of bespoke landing layouts — only home, pricing, blog, changelog, customers, careers get marketing treatment",
+      "page_patterns": {
+        "pricing": "f37Analog 'Pricing' h1 → Cloud (we host) / Self-hosted (you host) toggle → 4 plan cards using the shadcn layer (plan name text-lg semibold, price text-3xl bold, 'Trusted by' logo rows, hairline-bordered feature lists) → 6 text-sm comparison tables",
+        "changelog": "single-column feed: entry title + one-sentence description + 10px mono relative timestamp ('2 Days Ago'), media thumbnails; 16px body size appears here",
+        "customers": "'User Stories' in f37Analog text-4xl → story cards (company name, headline, italic pull-quote) → giant 'Adopters' table (Company / Use Case / Reference) — proof-by-enumeration",
+        "careers": "annotated-scrapbook: photo collages with 9-10px mono place/date captions, dashed underlines and vertical dashed rules, f37Analog small labels, founder sign-off ('– Marc, Clemens, Max'), team table with social links, live traction charts"
+      },
+      "alignment": "hero centered; sections otherwise left-aligned within ruled cells"
+    },
+    "shape": {
+      "radius_scale": "2px nearly everywhere (rounded-[2px]) — buttons, cards, keycaps, code frames; rounded-full only for avatars/dots; shadcn --radius 0.5rem exists but marketing overrides it",
+      "border_usage": "constant 1px hairlines in line-structure #cfcfc9; borders are the primary structural device (cells, buttons, keycaps, logo grids); dashed divider token (#bebeb6) for secondary separation",
+      "divider_style": "solid hairlines for structure; dashed #bebeb6 lines for annotation-level separation (underlines under captions, vertical rules between figure columns) — dashed reads as 'pencil markup' on top of the printed document",
+      "rule": "near-square corners + visible hairline rules = technical-document look; avoid pill shapes entirely"
+    },
+    "elevation": {
+      "shadow_style": "very soft, small, layered: buttons/cards use [box-shadow:0_4px_8px_0_rgba(0,0,0,0.05),0_4px_4px_0_rgba(0,0,0,0.03)]; hierarchy mostly from surface stepping (#f6f6f3 → #edede8 → #e5e5e1) and borders, not depth",
+      "depth_cues": "surface tone + hairlines first, whisper shadows second; no glass, no glow"
+    },
+    "iconography": {
+      "style": "Lucide stroke icons at small sizes; large third-party integration logos as flat SVGs in ruled grid cells",
+      "preferred_set": "lucide"
+    },
+    "motion": {
+      "easing_durations": "transition-colors at 150/180/200ms for most state changes; 700ms for slow reveals",
+      "keyframes_observed": "marquee / marquee-left / marquee-right / marquee-vertical (stat + logo loops), border-beam (animated border highlight), accordion-down/up, ask-ai-open/close, rive-text-in, tooltip-in, ellipsis, fall, grid, slide, spin-custom",
+      "philosophy": "functional micro-motion plus a few signature loops (marquees, border-beam); no scroll-scrubbing, no GSAP/Framer/Three (verified absent from page)"
+    },
+    "components": {
+      "button_primary": "ink-filled: bg #222220 (text-primary token used as fill), cream #f6f6f3 label, 32px height, 2px radius, 12px/450 Inter; embeds a 20x20px keycap showing its keyboard shortcut (e.g. 'S' for Start free) with aria-keyshortcuts",
+      "button_secondary": "surface fill + hairline border + the layered soft shadow, 26–32px height, 2px radius, also with keycap shortcut hint ('G' Get Demo, 'D' Documentation, 'L' Launch App)",
+      "cta_yellow_reserved": "--surface-cta-primary #fbff81 (olive #4c4d23 dark) is never a button fill — it appears as highlighter swipes behind small uppercase labels ('ONLINE'/'OFFLINE' badges on academy courses) and as hand-drawn thick SVG strokes; treat it as marker ink on the paper, not as a fill color",
+      "highlighter_badge": "signature motif: tiny uppercase label with a chartreuse marker-swipe rendered via layered linear-gradient (transparent above 60% and below 92% of the line) + color-mix at 75% opacity, padding 0 4px, negative left margin — imitates a physical highlighter stroke that doesn't quite cover the full text height",
+      "annotation_captions": "9-10px Geist Mono, +0.02em tracking, text-secondary, min-width with dashed bottom border — used like typewritten labels on an annotated document (dates, places, timestamps)",
+      "pricing_cards": "the one area leaning on the stock shadcn layer: text-lg semibold plan names, text-3xl bold prices, text-sm comparison tables, standard card borders — less bespoke than the marketing pages",
+      "links": "body links underlined with underline-offset-2 and decoration in line-structure greige, darkening on hover; nav links 13px/430 tracking -0.26px in text-tertiary, some with a [text-shadow:0_0_0_#B5AFEA] periwinkle emboss trick",
+      "keycap": "signature component: bordered 2px-radius 20px square, translucent fill (rgba(64,61,57,.3/.4) on dark buttons), Geist-adjacent 12px glyph — keyboard-first affordance repeated across nav and CTAs",
+      "code_blocks": "inverted near-black #333 panels with cream translucent secondary text, muted orange/pink/blue syntax, 1px #333 border, copy buttons on #51504f",
+      "accordions": "FAQ and 'Why use Langfuse?' as h3 accordion rows with accordion-down/up animation",
+      "stats_cards": "big numerals + small greige labels inside ruled cells (Community Stats rail, Used-by marquee)",
+      "navigation": "mega-menu dropdown panels containing rich preview cards (doc guide card, ClickHouse announcement card)"
+    }
+  },
+  "design_style": {
+    "mood": "warm, utilitarian, engineered, understated, slightly retro",
+    "personality": "a meticulously typeset technical datasheet — hairline-ruled paper, ink text, retro slab display type, keyboard shortcuts on every button; branding by craft and telemetry (live GitHub stats on the homepage) instead of decoration",
+    "genre": "open-source developer-infrastructure marketing, 'warm paper' school (Anthropic/Linear-adjacent warmth rather than dark-mode neon) — distinct from the grayscale Vercel school via cream surfaces, serif display, and visible rules",
+    "visual_language": "everything lives in bordered cells on warm paper; text does the hierarchy (4-step ink scale); the only loud element is the chartreuse #fbff81 applied like a physical highlighter pen; product screenshots and a Rive animation supply imagery; integration logos and the Adopters table form walls of proof",
+    "document_metaphor": "the whole site behaves like one annotated engineering document: solid hairlines are the printed ruling, dashed lines are pencil markup, 9-10px mono captions are typewritten labels, f37Analog is the letterhead, and chartreuse highlighter strokes mark what matters — most visible on /careers and /academy",
+    "composition": "centered hero over a continuous ruled-grid document; a sticky data rail keeps community stats visible; sections alternate copy and product visuals; marquee bands provide horizontal motion breaks",
+    "copy_voice": "plain, confident, metric-forward ('19 of Fortune 50', '10+ billion observations/month'); imperative section verbs ('Launch, observe, improve — repeat.'); developer-literal CTAs (Start free, Get Demo, Documentation) each with a keyboard shortcut; personal where it matters (careers ends with a founders' sign-off '– Marc, Clemens, Max'); customer proof via italic pull-quotes and an exhaustive public Adopters table",
+    "interaction_feel": "quick color transitions (150–200ms), keyboard-first affordances, hover promotes greige hairlines to ink (border line-structure → line-cta); accordion and marquee are the main moving parts"
+  },
+  "visual_effects": {
+    "overview": {
+      "effect_intensity": "subtle-accent",
+      "performance_tier": "lightweight-medium — CSS keyframes plus one Rive (canvas) hero animation with a preloaded PNG mock as placeholder; no WebGL/Three.js/GSAP/Framer Motion detected",
+      "primary_technology": "CSS animations + Rive runtime",
+      "composite_notes": "Extraction was from static HTML/CSS (no live browser), so runtime behavior of the Rive scene, marquee speeds, and border-beam placement are inferred from shipped keyframes, class names, and the preloaded rive-mock.png rather than observed. Verify live before cloning motion details."
+    },
+    "rive_animation": {
+      "enabled": true,
+      "details": "hero/product illustration driven by the Rive runtime (rive-mock.png preloaded at up to 2048w as the static placeholder; rive-text-in keyframe for entrance)"
+    },
+    "marquee_loops": {
+      "enabled": true,
+      "details": "horizontal (and a vertical variant) infinite marquees: the 'Used by' stats band is duplicated 3x in the DOM for seamless looping; marquee-left/right/vertical keyframes shipped"
+    },
+    "border_beam": {
+      "enabled": true,
+      "details": "border-beam keyframe — an animated highlight traveling along an element's border, used as a spotlight accent"
+    },
+    "highlighter_strokes": {
+      "enabled": true,
+      "details": "chartreuse marker effects: CSS gradient highlighter swipes behind labels (layered linear-gradient + color-mix, covering only 60–92% of the line height) and inline SVG paths stroked in var(--surface-cta-primary) at stroke-width 11 with butt caps/miter joins — hand-drawn underline/bracket annotations (seen on /academy)"
+    },
+    "video": {
+      "enabled": true,
+      "details": "one product video (in-app agent demo, mp4 from static.langfuse.com)"
+    },
+    "scroll_effects": { "enabled": false, "note": "no parallax or scroll-scrub libraries; at most standard reveal transitions" },
+    "webgl_3d": { "enabled": false },
+    "particles": { "enabled": false },
+    "shaders": { "enabled": false },
+    "cursor_effects": { "enabled": false, "note": "--cursor-x/--cursor-y custom properties exist in docs CSS (likely a hover-gradient card) but no custom cursor" },
+    "glassmorphism": { "enabled": false, "note": "opaque warm surfaces throughout; translucency limited to button-grey rgba fills" },
+    "text_effects": { "enabled": false, "note": "headlines static; only rive-text-in entrance and the text-shadow emboss on nav links" },
+    "svg_animations": { "enabled": false, "note": "SVGs are static logos/icons" }
+  }
+}
