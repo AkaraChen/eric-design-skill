@@ -1,0 +1,47 @@
+// Run in the preview console: import('/check.js').then(m => m.default())
+export default async function check() {
+  const pause = () => new Promise(resolve => setTimeout(resolve, 200));
+  const assert = (value, message) => { if (!value) throw new Error(message); };
+  document.querySelector('#proposal-a').click();
+  document.querySelector('[aria-label="重置预览"]').click();
+  await pause();
+  const frame = document.querySelector('iframe'), doc = frame.contentDocument;
+  const click = text => [...doc.querySelectorAll('button')].find(button => button.textContent === text).click();
+  assert(doc.querySelectorAll('li').length === 3, 'initial items');
+  const input = doc.querySelector('input:not([type=checkbox])');
+  Object.getOwnPropertyDescriptor(frame.contentWindow.HTMLInputElement.prototype, 'value').set.call(input, '测试待办');
+  input.dispatchEvent(new frame.contentWindow.Event('input', { bubbles: true }));
+  await pause();
+  doc.querySelector('form').requestSubmit();
+  await pause();
+  assert(doc.querySelectorAll('li').length === 4, 'add');
+  const filterTop = () => doc.querySelector('nav').getBoundingClientRect().top;
+  assert(filterTop() > doc.querySelector('ul').getBoundingClientRect().bottom, 'A filters below list');
+  document.querySelector('#proposal-b').click();
+  await pause();
+  assert(filterTop() < doc.querySelector('form').getBoundingClientRect().top, 'B filters above form');
+  assert(doc.querySelectorAll('main').length === 1, 'one product screen');
+  assert(doc.querySelectorAll('li').length === 4, 'proposal retains state');
+  document.querySelector('#proposal-a').click();
+  await pause();
+  assert(filterTop() > doc.querySelector('ul').getBoundingClientRect().bottom, 'return to A');
+  [...document.querySelectorAll('button')].find(button => button.textContent === '手机').click();
+  await pause();
+  assert(frame.contentWindow.innerWidth <= 390, 'mobile width');
+  assert(doc.querySelectorAll('li').length === 4, 'state retained');
+  doc.querySelector('input[type=checkbox]').click();
+  await pause();
+  click('已完成');
+  await pause();
+  assert(doc.querySelectorAll('li').length === 2, 'complete and filter');
+  click('清除已完成');
+  await pause();
+  assert(doc.querySelectorAll('li').length === 0, 'clear');
+  click('全部');
+  await pause();
+  doc.querySelector('[aria-label="删除测试待办"]').click();
+  await pause();
+  assert(doc.querySelectorAll('li').length === 1, 'delete');
+  assert(doc.documentElement.scrollWidth <= frame.contentWindow.innerWidth, 'no overflow');
+  return 'TodoMVC smoke check passed';
+}

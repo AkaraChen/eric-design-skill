@@ -1,0 +1,4 @@
+interface:
+  display_name: "Design With Me"
+  short_description: "Discuss, sketch, and preview product UI together"
+  default_prompt: "Use $design-with-me to work through this feature with me, using HTML wireframes and real component previews as the design becomes clear."

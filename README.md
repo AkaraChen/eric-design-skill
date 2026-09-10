@@ -4,6 +4,7 @@ Eric's UI and visual design skills, with the vendored Design DNA dependency.
 
 ## Skills
 
+- [design-with-me](skills/design-with-me/SKILL.md): collaborative design from a vague idea to HTML wireframes and real component previews, with separate proposal and device switches.
 - [eric-ui](skills/eric-ui/SKILL.md): UI usefulness, disclosure, and cognitive load.
 - [eric-design](skills/eric-design/SKILL.md): visual direction, design profiles, and execution details.
 - [design-dna](skills/design-dna/SKILL.md): extract and apply design DNA, pinned from [zanwei/design-dna](https://github.com/zanwei/design-dna).
@@ -12,6 +13,8 @@ Eric's UI and visual design skills, with the vendored Design DNA dependency.
 
 ```text
 skills/
+  design-with-me/
+    SKILL.md
   eric-ui/
     references/ui.md
   eric-design/

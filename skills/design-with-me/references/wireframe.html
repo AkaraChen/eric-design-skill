@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="zh-CN">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TodoMVC · 线框方案对比</title>
+<style>
+  * { box-sizing: border-box; }
+  body { margin: 0; background: #f5f5f5; color: #222; font: 15px/1.6 system-ui, sans-serif; }
+  main { max-width: 1240px; margin: 40px auto; padding: 0 24px; }
+  h1 { margin: 0 0 8px; font-size: 24px; } h2 { font-size: 17px; }
+  .comparison { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
+  .screen { padding: 28px 20px; border: 1px solid #aaa; background: white; }
+  .title { margin-bottom: 32px; font-size: 30px; font-weight: 600; }
+  .entry, .row, footer, nav { display: flex; align-items: center; gap: 12px; }
+  .entry { margin-bottom: 24px; }
+  .field { flex: 1; padding: 12px; border: 1px solid #aaa; color: #666; }
+  .button { padding: 10px 14px; border: 1px solid #aaa; white-space: nowrap; }
+  .list { border: 1px solid #aaa; }
+  .row, footer { padding: 12px 16px; }
+  .row + .row, footer { border-top: 1px solid #ddd; }
+  .check { width: 16px; height: 16px; border: 1px solid #888; line-height: 14px; }
+  .delete { margin-left: auto; } .done { text-decoration: line-through; color: #777; }
+  footer { justify-content: space-between; flex-wrap: wrap; font-size: 13px; }
+  nav { justify-content: center; margin: 20px 0 0; }
+  .top nav { justify-content: flex-start; margin: 0 0 24px; }
+  .note, .intro { color: #666; font-size: 13px; }
+  .intro { margin-bottom: 28px; }
+  @media(max-width:760px) { .comparison { grid-template-columns: 1fr; } main { padding: 0 16px; } }
+</style>
+<main>
+  <h1>同一份待办，两种安排</h1>
+  <p class="intro">静态线框对比：先讨论筛选入口的位置，再进入真实组件预览。</p>
+  <div class="comparison">
+    <section><h2>A · 底部筛选</h2><div class="screen" id="a"></div><p class="note">先输入和浏览，再筛选。列表变长后，筛选是否容易找到？</p></section>
+    <section><h2>B · 顶部筛选</h2><div class="screen top" id="b"></div><p class="note">先选择要看的任务。筛选是否打断了直接添加的动作？</p></section>
+  </div>
+</main>
+<template id="content">
+  <div class="title">待办事项</div>
+  <div class="entry"><span class="field">接下来要做什么？</span><span class="button">添加</span></div>
+  <div class="list">
+    <div class="row"><span class="check"></span>买牛奶<span class="delete">×</span></div>
+    <div class="row"><span class="check"></span>散步十分钟<span class="delete">×</span></div>
+    <div class="row"><span class="check">✓</span><span class="done">给植物浇水</span><span class="delete">×</span></div>
+    <footer><span>2 项未完成</span><span>清除已完成</span></footer>
+  </div>
+  <nav aria-label="筛选布局示意"><span class="button">全部</span><span>未完成</span><span>已完成</span></nav>
+</template>
+<script>
+  document.querySelector('#a').append(document.querySelector('#content').content.cloneNode(true));
+  document.querySelector('#b').append(document.querySelector('#content').content.cloneNode(true));
+  document.querySelector('#b .entry').before(document.querySelector('#b nav'));
+</script>
+</html>
