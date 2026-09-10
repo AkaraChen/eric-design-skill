@@ -1,0 +1,4 @@
+interface:
+  display_name: "UI Clarity"
+  short_description: "Build useful, restrained product UI"
+  default_prompt: "Use $ui-clarity to make this product UI useful, clear, and appropriately private."

@@ -78,8 +78,8 @@ system's surfaces, typography, spacing, and controls.
 - Use local mock data and simulated execution to make the flow reviewable unless
   real integration is requested. Scope the implementation so these components can
   become the final implementation; do not build a separate disposable imitation.
-- Where available, use `eric-ui` for information and interaction correctness and
-  `eric-design` for visual execution. This skill owns the collaboration workflow;
+- Where available, use `ui-clarity` for information and interaction correctness and
+  `visual-craft` for visual execution. This skill owns the collaboration workflow;
   it does not require either companion skill to be installed.
 
 ## Present real UI at its intended size

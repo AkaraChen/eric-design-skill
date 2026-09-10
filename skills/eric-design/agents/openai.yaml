@@ -1,4 +1,0 @@
-interface:
-  display_name: "Eric Design"
-  short_description: "Shape Eric-style visual direction and flair"
-  default_prompt: "Use $eric-design to create a distinctive visual direction in Eric’s style."

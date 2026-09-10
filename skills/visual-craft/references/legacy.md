@@ -1,4 +1,4 @@
-# How to design in Eric way
+# Visual Design Principles
 
 ## Decide the context first: landing or app
 

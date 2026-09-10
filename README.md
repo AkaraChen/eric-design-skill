@@ -1,12 +1,12 @@
-# Eric Design Skill
+# Design Skills
 
-Eric's UI and visual design skills, with the vendored Design DNA dependency.
+Collaborative UI and visual design skills, with the vendored Design DNA dependency.
 
 ## Skills
 
 - [design-with-me](skills/design-with-me/SKILL.md): collaborative design from a vague idea to HTML wireframes and real component previews, with separate proposal and device switches.
-- [eric-ui](skills/eric-ui/SKILL.md): UI usefulness, disclosure, and cognitive load.
-- [eric-design](skills/eric-design/SKILL.md): visual direction, design profiles, and execution details.
+- [ui-clarity](skills/ui-clarity/SKILL.md): UI usefulness, disclosure, and cognitive load.
+- [visual-craft](skills/visual-craft/SKILL.md): visual direction, design profiles, and execution details.
 - [design-dna](skills/design-dna/SKILL.md): extract and apply design DNA, pinned from [zanwei/design-dna](https://github.com/zanwei/design-dna).
 
 ## Structure
@@ -15,16 +15,16 @@ Eric's UI and visual design skills, with the vendored Design DNA dependency.
 skills/
   design-with-me/
     SKILL.md
-  eric-ui/
+  ui-clarity/
     references/ui.md
-  eric-design/
+  visual-craft/
     references/
       craft.md
       index.md
       legacy.md
       normalize.css
       spec/
-      ui.md -> ../../eric-ui/references/ui.md
+      ui.md -> ../../ui-clarity/references/ui.md
   design-dna -> ../vendor/design-dna
 vendor/
   design-dna/
@@ -38,8 +38,8 @@ git submodule update --init --recursive
 
 All design references and profiles live inside the skills. `references/legacy.md`
 preserves the original standalone design notes. Shared UI guidance has one source
-under `eric-ui`; keep both skills together so the relative link resolves.
+under `ui-clarity`; keep both skills together so the relative link resolves.
 
-`eric-design` references the companion `eric-frontend` skill for implementation
+`visual-craft` references the companion `eric-frontend` skill for implementation
 conventions and `eric-e2e-testing` for browser verification. Those remain in
 `eric-way`; they are not vendored here.

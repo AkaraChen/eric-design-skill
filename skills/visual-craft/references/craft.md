@@ -2,7 +2,7 @@
 
 How to execute a chosen visual direction. This is not a style: tokens, palette,
 type, and motion come from the project's design system or the Design DNA spec
-the user picked. `$eric-ui` still owns what appears; this file owns how it looks.
+the user picked. `$ui-clarity` still owns what appears; this file owns how it looks.
 
 If the project already has tokens, radii, type, or motion recipes, use those
 instead of inventing a parallel set.

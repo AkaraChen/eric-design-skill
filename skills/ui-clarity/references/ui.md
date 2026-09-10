@@ -1,4 +1,4 @@
-# How to build UI in Eric way
+# UI Clarity Principles
 
 UI is a boundary between the product and the user, not a window into the data
 model or a stage for design details.
