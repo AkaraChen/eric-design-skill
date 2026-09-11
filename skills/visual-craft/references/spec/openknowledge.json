@@ -1,6 +1,23 @@
 {
-  "source": "https://openknowledge.ai/",
-  "extracted": "2026-07-11",
+  "name": "openknowledge",
+  "source": [
+    "https://openknowledge.ai/",
+    "https://openknowledge.ai/docs/get-started/overview",
+    "https://openknowledge.ai/blog",
+    "https://openknowledge.ai/blog/markdownlint-support",
+    "https://openknowledge.ai/download"
+  ],
+  "extracted": "2026-09-11",
+  "coverage": {
+    "method": "Sitemap/navigation discovery, page-family HTML/CSS inspection, selected browser screenshots and runtime probes where permitted.",
+    "source_pages": 8,
+    "rendered": [
+      "https://openknowledge.ai/",
+      "https://openknowledge.ai/docs/get-started/overview"
+    ],
+    "viewports": "1440px desktop and 390px mobile; not every source page was rendered.",
+    "limits": "Public page families sampled, not every article, locale, private app or interaction state. Source-only theme/motion declarations are not runtime verification."
+  },
   "design_system": {
     "color": {
       "primary": "#3784ff",
@@ -8,7 +25,7 @@
       "primary_foreground": "#ffffff",
       "accent": "#d5e5ff",
       "accent_foreground": "#29325c",
-      "background": "#fbf9f4",
+      "background": "Marketing body observed lab(98.846 0.111073 0.751436), a near-white warm ground; #fbf9f4 remains a source cream surface, not a universal page fill.",
       "surface": "#fcfcfa",
       "card": "#ffffff",
       "foreground": "#1a1a1a",
@@ -27,8 +44,32 @@
       },
       "ink": "#231f20",
       "dot_grid": "#c4c8cc",
-      "azure_scale": ["#eef6ff", "#d9eaff", "#bcdbff", "#8ec6ff", "#59a5ff", "#3784ff", "#1b60f5", "#144be1", "#173db6", "#19388f", "#142357"],
-      "neutral_scale": ["#fafaf9", "#f5f5f4", "#e7e5e4", "#d6d3d1", "#a6a09b", "#79716b", "#57534d", "#44403b", "#292524", "#1c1917", "#0c0a09"],
+      "azure_scale": [
+        "#eef6ff",
+        "#d9eaff",
+        "#bcdbff",
+        "#8ec6ff",
+        "#59a5ff",
+        "#3784ff",
+        "#1b60f5",
+        "#144be1",
+        "#173db6",
+        "#19388f",
+        "#142357"
+      ],
+      "neutral_scale": [
+        "#fafaf9",
+        "#f5f5f4",
+        "#e7e5e4",
+        "#d6d3d1",
+        "#a6a09b",
+        "#79716b",
+        "#57534d",
+        "#44403b",
+        "#292524",
+        "#1c1917",
+        "#0c0a09"
+      ],
       "dark_mode": {
         "background": "#0c0c0c",
         "card": "#171717",
@@ -41,16 +82,10 @@
       "temperature": "warm neutrals (stone/cream), cool single-hue blue accent"
     },
     "typography": {
-      "heading_font": "DM Sans (geometric humanist sans)",
-      "body_font": "DM Sans, fallback Inter",
-      "mono_font": "JetBrains Mono",
-      "heading_weight": "300 (light) — large headlines are font-light with tracking-tight",
-      "body_weight": "400-500",
-      "scale": "Tailwind default ramp: 0.75 / 0.875 / 1 / 1.125 / 1.25 / 1.5 / 2.25 / 3 / 3.75rem; hero at text-5xl to 6xl",
-      "eyebrow_style": "JetBrains Mono, uppercase, tracking-wide, muted or primary blue",
-      "letter_spacing": "-0.025em on headings; buttons use custom -0.64px",
-      "line_height": "1.25 tight headings, 1.5 body, 115% on buttons",
-      "numerals": "tabular-nums for metrics"
+      "fonts": "DM Sans marketing headings and body; Inter inside the editor demo; JetBrains Mono for labels/code. Docs use system sans.",
+      "marketing": "Home h1 60/60, weight 300, tracking -1.5px; at 390px 48/48, tracking -1.2px. Body 16/24.",
+      "docs": "h1 28/42, weight 600; h2 24/32; h3 17/28, tracking -0.425px.",
+      "voice": "Light proportional headline + uppercase mono labels; editor prose is a separate typographic layer."
     },
     "spacing": {
       "base_unit": "0.25rem (Tailwind spacing token)",
@@ -58,10 +93,12 @@
       "section_rhythm": "consistent large vertical bands, each with mono eyebrow + light headline"
     },
     "layout": {
-      "max_width": "content columns around 42rem (2xl) for text; wider demo panels",
+      "max_width": "Home hero text about 938px at 1440px, wider demo frame below; the older 42rem text cap is not the homepage frame.",
       "grid": "1-col mobile to 2-3 col feature grids",
       "structure": "hero with product demo window, alternating feature sections, CTA, minimal footer",
-      "alignment": "mostly centered hero, left-aligned section content"
+      "alignment": "mostly centered hero, left-aligned section content",
+      "mobile": "390px: 48px light headline; agent selector remains horizontal; demo prioritizes the document pane and hides the desktop chat split.",
+      "docs": "Separate Fumadocs shell: system sans, left search/nav, main article, right TOC/newsletter and floating Ask AI."
     },
     "shape": {
       "radius_scale": "sm 4px / md 6px / lg 8px / xl 12px / 2xl 16px",
@@ -95,48 +132,23 @@
     }
   },
   "design_style": {
-    "mood": "calm, crafted, trustworthy — a warm 'paper' take on developer tooling",
-    "personality": "understated confidence; open-source ethos signaled through mono type and plain-file metaphors",
-    "genre": "modern dev-tool / AI-product landing page (Linear/Vercel lineage) but warm-paper instead of dark",
-    "visual_language": "cream paper background + dot grid = engineering notebook; azure blue as the single vivid accent; product UI itself is the hero imagery",
-    "composition": "eyebrow, light oversized headline, short declarative subhead, live product demo; repeated per section",
-    "imagery": "no photography; real product UI (editor windows, agent chat transcripts, timelines) is the primary imagery, staged over soft dawn-sky mesh-gradient image backdrops (sky blue #b3d4f7 to warm peach #f8e7dd to pale mint — the morning-mist/golden-sun palette as atmosphere); flat crystal-blue #d5e5ff elongated-hexagon shapes with a blurred echo layer flank the CTA; partner-tool logos as static SVGs",
-    "ornamentation": "minimal — dot grid texture, hairline rules, occasional warm-amber callout tint, plus atmospheric dawn-sky gradient backdrops and flat crystal-blue hexagon accents reserved for hero/CTA moments",
-    "whitespace_philosophy": "generous; whitespace does the separating, borders do the grouping",
-    "copy_voice": "short, plain, benefit-led sentences; mono uppercase section labels",
-    "interaction_feel": "snappy and physical — quick 120-200ms color transitions, subtle lift/press on buttons"
+    "mood": "Calm, light, warm technical paper with one azure action color.",
+    "composition": "Centered light headline and mono labels above a wide live document/agent demo. Dot-grid margins, pill controls and rounded demo frames provide structure.",
+    "imagery": "Product documents, agent conversations, tabs and timelines; pale sky/peach/mint backdrop assets and occasional blue hexagon accents. Docs use a functional three-column shell.",
+    "interaction": "Lightweight tabbed demo choreography; clearly marked download and copy affordances."
   },
   "visual_effects": {
-    "overview": {
-      "effect_intensity": "low-medium",
-      "performance_tier": "lightweight — CSS/DOM only, no WebGL/Canvas/Three.js detected",
-      "composite_notes": "Signature effects: (1) dot-grid paper background, (2) soft dawn-sky mesh-gradient image backdrops behind hero and pillar demo boxes (static webp assets: hero-box-background.webp 2696x808, pillar gradients — blue to peach to mint washes), (3) glassmorphic overlay panels (20px backdrop blur, 28px radius, translucent #fffefe2e fill, cool blue shadow) floating over those gradients, (4) staggered fade-up reveals, (5) odometer-style rolling-digit ticker demo, (6) faux multi-agent chat windows cycling between Claude/Cursor/Codex tabs, (7) flat #d5e5ff hexagon SVG shapes with feGaussianBlur echo flanking the CTA."
-    },
-    "glassmorphism": {
-      "enabled": true,
-      "details": "backdrop-blur 20px, rgba white fill #fffefe2e, 1px card-tinted border, radius 28px, shadow 6px 6px 24px rgba(153,173,205,0.2)"
-    },
-    "scroll_effects": {
-      "enabled": true,
-      "details": "fade + small translateY entrance reveals (4-7px), 300-1400ms, staggered per block"
-    },
-    "micro_interactions": {
-      "enabled": true,
-      "details": "button lift on hover (-2px + shadow), scale-98 press, 120ms hover tint on toolbar buttons"
-    },
-    "animated_ui_demos": {
-      "enabled": true,
-      "details": "rolling-digit ticker (translateY digit strips), tabbed agent-conversation player, animated timeline feed — all DOM/CSS driven"
-    },
-    "background_gradients": {
-      "enabled": true,
-      "details": "static mesh-gradient image assets (webp), not CSS gradients: dawn-sky wash from #b3d4f7 sky blue through #f8e7dd warm peach to pale mint/teal; used behind hero product window and pillar sections; glass panels blur over them"
-    },
-    "canvas_2d": { "enabled": false },
-    "webgl_3d": { "enabled": false },
-    "particles": { "enabled": false },
-    "shaders": { "enabled": false },
-    "cursor_effects": { "enabled": false },
-    "svg_animations": { "enabled": false, "note": "SVGs are static logos/icons; Mermaid diagrams rendered in-product demos" }
+    "technology": "No canvas in rendered homepage or docs samples; CSS/DOM demos and static image/SVG backdrops.",
+    "reveals": "ok-reveal-in observed at 360ms; rich-fade-up at 500ms with 80ms stagger. Other source reveal utilities use 4–7px vertical travel.",
+    "demo": "Agent selector changes the conversation; document preview renders rich markdown, labels and task states. Mobile emphasizes the document rather than scaling the whole desktop demo.",
+    "surfaces": "Dot grid, static gradient image backgrounds, translucent glass panels where used (20px blur, 28px radius, cool soft shadow); these are not evidence of WebGL.",
+    "scope": "Dark tokens are shipped; this refresh rendered light marketing and light docs only."
+  },
+  "page_families": {
+    "/": "Wide agent/document demo, blue pill CTA and dot-grid backdrop.",
+    "/docs/get-started/overview": "System-font documentation, blue selected nav and code/copy controls; does not inherit DM Sans display sizes.",
+    "/blog; /blog/markdownlint-support": "Editorial list/detail in the shared brand shell.",
+    "/brand; /download; /launch-week": "Brand assets, platform selection and launch collection.",
+    "/d/…": "Public rendered markdown document rather than a marketing landing."
   }
 }

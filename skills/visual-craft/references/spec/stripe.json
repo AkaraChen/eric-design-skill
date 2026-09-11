@@ -1,12 +1,25 @@
 {
+  "name": "stripe",
   "source": [
-    "https://stripe.com/ (browsed live 2026-07-21, 1440px viewport — new 'HDS' design-system generation)",
-    "https://stripe.com/payments (redirect from /en-us/payments — classic Stripe marketing generation)",
-    "https://docs.stripe.com/ (Sail design system, product UI)",
-    "https://stripe.com/blog"
+    "https://stripe.com/",
+    "https://stripe.com/payments",
+    "https://docs.stripe.com/",
+    "https://stripe.com/blog",
+    "https://stripe.com/blog/page/1",
+    "https://stripe.com/pricing"
   ],
-  "extracted": "2026-07-21",
-  "generation_note": "Stripe is mid-migration between two design generations that coexist: the homepage runs the new 'HDS' system (hds-heading classes, weight-300 display type, #533AFD accent, flowing ribbon hero); /payments and /blog still run the classic generation (Gradient__canvas diagonal mesh hero, #635BFF/#9966FF accents, weight-500 navy titles, pill CTAs); docs runs the separate Sail product-UI system (system fonts, 905 root CSS variables). The shared DNA underneath: dark navy + blurple + multi-hue gradient spectacle on a white page.",
+  "extracted": "2026-09-11",
+  "coverage": {
+    "method": "Sitemap/navigation discovery, page-family HTML/CSS inspection, selected browser screenshots and runtime probes where permitted.",
+    "source_pages": 50,
+    "rendered": [
+      "https://stripe.com/",
+      "https://stripe.com/payments",
+      "https://docs.stripe.com/"
+    ],
+    "viewports": "1440px desktop and 390px mobile; not every source page was rendered.",
+    "limits": "Public page families sampled, not every article, locale, private app or interaction state. Source-only theme/motion declarations are not runtime verification. Site CSP blocked computed-style evaluation; screenshots and source were used."
+  },
   "design_system": {
     "color": {
       "palette_type": "navy + blurple two-anchor palette with a full multi-hue gradient spectrum (orange/pink/purple/cyan) reserved for hero canvases and illustration",
@@ -24,7 +37,10 @@
       "background_tint_cool": "#F8FAFD",
       "background_tint_classic": "#F6F9FC",
       "background_tint_blue": "#E5EDF5",
-      "tint_blurple": ["#E2E4FF", "#E8E9FF"],
+      "tint_blurple": [
+        "#E2E4FF",
+        "#E8E9FF"
+      ],
       "tint_warm": "#FFE0D1",
       "docs": {
         "text": "#3C4257",
@@ -38,23 +54,12 @@
       "contrast_strategy": "dark navy on white for structure; blurple strictly signals interactivity (links, CTAs, category eyebrows); light-on-dark navy sections use white text with blurple/purple glow accents; gradient text only inside the hero headline"
     },
     "typography": {
-      "heading_font": "Söhne (sohne-var, variable) — fallback 'SF Pro Display' on new pages, 'Helvetica Neue'/Arial on classic pages",
-      "body_font": "Söhne (sohne-var) on all marketing pages; docs use the native system-ui stack (-apple-system, Segoe UI, Roboto…) at 14px",
-      "mono_font": "Menlo / Consolas (docs code, 13px); Source Code Pro appears in classic terminal demos",
-      "scale_observed": {
-        "hero_display_new": "48px / weight 300 / lh 55.2px (1.15) / ls -0.96px — homepage h1, entire paragraph-length headline set as display type",
-        "hero_display_classic": "56px / weight 500 / lh 68px / ls -1.12px — /payments h1, navy #0A2540",
-        "section_h2_new": "32px / weight 300 / lh 35.2px / ls -0.64px — homepage sections; first clause navy #061B31, trailing clause #64748D as inline two-tone",
-        "docs_h1": "32px / weight 700 / lh 40px — product UI goes bold where marketing goes light",
-        "eyebrow_classic": "18px / weight 500 / ls +0.2px / purple #9966FF — h2 used as small purple kicker above navy titles",
-        "body_marketing": "18px / weight 300 / lh 28px / ls +0.2px / #425466",
-        "body_blog_card": "14-15px / weight 300 / lh 1.4-1.6",
-        "ui_text": "15px / weight 425 / ls +0.2px — Stripe's signature in-between weight for links, buttons, category labels, nav",
-        "docs_body": "14px system-ui / #3C4257"
-      },
-      "weight_discipline": "the split is generational: new HDS sets giant type at featherweight 300 and lets scale carry hierarchy; classic marketing uses 500 titles + 300 body; docs use 700/400. The 425 'book-medium' variable weight for interactive text is constant across all generations",
-      "tracking_rule": "negative tracking scales with size (-2% at display sizes); small UI text tracks slightly open (+0.2px)",
-      "signature_moves": "paragraph-as-headline (whole value prop set at display size, second sentence in muted color or animated gradient); inline two-tone headings (navy clause + gray clause in one h2)"
+      "fonts": "Söhne variable for marketing, native system sans for Sail docs; Menlo/Consolas and Source Code Pro for code/demo roles.",
+      "home_source": "HDS headline 48/55.2, weight 300, tracking -0.96px; sections 32/35.2, weight 300, inline navy + muted-gray clauses.",
+      "classic_source": "Payments title 56/68, weight 500, tracking -1.12px; 18px/500 purple kickers; body 18/28, weight 300.",
+      "controls": "Marketing 15px variable weight 425 and +0.2px tracking; HDS hero CTA 16px/400, classic compact controls 15px/425.",
+      "docs": "System sans, 32/40 bold title and 14px body in source; calmer indigo links.",
+      "verification": "This refresh compared screenshots and current CSS. Site CSP blocked computed-style probes; values are not newly runtime-measured."
     },
     "spacing": {
       "base_unit": "4px",
@@ -63,11 +68,12 @@
     },
     "layout": {
       "max_content_width": "~1080-1152px centered column with generous side margins at 1440px",
-      "grid": "12-col; marketing favors 3-col feature/card rows and asymmetric two-col hero (text left ~60%, visual right); docs: top nav + centered content with right-floating illustration",
-      "homepage_structure": "white nav → hero (left: display headline + CTA pair; right/behind: WebGL ribbon; above: live 'Global GDP running on Stripe' ticker) → dark logo bar (Nvidia, Ford, Coinbase, Google, Shopify…) → white product-tour section with phone/dashboard screenshot cards → dark navy 'backbone of global commerce' stats band with purple aurora horizon glow → segmented audience sections (enterprise / startups / SaaS) as card grids with warm-gradient thumbnails → testimonial → dark developer section with giant blurple metrics (500M+, 10K+, 150K+) → CTA band → mega footer (5-col sitemap)",
-      "payments_structure": "diagonal-clipped gradient hero → logo bar → alternating feature sections, each = purple eyebrow + navy title + 18px gray body + product screenshot composition → full-width customer-logo case panels (OpenAI, Slack, shopify) as dark/gradient bands → navy developer band → pricing → resources",
+      "grid": "Marketing uses wide rails and asymmetric product proofs; docs landing is a resource directory, while article/API routes use reading/code navigation.",
+      "homepage_structure": "White framed HDS hero: paragraph-scale headline, live GDP counter and large WebGL silk/ribbon composition; straight ruled bands, product solutions and logos below. Current logo strip is light.",
+      "payments_structure": "Classic product subnav and asymmetric hero: heavy navy copy left, checkout composition right; a diagonal gradient band beneath. Subsequent product/customer/developer sections retain classic spacing and pills.",
       "diagonal_sections": "classic pages cut section boundaries and hero backgrounds on a consistent shallow diagonal (~6-10deg skew) — a Stripe trademark; the new homepage drops this for straight bands",
-      "alignment_tendency": "left-aligned headings and hero; cards on strict grid; docs centered column"
+      "alignment_tendency": "left-aligned headings and hero; cards on strict grid; docs centered column",
+      "mobile": "390px homepage: shortened headline, single-column full-width action pair, cropped ribbon and horizontal logo strip; navigation reduces to logo/menu."
     },
     "shape": {
       "border_radius": "small 4px (new-gen buttons, code chips) / 6px (cards, search, docs) / 8px occasional / pill 16.5px-height-derived on classic CTAs / 50% avatars",
@@ -97,7 +103,7 @@
     },
     "components": {
       "button_primary_new": "#533AFD fill, white 16px/400 label, 4px radius, 48px height, chevron suffix ('Get started >')",
-      "button_primary_classic": "pill (full-round), near-black navy #031323 fill, white 15px/425 label, compact (~30px), chevron suffix ('Start now >')",
+      "button_primary_classic": "Compact fully rounded control, 15px/425 with chevron; observed Payments primary uses purple #9966ff, while dark/navy variants occur elsewhere. Do not treat every classic CTA as navy.",
       "button_secondary": "white fill + 1px border, blurple label (homepage 'Sign up with Google'); on dark bands: translucent white pill",
       "nav": "white bar, 15px/425 links with dropdown chevrons, logo left, 'Sign in' ghost + 'Contact sales' blurple solid right; dropdowns are white floating panels with layered shadow",
       "text_link": "blurple (#9966FF classic / #635BFF blog / #5469D4 docs), weight 425-500, always with '>' or '→' suffix on marketing",
@@ -111,61 +117,28 @@
     }
   },
   "design_style": {
-    "mood": "confident, polished, optimistic, technical-yet-warm, expensive",
-    "personality": "the fintech gold standard — engineering credibility (terminals, API JSON, uptime stats) wrapped in vivid painterly gradient color; serious navy suit with an iridescent lining",
-    "genre": "premium fintech/developer-platform marketing — the archetype half the SaaS industry imitates",
-    "visual_language": "white pages structured by navy type and cool-tint bands; color is spent in one place per viewport — a huge multi-hue gradient canvas, a gradient illustration card, or a glowing stat — never sprinkled; product screenshots (dashboard, checkout, phone) are the primary imagery, floated with tilted perspective and violet shadows",
-    "composition": "asymmetric hero (display headline left, ambient gradient canvas behind/right); alternating light/dark full-bleed bands pace the scroll like chapters; classic pages cut band edges on a shallow diagonal; feature sections pair eyebrow+title+body column with a layered screenshot composition, sides alternating",
-    "imagery": "no photography of people on core pages; real product UI screenshots, abstract gradient ribbons/meshes, flat-but-dimensional illustration with gradient fills, customer logos in original colors (homepage) or monochrome (classic strips)",
-    "ornamentation": "restrained but present: dotted-grid corner ornaments (docs), diagonal cuts, aurora glows on navy, gradient hairline accents — every ornament uses the brand spectrum",
-    "whitespace_philosophy": "generous but not extreme — denser than Vercel/Linear minimalism; Stripe fills sections with evidence (screenshots, stats, logos) rather than emptiness",
-    "copy_voice": "assured, quantified, benefit-led ('Financial infrastructure to grow your revenue', 'from your first transaction to your billionth'); metrics as proof everywhere (1.68% of global GDP, 99.999% uptime); sentence-case headings; CTAs are short verb phrases with chevrons",
-    "interaction_feel": "smooth and premium; ambient motion in the hero, quick conventional hovers elsewhere; live-updating numbers create a sense of a running machine"
+    "mood": "Polished financial infrastructure: navy structure, vivid purple actions and a concentrated multicolor spectacle.",
+    "composition": "Keep HDS homepage, classic product marketing and Sail documentation separate. HDS uses light paragraph-scale headings and straight bands; classic pages use heavier titles and diagonal cuts; docs prioritize dense navigation.",
+    "imagery": "Shader ribbon, layered checkout/dashboard captures, customer logos and illustrated gradient artwork. Color is concentrated in hero/product proof rather than spread through every control.",
+    "interaction": "Live counter and slow ambient graphics create motion around quiet conventional links, menus and copy controls."
   },
   "visual_effects": {
-    "overview": {
-      "effect_intensity": "moderate — one signature WebGL gradient animation per marketing page, ambient not interactive",
-      "performance_tier": "heavy on marketing heroes (WebGL canvas, verified webgl context on both / and /payments), lightweight elsewhere (CSS/DOM); docs are effect-free static UI",
-      "fallback_strategy": "static gradient image where WebGL unavailable; content never depends on the canvas",
-      "primary_technology": "custom WebGL fragment-shader gradients on <canvas> (no Three.js/GSAP/PIXI globals detected)"
+    "technology": "Current homepage source has a WebGL waveMesh, custom vertex and fragment shaders, and a static image fallback. This is not merely a 2D CSS gradient or geometry-free fragment effect.",
+    "ribbon": {
+      "source": "hero-wave-animation__canvas; waveMesh with material uniforms and palette texture.",
+      "vertex": "tangent attribute and time/speed/resolution plus twistFrequencyX/Y/Z and twistPowerX/Y/Z uniforms; the mesh is deformed in the vertex stage.",
+      "rendering": "Palette texture, noise/grain and shader material build the silk-like color bands. Mobile/tablet/desktop fallback sizes are explicitly supported."
     },
-    "webgl_gradient_canvas": {
-      "enabled": true,
-      "details": "THE Stripe signature. Homepage: 'hero-wave-animation__canvas' — a flowing 3D ribbon of orange→pink→violet→blue sweeping diagonally across the full hero, painterly and silk-like. /payments: 'Gradient__canvas isLoaded' — the classic animated mesh gradient (blurple/cyan/coral/magenta blobs slowly morphing), clipped by the diagonal hero edge. Both are continuous slow ambient loops, pointer-events none, behind content"
-    },
-    "gradient_text": {
-      "enabled": true,
-      "details": "homepage h1: first sentence solid navy, remainder background-clip gradient text whose colors animate through the brand spectrum; classic pages use static gradient text on select stats"
-    },
-    "live_data_liveness": {
-      "enabled": true,
-      "details": "'Global GDP running on Stripe: 1.68460731%' ticker counts continuously in the hero; stat numerals (2x, 500M+) reinforce the running-machine feel"
-    },
-    "diagonal_clip_sections": {
-      "enabled": true,
-      "details": "classic pages: hero canvas and section bands clipped on a shallow diagonal (transform: skewY on background layers) — straight-edged on the new homepage"
-    },
-    "aurora_glow_on_dark": {
-      "enabled": true,
-      "details": "dark navy bands get a soft purple/blurple radial horizon glow (homepage 'backbone of global commerce' stats band) — a light source rising behind a dark horizon"
-    },
-    "floating_screenshot_compositions": {
-      "enabled": true,
-      "details": "product UI screenshots layered/overlapped at slight tilt with large violet-tinted shadows; docs tilt a 'test cards' credit-card illustration; blog hero cards carry full-bleed gradient artwork"
-    },
-    "scroll_effects": {
-      "enabled": true,
-      "details": "gentle fade/translate section reveals; no parallax, no scroll-scrubbing"
-    },
-    "dotted_grid_ornament": {
-      "enabled": true,
-      "details": "docs only: page corners carry a dot-grid pattern whose dots are tinted by the brand gradient spectrum, fading toward the content"
-    },
-    "particles": { "enabled": false },
-    "3d_elements": { "enabled": false, "note": "the ribbon reads 3D but is a shader gradient, not geometry" },
-    "cursor_effects": { "enabled": false },
-    "glassmorphism": { "enabled": false, "note": "one rgba(255,255,255,0.65) overlay panel observed; no frosted-blur language" },
-    "svg_animations": { "enabled": false, "note": "SVGs are static logos and icons" },
-    "composite_notes": "Stripe's formula: spend the entire effects budget on one breathtaking ambient WebGL gradient in the hero, then earn trust below it with static evidence — screenshots, stats, logos, terminals. Color discipline is the real trick: a 5-hue gradient spectrum that would be garish anywhere else stays premium because the rest of the page is navy-on-white with tiny doses of blurple."
+    "classic": "Payments has a separate Gradient__canvas/diagonal mesh-gradient treatment; do not conflate its renderer or palette with the HDS ribbon.",
+    "text": "Homepage heading uses an animated color/gradient treatment alongside solid navy; mobile shortens the statement.",
+    "other": "GDP counter changes continuously; static layered UI captures, diagonal bands and dark glow sections provide secondary effects. Docs use static colored dot-grid ornament and functional UI.",
+    "verification": "Rendered screenshots of home desktop/mobile, Payments and docs; CSS and JavaScript source fetched. CSP prevented new runtime context probing; no claim that missing globals prove library absence."
+  },
+  "page_families": {
+    "/": "HDS light display, squared 48px CTAs, WebGL deformed ribbon and live counter.",
+    "/payments; /billing; /connect": "Classic product generation: subnavigation, stronger titles, compact pills and product compositions; Payments includes diagonal gradient.",
+    "/pricing": "Pricing/comparison family, distinct from the homepage hero.",
+    "/customers; /blog": "Proof and editorial layouts; customer imagery and gradient covers vary.",
+    "https://docs.stripe.com/": "Sail documentation: system sans, muted indigo, search/Ask AI and resource directory; no imported ribbon."
   }
 }

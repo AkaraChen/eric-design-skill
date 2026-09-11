@@ -1,11 +1,28 @@
 {
+  "name": "vercel",
   "source": [
-    "https://vercel.com/home (browsed live 2026-07-12, light + dark, 1440px viewport)",
-    "https://vercel.com/design.md (Geist design system, light theme)",
-    "https://vercel.com/design.dark.md (Geist dark theme)",
-    "also browsed: /pricing, /docs, /blog, /ai, nav mega-menu, footer"
+    "https://vercel.com/home",
+    "https://vercel.com/pricing",
+    "https://vercel.com/about",
+    "https://vercel.com/blog",
+    "https://vercel.com/blog/page/2",
+    "https://vercel.com/changelog",
+    "https://vercel.com/changelog/page/2",
+    "https://vercel.com/docs",
+    "https://vercel.com/templates"
   ],
-  "extracted": "2026-07-12",
+  "extracted": "2026-09-11",
+  "coverage": {
+    "method": "Sitemap/navigation discovery, page-family HTML/CSS inspection, selected browser screenshots and runtime probes where permitted.",
+    "source_pages": 51,
+    "rendered": [
+      "https://vercel.com/home",
+      "https://vercel.com/pricing",
+      "https://vercel.com/docs"
+    ],
+    "viewports": "1440px desktop and 390px mobile; not every source page was rendered.",
+    "limits": "Public page families sampled, not every article, locale, private app or interaction state. Source-only theme/motion declarations are not runtime verification."
+  },
   "design_system": {
     "color": {
       "palette_type": "monochromatic grayscale with a single blue accent; full 10-step accent scales held in reserve for state",
@@ -15,9 +32,31 @@
       "neutral": "#f2f2f2",
       "background_100": "#ffffff",
       "background_200": "#fafafa",
-      "observed": "marketing pages set body to background-200 #fafafa with #171717 text; cards and showcase frames sit on #ffffff; docs/blog use #ffffff",
-      "gray_scale": ["#f2f2f2", "#ebebeb", "#e6e6e6", "#eaeaea", "#c9c9c9", "#a8a8a8", "#8f8f8f", "#7d7d7d", "#4d4d4d", "#171717"],
-      "gray_alpha_scale": ["#0000000d", "#00000015", "#0000001a", "#00000014", "#00000036", "#0000003d", "#00000070", "#00000082", "#000000b3", "#000000e8"],
+      "observed": "Home, pricing and docs landing body #fafafa with #171717 text; white panels and cards create the next surface step.",
+      "gray_scale": [
+        "#f2f2f2",
+        "#ebebeb",
+        "#e6e6e6",
+        "#eaeaea",
+        "#c9c9c9",
+        "#a8a8a8",
+        "#8f8f8f",
+        "#7d7d7d",
+        "#4d4d4d",
+        "#171717"
+      ],
+      "gray_alpha_scale": [
+        "#0000000d",
+        "#00000015",
+        "#0000001a",
+        "#00000014",
+        "#00000036",
+        "#0000003d",
+        "#00000070",
+        "#00000082",
+        "#000000b3",
+        "#000000e8"
+      ],
       "scale_semantics": "each 10-step scale encodes intent, not just lightness: 100 default bg / 200 hover bg / 300 active bg / 400 default border / 500 hover border / 600 active border / 700 solid fill / 800 solid fill hover / 900 secondary text / 1000 primary text",
       "accents": {
         "blue_700": "#006bff",
@@ -29,7 +68,7 @@
         "teal_700": "#00ac96",
         "purple_700": "#a000f8",
         "pink_700": "#f22782",
-        "note": "blue = success/links/focus, red = errors, amber = warnings; every accent scale also ships oklch() *-p3 wide-gamut variants. In practice blue appears only in: footer system-status line, docs 'Beta' pill badges, docs syntax highlighting, focus rings — the marketing pages are otherwise 100% grayscale"
+        "note": "Blue marks links/focus/status; other scales support state and product/campaign material. Observed home/pricing are predominantly grayscale, not proof that every marketing route is."
       },
       "alpha_usage": "gray-alpha-* tokens are translucent and layer over any background — use for borders, dividers, overlays, hover states; solid gray-* for text and opaque fills; never swap gray-* for background-*",
       "dark_mode": {
@@ -38,42 +77,40 @@
         "primary": "#ededed",
         "secondary": "#a0a0a0",
         "tertiary_accent": "#006efe",
-        "gray_scale": ["#1a1a1a", "#1f1f1f", "#292929", "#2e2e2e", "#454545", "#878787", "#8f8f8f", "#7d7d7d", "#a0a0a0", "#ededed"],
-        "gray_alpha_scale": ["#ffffff12", "#ffffff17", "#ffffff21", "#ffffff24", "#ffffff3d", "#ffffff82", "#ffffff8a", "#ffffff78", "#ffffff9c", "#ffffffeb"],
-        "note": "verified live: dark body is pure #000000 with #ededed text; theme follows prefers-color-scheme (html gets light-theme/dark-theme class) and a manual sun/moon/system segmented switcher sits in the footer"
+        "gray_scale": [
+          "#1a1a1a",
+          "#1f1f1f",
+          "#292929",
+          "#2e2e2e",
+          "#454545",
+          "#878787",
+          "#8f8f8f",
+          "#7d7d7d",
+          "#a0a0a0",
+          "#ededed"
+        ],
+        "gray_alpha_scale": [
+          "#ffffff12",
+          "#ffffff17",
+          "#ffffff21",
+          "#ffffff24",
+          "#ffffff3d",
+          "#ffffff82",
+          "#ffffff8a",
+          "#ffffff78",
+          "#ffffff9c",
+          "#ffffffeb"
+        ],
+        "note": "Source dark-theme tokens; footer offers sun/moon/system switching. This refresh did not verify the live dark state."
       },
       "contrast_strategy": "high contrast dark-on-light (or light-on-dark); hold WCAG AA 4.5:1 for body text; color signals state or hierarchy, never decoration; never state by color alone"
     },
     "typography": {
-      "heading_font": "Geist Sans — variable font; loaded as GeistSans + 'GeistSans Fallback'",
-      "body_font": "Geist Sans",
-      "mono_font": "Geist Mono (fallback ui-monospace/SF Mono) — code, data, tabular figures, and all marketing eyebrows/feature-lists",
-      "heading_scale": {
-        "heading_72": "72px / lh 72px / ls -4.32px",
-        "heading_64": "64px / lh 64px / ls -3.84px  (verified: h1 on /home and /pricing)",
-        "heading_56": "56px / lh 56px / ls -3.36px  (verified: every section h2 on /home)",
-        "heading_48": "48px / lh 56px / ls -2.88px",
-        "heading_40": "40px / lh 48px / ls -2.4px",
-        "heading_32": "32px / lh 40px / ls -1.28px",
-        "heading_24": "24px / lh 32px / ls -0.96px  (mega-menu links)",
-        "heading_20": "20px / lh 26px / ls -0.4px",
-        "heading_16": "16px / lh 24px / ls -0.32px",
-        "heading_14": "14px / lh 20px / ls -0.28px  (footer column titles at weight 500)"
-      },
-      "heading_weight_split": "design.md specifies weight 600 for headings, but the live marketing site renders display headings at variable weights 400 (h1) and 450 (h2) — thin-feeling, tightly-tracked, solid-set (line-height = font-size). Product UI (docs) uses the heavier 600. Both are Geist Sans",
-      "copy_scale": {
-        "copy_24": "24px / 400 / lh 36px",
-        "copy_20": "20px / 400 / lh 36px",
-        "copy_18": "18px / 400 / lh 28px",
-        "copy_16": "16px / 400 / lh 24px",
-        "copy_14": "14px / 400 / lh 20px (workhorse body size)",
-        "copy_13": "13px / 400 / lh 18px"
-      },
-      "label_scale": "label-20…label-12 at weight 400, tight single-line line-heights (nav, form labels, table headers, metadata); label-14 is the workhorse",
-      "button_scale": "button-16/14/12 at weight 500 (verified: nav buttons 14px/500)",
-      "mono_usage_observed": "Geist Mono carries all marketing meta-text: hero eyebrows ('FOR CODING AGENTS…', 16px, uppercase, #4d4d4d), feature checklists under showcases (14px, text-transform: uppercase, #171717), 'NEW' badges, 'POPULAR' badge, terminal/CLI demos, footer status line",
-      "tracking_rule": "letter-spacing tightens as size grows — -0.28px at 14px up to -4.32px at 72px (-0.06em); heading line-height equals font-size at display sizes",
-      "weight_discipline": "never more than two weights in one view; marketing: 400/450 headings + 400 body + 500 buttons; product: 600 headings + 400 body"
+      "fonts": "Geist Sans for marketing and UI; Geist Mono for code and selected technical annotations.",
+      "marketing": "Home h1 64/64, weight 400, tracking -3.84px; h2 56/56, weight 450, tracking -3.36px. Mobile h1 48/56, tracking -2.88px. Pricing h1 64/64, weight 450.",
+      "product": "Geist specification has a heavier 600 heading scale; copy 13/18,14/20,16/24,18/28,20/36,24/36.",
+      "controls": "Pricing CTA 14/21 weight 500. Current desktop hero audience list is sentence-case sans; the mobile descriptor uses mono. Do not force all marketing metadata into uppercase mono.",
+      "docs": "Docs landing h1 56/56, weight 600, tracking -3.36px; h2 24/32, weight 600; sidebar 14/21; body 16/24. Article titles have their own scale."
     },
     "spacing": {
       "base_unit": "4px",
@@ -83,18 +120,18 @@
       "density": "marketing pages are extremely airy — hero and each showcase get near-full-viewport vertical bands with huge empty margins; product UI (docs) is comfortable-compact"
     },
     "layout": {
-      "max_content_width": "1200px centered column for product UI; marketing /home runs edge-to-edge with 24px page gutters and full-bleed hairline-separated bands (main has no max-width)",
-      "breakpoints": "sm 401 / md 601 / lg 961 / xl 1200 / 2xl 1400",
-      "homepage_structure": "sticky 64px nav → full-viewport hero (left: h1 + CTA pair; center: canvas triangle; right: mono eyebrow list) → grayscale customer logo bar (Blackbox, Schwab, DoorDash, OpenAI, Supreme, Weather Co, Polymarket) → three customer showcases (Notion / Zapier / Mintlify), each = 56px h2 + framed product screenshot + '<Customer> powers…' aside with mono uppercase Features list → 'Recently shipped' 2-col card grid → centered CTA ('Built by you, or your agents' + Deploy button + copyable npx command) → 12-column sitemap footer",
-      "showcase_pattern": "text column and screenshot alternate sides section to section; the customer name in the aside is gray #a8a8a8 while the claim is #171717",
-      "footer": "6 columns x 2 rows of 14px/500 column titles + 14px/400 links; 'NEW' mono badges in hairline boxes; bottom row = triangle logo, blue mono '● ALL SYSTEMS NORMAL.' status link, and a 3-button theme switcher (system/light/dark)",
-      "mega_menu": "nav dropdowns open a full-width white panel below the header while the page content behind desaturates/dims to gray; 3 columns with 13px gray category labels (Agent Stack / Core Platform / Tools) over 24px weight-450 links; external links get a mono ↗",
-      "alignment": "hero and section headings left-aligned; final CTA centered; strict grid throughout"
+      "frame": "Edge-to-edge marketing bands with 24px gutters and hairline rules; product documentation uses bounded content and navigation rails.",
+      "hero": "Desktop: left 64px heading/CTA pair, centered halo triangle, right three-line sentence-case sans descriptor.",
+      "mobile": "Triangle moves above centered 48px headline; one mono descriptor and stacked full-width pill actions; logos remain a horizontal strip.",
+      "showcases": "Alternating text and customer-product proof, 56px headings, shipped-feature cards, centered closing CTA and multi-column footer.",
+      "pricing": "Three full-width columns divided by hairlines; 64px title/large prices, small plain labels, 36px pill CTAs.",
+      "navigation": "Compact 6px-rounded header controls; theme switcher is in footer; these differ from pill marketing CTAs.",
+      "docs": "Docs landing: 264px sidebar link rows, 1024px main content area at 1440px; introduction followed by three-column agent-resource cards. Guide articles add reading/navigation structure."
     },
     "shape": {
       "radius_scale": "sm 6px / md 12px / lg 16px / full 9999px",
       "usage_observed": "6px: nav/product/docs buttons and inputs; 12px: docs cards, menus; 16px: marketing showcase frames and 'Recently shipped' cards; 9999px (pill): ALL marketing CTAs — hero 'Deploy Now'/'Talk to Sales', pricing 'Start a free trial', /ai campaign buttons (36px tall)",
-      "rule": "one radius family per view — marketing views are pill+16px, product views are 6px+12px; never mix rounded and sharp corners",
+      "rule": "Keep component roles consistent: rectilinear compact product controls, pill marketing actions, larger rounded media frames. Hairline grid cells and sharp badges coexist with rounded controls.",
       "border_usage": "hairline 1px gray-alpha borders everywhere: card frames, logo-bar dividers, section separators, secondary buttons; borders and tonal surfaces do hierarchy before shadows"
     },
     "elevation": {
@@ -107,11 +144,11 @@
       "note": "tooltips take the lightest shadow; pair each elevation with the matching radius"
     },
     "motion": {
-      "philosophy": "motion only when it clarifies a change, never decoration; 0ms is often the best duration; instant-feeling UI",
+      "philosophy": "Product guidance favors short functional transitions; marketing includes an ambient canvas hero. Keep those scopes separate.",
       "easing": "cubic-bezier(0.175, 0.885, 0.32, 1.1) — short and physical, slight overshoot",
       "durations": "150ms state changes / 200ms popovers and tooltips / 300ms overlays and modals",
-      "rules": "no long, looping, or attention-grabbing animation; honor prefers-reduced-motion",
-      "observed": "homepage sections below the fold mount/reveal on scroll (blank until approached); no GSAP or Three.js in page globals — animation is CSS/React driven"
+      "rules": "Honor reduced motion and reserve ambient work for decorative marketing; do not copy a no-loops product rule over the actual canvas scene.",
+      "observed": "Pricing controls transition 150ms cubic-bezier(0.4,0,0.2,1); hero canvas has a 1200ms opacity transition class."
     },
     "components": {
       "button_primary_product": "solid gray-1000 (#171717) fill, white label, button-14 (14px/500), 6px radius, 32-40px height (verified nav Sign Up: 32px)",
@@ -130,53 +167,25 @@
     }
   },
   "design_style": {
-    "mood": "minimal, high-contrast, precise, developer-native, quietly monumental",
-    "personality": "confident restraint — the triangle logo, grayscale palette, thin oversized Geist headings, and mono meta-text do the branding; color is engineering signal, not decoration",
-    "genre": "canonical developer-infrastructure marketing (the style Linear/Raycast-era dev tools descend from) — but currently a LIGHT #fafafa default with a pure-black dark theme, not dark-first",
-    "visual_language": "near-total grayscale; whitespace and hairline borders structure everything; Geist Mono uppercase strings act as the 'engineering' texture (eyebrows, feature lists, badges, status lines); real product screenshots framed in hairline cards are the only imagery; the black triangle is treated as a monumental 3D object with a backlit glow",
-    "composition": "hero is an asymmetric three-part row: oversized thin two-line headline left, glowing canvas triangle center, mono uppercase eyebrow stack right; sections are near-viewport-height bands with 56px left-aligned statement headings; showcase text/image sides alternate; the page closes with one centered CTA + copyable CLI command",
-    "imagery": "no photography, no illustration in the classic sense; customer product screenshots (Notion AI chat, Zapier homepage, Mintlify docs), grayscale customer logos, thin line-art wireframe drawings (isometric outlines) inside 'Recently shipped' cards, terminal transcripts, and the canvas-rendered triangle; /ai campaign page adds hairline grid-paper backgrounds with '+' crosshair intersection markers and black speech-bubble shapes",
-    "ornamentation": "essentially none — the grain-glow behind the hero triangle, hairline rules, and mono badges are the entire decorative budget",
-    "whitespace_philosophy": "extreme; sections breathe with near-full-viewport spacing; whitespace ranks information before any box or color does; gray steps 1000/900/700 rank primary/secondary/disabled text",
-    "copy_voice": "precise, filler-free, agent-obsessed ('Agentic Infrastructure', 'FOR CODING AGENTS', 'Built by you, or your agents'); Title Case labels and buttons, sentence case body; actions are verb+noun; errors state what happened plus what to do next; toasts never say 'successfully'; numerals, curly quotes, real ellipsis; no 'please', no superlatives",
-    "interaction_feel": "instant and physical — most interactions at 0ms, slight-overshoot easing when motion is warranted, visible focus rings everywhere; mega-menu dims the page behind it"
+    "mood": "Precise grayscale infrastructure; tightly tracked Geist statements and engineering metadata.",
+    "composition": "Asymmetric three-part hero on desktop becomes a vertical triangle/headline/actions stack on mobile. Full-width hairline bands and generous whitespace organize proof.",
+    "imagery": "Customer product surfaces, terminal transcripts, line drawings and a monumental monochrome triangle; colored campaign/product details remain possible outside the sampled homepage.",
+    "interaction": "Fast state changes in compact controls; ambient hero animation is a deliberately separate marketing layer."
   },
   "visual_effects": {
-    "overview": {
-      "effect_intensity": "subtle-accent",
-      "performance_tier": "lightweight-medium — one Canvas 2D hero element, everything else CSS/DOM; no WebGL, no Three.js, no GSAP (verified: window globals absent, canvas context is 2d)",
-      "composite_notes": "The system doc explicitly discourages decorative motion, so effects concentrate in the hero: a single 1080x720 Canvas 2D rendering of the Vercel triangle as a physical object — in light theme a solid black triangle with a soft radial halo; in dark theme an eclipse-like black triangle rim-lit by a grainy white corona on pure black. Below the fold, sections lazy-reveal on scroll. Product UI is the spectacle; the chrome stays still."
-    },
-    "canvas_2d": {
-      "enabled": true,
-      "details": "hero triangle scene: Canvas 2D (verified via getContext probing), absolutely positioned inset-0 pointer-events-none behind hero content; renders grain/noise glow around the brand triangle; theme-aware (halo on light, eclipse corona on dark)"
-    },
-    "background_gradients": {
-      "enabled": true,
-      "details": "radial glow/vignette around the hero triangle; dark theme adds a large soft radial white-on-black gradient behind it; no color gradients anywhere — all glows are grayscale"
-    },
-    "scroll_effects": {
-      "enabled": true,
-      "details": "below-fold sections mount/fade in on approach (content is blank until scrolled near); no parallax, no scroll-scrubbing"
-    },
-    "micro_interactions": {
-      "enabled": true,
-      "details": "hover steps surface fill 100→200→300 and border 400→500→600; 150ms state changes with cubic-bezier(0.175,0.885,0.32,1.1); two-layer blue focus ring; copy-to-clipboard affordances on CLI commands and code blocks"
-    },
-    "animated_ui_demos": {
-      "enabled": true,
-      "details": "faux product windows as hero imagery (Notion AI chat with suggestion rows, terminal deploy transcripts with green checkmarks); DOM/CSS driven"
-    },
-    "grid_paper_texture": {
-      "enabled": true,
-      "details": "/ai campaign page only: full-bleed hairline grid with '+' crosshair markers at intersections, black rounded speech-bubble panels floating on it"
-    },
-    "glassmorphism": { "enabled": false, "note": "no frosted-blur panels anywhere; translucency is limited to gray-alpha hairlines" },
-    "webgl_3d": { "enabled": false, "note": "the '3D-looking' hero triangle is Canvas 2D, not WebGL" },
-    "particles": { "enabled": false, "note": "grain in the hero glow is rendered noise, not a particle system" },
-    "shaders": { "enabled": false },
-    "cursor_effects": { "enabled": false },
-    "text_effects": { "enabled": false, "note": "headlines are static; no split/typewriter/gradient text" },
-    "svg_animations": { "enabled": false, "note": "SVGs are static logos (Vercel triangle, customer logos) and stroke icons" }
+    "technology": "Homepage has one canvas. Current source uses Canvas 2D for triangle/halo drawing; no need to introduce a WebGL scene to reproduce this hero.",
+    "hero": "Theme-aware triangle and grainy halo; 1200ms canvas opacity transition. Buffer is 2160×1440 in the 1440px sample and 585×600 at 390px; buffer size is not CSS layout size.",
+    "scroll": "Below-fold content appears as approached; do not claim all motion is prohibited because the product-system text favors restrained transitions.",
+    "controls": "Pricing buttons use 150ms transitions; compact controls use hairline borders and shadows, not universal flatness.",
+    "scope": "Light home/pricing rendered; dark tokens and design.dark.md refreshed from source. No live dark-mode verification claimed in this pass.",
+    "docs": "No canvas/video in sampled docs landing; scroll-linked sidebar top/bottom fade animations use automatic timeline duration."
+  },
+  "page_families": {
+    "/home": "Large asymmetric hero, 2D triangle, customer proof and shipped-feature cards.",
+    "/pricing": "Three ruled columns rather than floating cards; lower cost-control and comparison content.",
+    "/docs": "Technical navigation/search, reading rail, code/copy components; heavier product typography.",
+    "/blog; /customers": "Editorial and customer-proof templates.",
+    "/ai": "Campaign surface with its own diagram/grid compositions.",
+    "/design.md; /design.dark.md": "Published Geist guidance and theme references; token guidance must be distinguished from live marketing overrides."
   }
 }

@@ -86,11 +86,10 @@ Design DNA profiles extracted from reference sites live under `references/spec/`
 - [Kong](references/spec/kong.json): sage and electric-lime infrastructure marketing,
   rail grids, heavy Funnel type, pill controls, light/dark and Agent variants.
   Includes page-family differences and verified portrait shaders.
-- [Minshot](references/spec/minshot.json): quiet native-tool landing, 880px
-  single column, Chinese system typography, blue pill CTA, real screenshot and
-  stacked pricing panels. Use for concise desktop-utility marketing. Preserve
-  the Chinese locale's sans headings; screenshot materials are not page effects.
-  Unobserved app components and states must come from the destination system.
+- [Minshot](references/spec/minshot.json): quiet personal product note in a
+  528px single column, SN Pro typography, warm near-white paper, black pill
+  download CTA and real screenshots. English and Chinese share the layout;
+  changelog uses the same narrow reading rail. Screenshot effects are image content.
 
 When suggesting a design style or visual direction, list that folder, read the specs, and consider them as candidate directions — they are the starting shortlist for [Picking a style](#picking-a-style). When one is chosen, derive tokens and treatments from its JSON instead of inventing values.
 

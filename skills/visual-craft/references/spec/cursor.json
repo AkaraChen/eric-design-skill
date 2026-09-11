@@ -1,10 +1,27 @@
 {
+  "name": "cursor",
   "source": [
-    "https://cursor.com/cn/home (fetched 2026-08-03; SSR HTML 837KB + 4 compiled CSS chunks; browser extension unavailable — extraction from markup/tokens plus downloaded demo wallpaper; Chinese locale of the global homepage)",
-    "assets read: marketing-static _next CSS chunks (418KB combined), /marketing-static/demos/cursor-wallpaper.png"
+    "https://cursor.com/home",
+    "https://cursor.com/pricing",
+    "https://cursor.com/automate",
+    "https://cursor.com/blog",
+    "https://cursor.com/blog/basis",
+    "https://cursor.com/changelog",
+    "https://cursor.com/changelog/page/2",
+    "https://cursor.com/docs",
+    "https://cursor.com/download"
   ],
-  "extracted": "2026-08-03",
-  "product_context": "Cursor — 'AI coding agent' (中文: 'Cursor 是您的编程智能体，助您构建雄心勃勃的软件。'); the post-2025 warm rebrand of cursor.com, fully localized zh/cn",
+  "extracted": "2026-09-11",
+  "coverage": {
+    "method": "Sitemap/navigation discovery, page-family HTML/CSS inspection, selected browser screenshots and runtime probes where permitted.",
+    "source_pages": 25,
+    "rendered": [
+      "https://cursor.com/home",
+      "https://cursor.com/pricing"
+    ],
+    "viewports": "1440px desktop and 390px mobile; not every source page was rendered.",
+    "limits": "Public page families sampled, not every article, locale, private app or interaction state. Source-only theme/motion declarations are not runtime verification."
+  },
   "design_system": {
     "color": {
       "palette_type": "warm greige monochrome driven by ONE ink color per theme — nearly every text/border/surface tone is the fg at a color-mix(oklab) opacity step; single burnt-orange accent",
@@ -29,22 +46,22 @@
       "contrast_strategy": "soft warm ink-on-paper; hierarchy via the opacity ladder rather than distinct grays; color appears only as the orange accent, product ANSI hues, and chart/timeline palettes"
     },
     "typography": {
-      "heading_font": "CursorGothic (custom grotesque, 400/700) with cursorDisplay for display moments; EB Garamond (400–800 + italics) as --font-serif for editorial/'Insights' surfaces; Lato appears for embedded UI demos",
-      "body_font": "CursorGothic",
-      "mono_font": "Berkeley Mono (licensed) — terminal demos, code, agent transcripts",
-      "type_scale": "named type-* classes, ALL weight 400: 2xl 72px/1.1/-.03em, xl 52px/-.025em, lg 36px/-.02em, md-lg 26px/-.0125em, md 22px/-.005em, sm 14px — tracking tightens as size grows, boldness never used for headline hierarchy",
-      "hero_h1": "type-md-lg (26px, weight 400) with text-balance — a deliberately modest hero; the giant sizes (type-xl/2xl) are saved for the closing '立即试用 Cursor.' CTA",
-      "font_style_notes": "regular-weight custom grotesque everywhere + a full Garamond family for humanist/editorial contrast + Berkeley Mono for machine text — three-voice system (product / prose / terminal)"
+      "fonts": "CursorGothic throughout marketing; Berkeley Mono for code/terminal; EB Garamond in editorial and embedded browser content. Font roles must follow their surface.",
+      "marketing": "Home h1 26/32.5, weight 400, tracking -0.325px; mobile 24.375/30.469. Feature h3 22/28.6, tracking -0.11px. Pricing h1 52/59.8, tracking -1.3px.",
+      "scale": "Source type ramp: 14,22,26,36,52,72px. Display tracking tightens from -0.005em to -0.03em; hierarchy is mostly size, not boldness.",
+      "body": "16/24, weight 400; logo-strip label 14/21, tracking +0.14px."
     },
     "spacing": {
       "base_unit": "4px Tailwind + custom g-grid tokens (--spacing-g0.25 … g3 mapped to xs–2xl); custom breakpoint md at 660px",
       "content_density": "airy marketing sections; dense faithful product recreations inside demo frames"
     },
     "layout": {
-      "grid_system": "Next.js marketing app, max containers to 80rem; sections stacked with generous vertical rhythm",
-      "homepage_structure": "modest 26px h1 + download/get-started CTAs → interactive multi-surface demo (Cursor Desktop, CLI, Mission Control task queue with Chinese task cards, mobile app, browser preview of a generated 'Acme Labs' research site with EB Garamond styling) → trusted-by logos → '构建软件的全新方式。' statement → changelog + '近期亮点' highlights → giant type-xl/2xl closing CTA",
-      "product_as_hero": "the hero visual is a working replica of the product rendered in DOM/CSS (chrome/editor/sidebar theme tokens, phone-screen token sets, visual-feedback overlay tokens) — hundreds of bespoke CSS vars exist just to fake the app faithfully in both themes",
-      "alignment": "centered statements, left-aligned product surfaces"
+      "frame": "1440px viewport has a 1300px content rail with ~70px margins; header reserves 52px height.",
+      "hero": "Modest left-aligned 26px headline and pill actions over a giant desktop/CLI/browser demo; landscape painting is contained within the demo frame.",
+      "sections": "Wide warm-gray feature panels, alternating text/product views, logos and dated highlights; much larger type reserved for later statements and final CTA.",
+      "pricing": "52px centered heading and monthly/yearly pill; four equal warm-tint plan cards, with secondary segmented controls inside individual/team plans.",
+      "mobile": "At 390px the header reduces to logo, Sign in and hamburger; CTA becomes Get started; oversized product replica is clipped horizontally instead of shrunk to fit.",
+      "locales": "English and /cn/home use the same design tokens; localized demo text is a content variant."
     },
     "shape": {
       "radius_scale": "rounded-sm and rounded-full dominate; buttons are full pills (border-radius 3.40282e38px — max-float pill); cards 10–12px; tiny 2px radii inside product replicas",
@@ -73,37 +90,23 @@
     }
   },
   "design_style": {
-    "mood": "warm, assured, understated, craft-heavy, quietly premium",
-    "personality": "the definitive post-2025 'warm AI' rebrand: burnt orange on olive-warm greige, regular-weight custom grotesque, Garamond accents, Berkeley Mono terminals, and an oil-painting wallpaper inside the product demo — power demonstrated through a meticulous working replica rather than claimed through hype",
-    "genre": "AI dev-tool marketing, painterly-warm school (the style ara.so also inhabits) — deliberately opposite the black/neon terminal aesthetic; closest structural kin to Vercel's discipline but warm-toned and serif-inflected",
-    "visual_language": "one ink color per theme expanded into a full system via oklab opacity ladders; five-step warm card tonality instead of shadows; saturated color rationed to one orange accent plus product ANSI/timeline/chart hues; the product replica IS the imagery — no screenshots, no illustration",
-    "composition": "understated 26px hero headline over a giant interactive product demo; statement sections in 36–52px regular weight; the only typographic shout (72px) is the final CTA; Chinese copy set with the same restraint",
-    "copy_voice": "calm, ambition-flattering ('助您构建雄心勃勃的软件' — helps you build ambitious software; '构建软件的全新方式' — a new way to build software); research-lab register in the demo content ('a group of researchers, engineers, and technologists inventing at the edge of what's useful and possible')",
-    "interaction_feel": "demo-driven: streaming text fades, working-state waveforms, shimmer placeholders, task cards progressing through queues — motion communicates 'the agent is working', never decoration"
+    "mood": "Warm, understated, regular-weight developer tooling with an olive ink and greige paper palette.",
+    "composition": "Small opening statement makes the full-scale product demonstration dominant; calm feature panels and editorial spacing follow. One ink color expands into text/border/surface opacity ladders.",
+    "imagery": "DOM replicas of desktop, CLI, mobile and browser surfaces; alpine painting wallpaper inside the demo. Product screenshots and media on other routes should not be ruled out.",
+    "interaction": "Activity states, terminal output and streaming text communicate agent progress; ink pills and faint warm borders keep surrounding chrome quiet."
   },
   "visual_effects": {
-    "overview": {
-      "effect_intensity": "subtle-accent (marketing) / moderate (inside demos)",
-      "performance_tier": "lightweight-medium — all DOM/CSS; zero canvas, zero WebGL, zero videos on the homepage; 110 inline SVGs",
-      "primary_technology": "CSS keyframes + React-driven product replicas",
-      "composite_notes": "Extraction from SSR HTML + compiled CSS of the zh-CN homepage; interactive demo behavior (task progression, streaming) inferred from keyframe names and token sets rather than observed live. The a11y note in the DOM confirms the hero is 'an interactive demo… displayed over a subtle, solid brand background'."
-    },
-    "product_replica_demos": {
-      "enabled": true,
-      "details": "hero is a multi-surface working replica (Desktop, CLI, Mission Control, mobile, browser preview) built from dedicated CSS token sets per surface, theme-aware light/dark, localized into Chinese"
-    },
-    "streaming_text": { "enabled": true, "details": "streaming-word-fade keyframe — LLM output words fade in sequentially inside demos" },
-    "shimmer_placeholders": { "enabled": true, "details": "shimmer + shimmer-slide loading sheens on demo UI" },
-    "working_indicators": { "enabled": true, "details": "mobileRecordingWaveform + mobileWorking horizontal/vertical/center opacity cycles + interaction glow/pulse — 'agent is busy' choreography" },
-    "painting_wallpaper": { "enabled": true, "details": "the demo desktop's wallpaper asset is a pastel alpine-lake oil painting (Hudson River School style) — same pastoral-painting motif ara.so builds its whole identity on" },
-    "gallery_marquee": { "enabled": true, "details": "gallery-marquee-item-slide-up loop for showcase/gallery items" },
-    "scroll_effects": { "enabled": false, "note": "no parallax/scroll-scrub in CSS" },
-    "webgl_3d": { "enabled": false },
-    "particles": { "enabled": false },
-    "shaders": { "enabled": false },
-    "cursor_effects": { "enabled": false },
-    "glassmorphism": { "enabled": false, "note": "soft gradient cards inside phone demos only; no frosted blur system" },
-    "text_effects": { "enabled": true, "details": "limited to streaming-word-fade in demos; headlines themselves static" },
-    "svg_animations": { "enabled": false }
+    "technology": "Homepage sampled with zero canvas and one logo MP4 element; marketing/product replicas are principally React DOM and CSS.",
+    "demo": "Theme-aware desktop/CLI/browser surfaces. Source keyframes include streaming-word-fade, shimmer, shimmer-slide, mobile-chat-enter and recording/working indicators.",
+    "imagery": "Static landscape painting supplies the large demo backdrop; it is not a full-page shader. A logo-light-theme.mp4 was present, autoplay=false and loop=false at inspection.",
+    "motion": "Gallery and demo sequences are scoped to their components; nav fades and button states are modest. Do not infer runtime absence from missing global library names.",
+    "themes": "Warm light/dark token ladders retained from current CSS; rendered samples here are light."
+  },
+  "page_families": {
+    "/home; /cn/home": "Shared warm marketing shell and localized product replicas.",
+    "/pricing": "Four plan cards, nested tier controls and monthly/yearly switch.",
+    "/enterprise; /features": "Enterprise/features source uses the same palette with different product-proof panels.",
+    "/blog; /changelog": "Editorial and dated release families.",
+    "/docs; /download": "Technical navigation and platform/distribution routes; do not inherit oversized marketing demo composition."
   }
 }

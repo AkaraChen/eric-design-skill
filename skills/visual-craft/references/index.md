@@ -20,16 +20,12 @@ document root.
 
 ## Design DNA references
 
-- [Minshot (Chinese landing)](./spec/minshot.json), extracted from
-  [minshot.fehey.com/zh](https://minshot.fehey.com/zh) on 2026-09-07:
-  a quiet native-tool landing with an 880px single column, cool near-white
-  surfaces, blue pill download buttons, a real product screenshot, plain feature
-  rows, and vertically stacked pricing cards. Chinese headings use system sans
-  (24px/500), not the serif declared for other locales. Suitable for concise
-  desktop-utility marketing; this is not a specification of the app's editor UI.
-  The JSON separates measured tokens, qualitative interpretation, and unobserved
-  states. Gradients and glass inside the screenshot are image content, not page
-  effects. The skill exposes the same profile through `references/spec/minshot.json`.
+- [Minshot](./spec/minshot.json), refreshed from the English/Chinese landing
+  and changelog on 2026-09-11: a personal product note in a 528px single column,
+  warm near-white paper, SN Pro text, a black pill download button and real
+  screenshots. Both locales share the layout. Suitable for concise utility
+  marketing; this does not specify the app editor or turn screenshot materials
+  into page effects.
 
 ## Craft
 

@@ -1,10 +1,25 @@
 {
+  "name": "mosoo",
   "source": [
-    "https://mosoo.ai/ (fetched 2026-08-03; the landing is a client-rendered Vite+React SPA, so extraction is from the token CSS, route JS chunks, i18n bundles, and downloaded imagery rather than rendered DOM)",
-    "also fetched: /en, /en/pricing, /en/use-cases, /en/status, /blog, /docs/, /docs/quickstart/ plus asset chunks (app, index, landing-below-fold, pricing, unicorn, motion-variants) and /landing imagery"
+    "https://mosoo.ai/docs/quickstart/",
+    "https://mosoo.ai/en",
+    "https://mosoo.ai/en/pricing",
+    "https://mosoo.ai/blog",
+    "https://mosoo.ai/blog/ja",
+    "https://mosoo.ai/docs/"
   ],
-  "extracted": "2026-08-03",
-  "product_context": "mosoo — open-source agent runtime/backend: 'Run OpenAI Codex, Claude Agent SDK, and OpenCode behind one Agent API in isolated sandboxes.' Trilingual site (en/zh/ja) with cookie-based locale routing",
+  "extracted": "2026-09-11",
+  "coverage": {
+    "method": "Sitemap/navigation discovery, page-family HTML/CSS inspection, selected browser screenshots and runtime probes where permitted.",
+    "source_pages": 8,
+    "rendered": [
+      "https://mosoo.ai/docs/quickstart/",
+      "https://mosoo.ai/en",
+      "https://mosoo.ai/en/pricing"
+    ],
+    "viewports": "1440px desktop and 390px mobile; not every source page was rendered.",
+    "limits": "Public page families sampled, not every article, locale, private app or interaction state. Source-only theme/motion declarations are not runtime verification."
+  },
   "design_system": {
     "color": {
       "palette_type": "nature-vocabulary token system — full 'green' + 'ink' + 'paper' scales plus earth-named semantics (soil/sky/amber/ember); THREE themed surfaces: app (paper white + electric lime), landing (warm cream + forest green via data-theme=landing), dark",
@@ -20,12 +35,15 @@
         "borders": "alpha hairlines: soft #1c20240f / default #1c20241a / strong #1c202429"
       },
       "landing_theme": {
-        "note": "data-theme=landing re-derives EVERY scale warm: greens become forest (#127a46 g500, accent green-700 #086030), inks become moss-tinted (#0b1a14 ink-900), paper becomes cream (#f7f6f1 paper-100, #efede4 paper-200), sky/amber/ember desaturate (#5a8fb8/#d49a3c/#c9523b); primary = accent (green buttons on landing vs ink buttons in app)",
+        "note": "Landing tokens warm the paper to #f7f6f1 and ink to #0b1a14, with forest accent #086030. Theme primary aliases do not establish every button fill: sampled main actions are ink.",
         "landing_bg": "#f7f6f1 warm cream",
         "landing_accent": "#086030 deep forest green"
       },
       "dark_theme": {
-        "bg": "#1c2024 (ink-900)", "bg_elevated": "#2b3036", "bg_sunken": "#08090a", "bg_sidebar": "#08090a",
+        "bg": "#1c2024 (ink-900)",
+        "bg_elevated": "#2b3036",
+        "bg_sunken": "#08090a",
+        "bg_sidebar": "#08090a",
         "accent": "#6fd305 with translucent soft #6fd30529",
         "borders": "#f4f6f80d/17/2e alpha whites",
         "note": "primary flips to green-600 in dark (green becomes the action color)"
@@ -42,12 +60,10 @@
       "contrast_strategy": "cool ink-on-paper for the app (near-black #1c2024 on #fbfbfc), warm moss-on-cream for the landing; lime accent reserved for brand moments/CTAs/focus rings; alpha borders on every surface"
     },
     "typography": {
-      "heading_font": "Geist (var --font-display), with Cabinet Grotesk (variable 100–900, self-hosted woff2) layered in via JS as '\"Cabinet Grotesk\", \"Geist\", …' for landing display type",
-      "body_font": "Geist / Inter fallback",
-      "mono_font": "Geist Mono; docs site uses DM Sans + Hanken Grotesk + JetBrains Mono instead",
-      "type_scale_tokens": "explicit --fs steps: 12 / 13 / 14 / 15 / 16 / 18 / 20 / 24 / 30 / 36 / 48 / 64px; line-heights tight 1.1 / snug 1.25 / normal 1.45 / loose 1.6",
-      "heading_classes": ".h-display 64px/800/lh1.1, .h1 36px/800, .h2 24px/700 — heavy weights (700–800) with zero letter-spacing; a chunkier, friendlier headline voice than the tight-tracked dev-tool norm",
-      "font_style_notes": "13–15px odd sizes tokenized for UI density; the landing's display personality comes from Cabinet Grotesk's rounded geometry at weight 800"
+      "fonts": "Cabinet Grotesk variable for landing display, Geist/Inter for UI, Geist Mono code. Docs use DM Sans with Hanken Grotesk fallback and JetBrains Mono.",
+      "marketing": "Home h1 84/85.68, weight 500, tracking -2.94px at 1440px. Pricing h1 64/66.56, weight 500, tracking -2.048px; plan h2 32/35.2, tracking -0.64px.",
+      "docs": "Quickstart h1 28/42, weight 600, tracking -0.616px.",
+      "body": "Application default 15/21.75, weight 500; main CTA 15px/600. Source fs ramp 12,13,14,15,16,18,20,24,30,36,48,64 does not include every landing override."
     },
     "spacing": {
       "base_unit": "4px, tokenized --s-1…--s-24 (4/8/12/16/20/24/32/40/48/64/80/96)",
@@ -55,11 +71,12 @@
       "section_rhythm": "landing sections revealed on scroll via use-in-view; consistent token-stepped gaps"
     },
     "layout": {
-      "grid_system": "SPA landing + console app + separate Next.js docs and blog; sidebar-based console (--bg-sidebar token, environment rows)",
-      "landing_structure": "hero ('Open source · Agent runtime and API' eyebrow, one-liner pitch, Star-on-GitHub + Deploy-to-Cloudflare CTAs, Unicorn Studio WebGL background) → agent console demo (fake agents: 'Clara Barton', 'Contract reviewer', 'Support copilot' across Customer Ops/Contract Desk/Internal Tools) → 'Invoke its agents anywhere' (Skill.md export / typed HTTP API / Slack-Lark-Discord-Telegram-WeChat channels) → runtime comparison (Claude Agent SDK: streaming, native resume, MCP tools, session replay) → Cloudflare self-host pitch (Workers/D1/R2/KV) → FAQ (11 who/why/where/what/which/when/how questions) → pricing link",
-      "docs_layout": "Fumadocs three-column, re-skinned with ms tokens",
-      "blog": "'Notes from the bamboo grove' — letter-style posts with category filter (Engineering/Product), author 'mosoo team'",
-      "alignment": "standard centered-hero landing; console UI left-aligned"
+      "frame": "Application shell has its own scrolling region; body height alone is not page height. Marketing is framed by vertical rules on warm cream.",
+      "hero": "Centered 84px Cabinet Grotesk statement, announcement pill, ink/outlined actions and a wide colorful text-pattern canvas.",
+      "pricing": "Centered 64px heading over three ruled plan columns with ink CTA and green checks; cooler ink/paper tokens than the warm hero.",
+      "mobile": "390px: logo, locale/social/login remain in the header; centered wrapped title, two actions then API-docs link; canvas still present.",
+      "docs": "Fumadocs three-column shell with DM Sans/Hanken Grotesk, green active state, copy/open controls and JetBrains Mono code.",
+      "blog": "Separate editorial site with Cabinet/Geist typography and category/language navigation."
     },
     "shape": {
       "radius_scale": "tokenized --r-xs 4 / sm 6 / md 10 / lg 14 / xl 20px — mid-round, softer than square-cornered dev tools but no pills-by-default",
@@ -70,8 +87,7 @@
       "depth_cues": "bg-sunken/bg-elevated surface stepping + alpha borders first, shadows for floating UI"
     },
     "iconography": {
-      "style": "stroke icons (Base UI component library appears in bundle); favicon.svg brand mark",
-      "preferred_set": "unconfirmed from static payload — verify live"
+      "style": "stroke icons (Base UI component library appears in bundle); favicon.svg brand mark"
     },
     "motion": {
       "philosophy": "quick, springy micro-reveals; scroll-triggered section entries; one signature AI shimmer",
@@ -80,53 +96,31 @@
       "libraries": "framer-motion/motion for React (motion + motion-variants chunks) with use-in-view scroll reveals"
     },
     "components": {
-      "buttons": "app: ink-filled primary (#1c2024) + lime accent for brand CTAs; landing: forest-green primary (primary=accent under data-theme=landing); focus rings in translucent accent (#6fd30573)",
+      "buttons": "Observed main CTA: ink fill, 48px height, 10px radius, 15px/600 label; secondary outlined. Green/lime accent and focus tokens vary by landing/app scope.",
       "thinking_indicator": "signature component: shimmer-swept gradient text (fg-3→fg-1→fg-3 at 40/50/60% stops) + bouncing dots — the AI-working state is a first-class design token",
-      "console_demo": "landing shows the real console: agent cards with model tags (Claude Sonnet 4.6, Gemini 2.5 Pro), environment rows, 'Total spend' + 'Export CSV' — product-as-imagery",
-      "cta_pair": "'Star mosoo on GitHub' + 'Deploy to Cloudflare' — OSS-native CTAs instead of 'Sign up'",
+      "console_demo": "Bounded console/runtime demonstrations and code below the hero; model names and example tasks are changing content, not design tokens.",
       "code_blocks": "docs: Fumadocs Shiki blocks on green-tinted dark (#14180f) with fd-diff add/remove tokens",
       "i18n_switcher": "EN / 中 / 日 language menu, cookie + path-prefix routing"
     }
   },
   "design_style": {
-    "mood": "fresh, organic, calm-technical, optimistic, growing",
-    "personality": "an agent-infrastructure tool that brands itself as a bamboo grove — nature vocabulary in the token names (ink/paper/soil/sky/amber/ember), pixel-art nature photography, a blog called 'Notes from the bamboo grove', and letters 'to builders' instead of press releases; engineering warmth rather than dark-mode menace",
-    "genre": "open-source dev-infrastructure landing, organic-tech school — sits opposite the black-and-neon runtime aesthetic; closest kin is the warm-paper school (Langfuse) but with saturated garden greens and pixel art instead of greige restraint",
-    "visual_language": "three deliberate voices: console app in cool ink-on-paper with an electric lime accent (#6fd305 — energetic, screen-native), landing re-themed to cream + deep forest green (calmer, editorial), docs on green-tinted dark; pixelated photography bridges tech and nature",
-    "signature_imagery": "pixel-art / posterized nature photographs — bamboo-sky.jpg (lush green bamboo against a blue summer sky, visibly pixelated like an upscaled sprite) and invoke-gradient.jpg (a lime gradient decomposed into 8-bit dithered rectangles); nature rendered in machine texture",
-    "composition": "hero over a live WebGL scene with staggered 240ms reveals; below the fold, the actual product console is the imagery; FAQ carries a full journalist question set (who/why/where/what/which/when/how)",
-    "copy_voice": "engineer-to-engineer and slightly literary: 'The journey begins with an Imagine If.', 'Notes from the bamboo grove', 'An agent's state is not its process'; concrete infra nouns everywhere (Threads, Runs, sandboxes, BYOK, Workers/D1/R2/KV); honest qualifiers ('these are live pages, not mockups'); trilingual en/zh/ja parity",
-    "interaction_feel": "springy (overshoot easing token), fast 240ms reveals, scroll-triggered section entries; the AI thinking shimmer is the emotional centerpiece of the product UI"
+    "mood": "Organic cream/ink/green vocabulary around a technically expressive agent-runtime product.",
+    "composition": "Large rounded-grotesk headline and monochrome actions over a colorful flowing field of repeated letters; ruled sections switch to practical console, API and documentation layouts.",
+    "imagery": "Unicorn Studio canvas is a rainbow text-pattern wave, not a flat forest-green backdrop. Product/API demos and code provide evidence below.",
+    "interaction": "Rounded 10px ink actions, green selection/status, constrained panel borders; docs use a quieter separate typography system."
   },
   "visual_effects": {
-    "overview": {
-      "effect_intensity": "moderate",
-      "performance_tier": "medium-heavy on the landing hero (third-party WebGL via Unicorn Studio, lazy-loaded from jsDelivr with graceful degradation — component renders nothing if the SDK fails), lightweight elsewhere (CSS keyframes + framer-motion)",
-      "primary_technology": "Unicorn Studio WebGL scene + framer-motion + CSS keyframes",
-      "composite_notes": "Extraction from static assets: the Unicorn scene's actual visual content (scene project renders at runtime) could not be observed — verify live before cloning the hero. Landing imagery viewed directly (downloaded JPGs)."
-    },
-    "webgl_hero": {
-      "enabled": true,
-      "details": "UnicornBackground React component loads unicornstudio.js v2.2.0 from jsDelivr CDN and mounts a hosted scene by projectId; wrapped with error state so the hero degrades to static styling if WebGL/CDN fails"
-    },
-    "pixel_art_imagery": {
-      "enabled": true,
-      "details": "signature effect: photographic nature imagery pre-processed into pixel-art (posterized bamboo/willow against blue sky; alt text 'Pixel-art bamboo reaching into a bright sky') and an 8-bit block-dithered lime gradient used as og-image/section background — organic subjects, machine rendering"
-    },
-    "text_shimmer": {
-      "enabled": true,
-      "details": "mosoo-thinking: background-clip:text gradient (muted→bright→muted) swept across the label at 1.8s linear infinite, plus staggered bouncing dots — the agent 'thinking' state"
-    },
-    "scroll_effects": {
-      "enabled": true,
-      "details": "use-in-view + framer-motion variants: sections and environment rows animate in on scroll (fade + small translate + scale); staggered hero reveal cascade at 40ms steps"
-    },
-    "spring_motion": { "enabled": true, "details": "dedicated --ease-spring cubic-bezier(.34,1.56,.64,1) overshoot token for playful micro-interactions" },
-    "particles": { "enabled": false, "note": "none outside whatever the Unicorn scene renders" },
-    "shaders": { "enabled": false, "note": "no custom GLSL; WebGL is outsourced to Unicorn Studio" },
-    "cursor_effects": { "enabled": false },
-    "glassmorphism": { "enabled": false, "note": "opaque paper surfaces with alpha borders" },
-    "svg_animations": { "enabled": false },
-    "canvas_drawings": { "enabled": false }
+    "technology": "Unicorn Studio script and one live homepage canvas confirmed. Client-rendered page must be inspected after JS; static HTML alone cannot describe its hero.",
+    "hero": "Broad flowing rainbow band with repeated mosoo-like glyphs over a pale stippled field. Pointer/render implementation belongs to the embedded scene; exact scene parameters were not recovered.",
+    "motion": "Source supplies short fade/rise transitions and shimmer/loader utilities; separate blog CSS has motion-fade and motion-rise.",
+    "responsive": "Canvas persists at 390px (525×990 buffer in sample); text/CTA wrap while the graphic crops to the frame.",
+    "themes": "Landing warm cream/forest palette, cooler application paper/lime palette and source dark tokens are separate scopes; no private console or live dark theme audited."
+  },
+  "page_families": {
+    "/en": "Cabinet display, cream/ink shell, rainbow glyph canvas and console/runtime sections.",
+    "/en/pricing; /en/use-cases": "Plan and use-case variants; three pricing columns and stronger practical UI treatment.",
+    "/health": "Status surface reached from the old /en/status route.",
+    "/blog": "Separate editorial build with Cabinet/Geist and language/category navigation.",
+    "/docs/quickstart/": "DM Sans documentation, green active nav and monospace code; distinct from 84px marketing display."
   }
 }
