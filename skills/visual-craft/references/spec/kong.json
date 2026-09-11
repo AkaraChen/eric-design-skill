@@ -1,0 +1,574 @@
+{
+  "meta": {
+    "name": "Kong — sage grid and electric lime",
+    "created_at": "2026-09-11",
+    "source_references": [
+      "https://konghq.com/",
+      "https://konghq.com/sitemap.xml",
+      "https://konghq.com/company/branding",
+      "https://konghq.com/company",
+      "https://konghq.com/products/kong-ai-gateway",
+      "https://konghq.com/pricing",
+      "https://konghq.com/events/conferences/api-ai-summit"
+    ],
+    "scope": "Public marketing site. 17 sitemaps, 3200 addresses, 2677 HTTP-200 responses; 25 rendered pages plus desktop/mobile, light/dark, Agent and hover states. Not every page visually inspected; late requests blocked by 403.",
+    "evidence": "Values measured from CSS/runtime unless labelled inferred or source-only. Style descriptions are interpretation. Unobserved effects are disabled; unknown tokens/states must come from the destination system."
+  },
+  "design_system": {
+    "color": {
+      "palette_type": "Analogous greens: sage surfaces, forest-black ink, electric lime accent.",
+      "primary": {
+        "hex": "#cdd4cb",
+        "role": "Area-dominant light background (--theme-bg-0), distinct from CSS --theme-primary."
+      },
+      "secondary": {
+        "hex": "#d7ded4",
+        "role": "Supporting sections/form panels (--theme-bg-100)."
+      },
+      "accent": {
+        "hex": "#ccff00",
+        "role": "Brand, pills, selected tabs, announcements, closing CTA bands, dark links."
+      },
+      "neutral": {
+        "scale": [
+          "#e7ede5",
+          "#d7ded4",
+          "#cdd4cb",
+          "#b7bdb5",
+          "#aeb5a7",
+          "#4a4d49",
+          "#001408",
+          "#000000"
+        ],
+        "usage": "Light body #4a4d49; headings #001408/black; grid #aeb5a7; crosses #4b4e46. Theme roles remap rather than invert."
+      },
+      "semantic": {
+        "success": "#00ff66 (CSS)",
+        "error": "#e50000 (CSS; form states untested)",
+        "warning": "unverified",
+        "info": "unverified"
+      },
+      "surface": {
+        "background": "#cdd4cb light / #001408 dark",
+        "card": "Section fill; separation by hairlines.",
+        "elevated": "Inputs #e7ede5 light / #101110 dark; header #bcc2ba light / black dark."
+      },
+      "contrast_strategy": "Strong text/CTA contrast; subtle surface layers punctuated by lime bands.",
+      "dark_mode": {
+        "background": "#001408",
+        "secondary_background": "#000000",
+        "heading": "#e7ede5",
+        "body": "#b7bdb5",
+        "accent": "#ccff00",
+        "grid": "#313919",
+        "cross": "#54660a",
+        "input": "#101110",
+        "muted": "#30352f",
+        "gradient": "linear-gradient(293deg, rgb(0 0 0 / 40%) 30.68%, rgb(24 97 53 / 40%) 82.92%)"
+      },
+      "semantic_token_caveat": "--theme-primary: light #001408, dark #ccff00. Hero/header can explicitly use lime in both; light form submits use forest-black."
+    },
+    "typography": {
+      "type_scale": {
+        "display": {
+          "size": "Homepage 48–120px fluid (49.0141px at 390px); generic --head-3xl 48–160px.",
+          "weight": 800,
+          "line_height": "Homepage 1.25; generic token 1",
+          "tracking": "-0.02em homepage"
+        },
+        "heading_1": {
+          "size": "clamp(48px,33.2112676056px + 3.9436619718vw,90px)",
+          "weight": 800,
+          "line_height": "1",
+          "tracking": "normal"
+        },
+        "heading_2": {
+          "size": "clamp(42px,35.661971831px + 1.6901408451vw,60px)",
+          "weight": 700,
+          "line_height": "1.08333",
+          "tracking": "normal"
+        },
+        "heading_3": {
+          "size": "24–32px fluid --head-l",
+          "weight": 700,
+          "line_height": "1.1875",
+          "tracking": "normal"
+        },
+        "body": {
+          "size": "16–18px fluid --body-m; inherited body itself measured 16px",
+          "weight": 400,
+          "line_height": "1.44",
+          "tracking": "normal"
+        },
+        "body_small": {
+          "size": "14–16px fluid --body-s",
+          "weight": 400,
+          "line_height": "1.5",
+          "tracking": "normal"
+        },
+        "caption": {
+          "size": "14px --body-xs",
+          "weight": 400,
+          "line_height": "1.29",
+          "tracking": "normal"
+        },
+        "overline": {
+          "size": "14–16px --label-m; larger highlighted labels use 16–20px --label-l",
+          "weight": 700,
+          "line_height": "1.125; label-l 1.1",
+          "tracking": "normal"
+        }
+      },
+      "font_families": {
+        "heading": "funnel, \"funnel Fallback\", sans-serif",
+        "body": "same as heading",
+        "mono": "robotoMono, \"robotoMono Fallback\" (declared; see Agent caveat)"
+      },
+      "font_style_notes": "Broad sans; heavy 700/800 headings, 300 italic cycling subhead at 32–52px. Exact font aliases; full name not decoded. Space Grotesk/League Gothic also declared, not global defaults.",
+      "template_variants": "Desktop titles: product/pricing 90px; blog/press/video 60px; customer story 48px; gated resource/event 32px. Heading level does not determine size."
+    },
+    "spacing": {
+      "base_unit": "4px inferred; fluid tokens measured.",
+      "scale": {
+        "fixed": [
+          0,
+          4,
+          8
+        ],
+        "xs": "8–16px",
+        "s": "16–24px",
+        "m": "24–40px",
+        "l": "40–60px",
+        "xl": "60–80px",
+        "2xl": "80–120px",
+        "3xl": "120–160px"
+      },
+      "content_density": "Spacious introductions; denser editorial, comparison and form grids.",
+      "section_rhythm": "Section padding 60–80px; 1px bands and adjoining cells, often no card gaps."
+    },
+    "layout": {
+      "grid_system": "Named CSS Grid tracks: full / left rail / content / right rail / slack; visible rails and crosshairs.",
+      "max_content_width": "1340px cap; 1440px viewport yields 1320px between two 60px rails, about 1240px after inner padding.",
+      "columns": "12-column spans; 6/6, 8/4, thirds; article sidebar 340px. Mobile stacks.",
+      "gutter": "clamp(20px,5.9154929578px + 3.7558685446vw,60px); inner half-gutter 10–30px.",
+      "breakpoints": {
+        "common_css_px": [
+          576,
+          768,
+          992,
+          1150,
+          1260,
+          1920
+        ],
+        "notes": "Other component thresholds: 375/500/600/900/1000/1100. Hands hidden below 1000; mobile nav below 1150."
+      },
+      "alignment_tendency": "Strict scaffold; centered marketing, left-aligned editorial/forms."
+    },
+    "shape": {
+      "border_radius": {
+        "small": "0px structural cells",
+        "medium": "10px card/form-group CSS",
+        "large": "component-specific; no global token",
+        "pill": "10000px controls; 999px some decoration"
+      },
+      "border_usage": "1px shared grid edges; control borders vary by state.",
+      "divider_style": "Continuous rules, small registration crosses; local dotted panels."
+    },
+    "elevation": {
+      "shadow_style": "Mostly flat; local overlays/special components only.",
+      "levels": {
+        "low": "none on observed standard cards and pills",
+        "medium": "Source-only ProductCard: 0 2px 8px rgba(0,0,0,.2), hover alpha .4. Not a global elevation token.",
+        "high": "Source-only GradientCard: 0 0 16px rgba(0,0,0,.3), inset 0 0 2px rgba(255,255,255,.5); cookie overlay visibly has a diffuse shadow."
+      },
+      "depth_cues": "Fill, hairlines, raster overlaps, frosted nav."
+    },
+    "iconography": {
+      "style": "Outline UI glyphs, technical symbols, crosses/arrows; solid lime gorilla logo.",
+      "stroke_weight": "Approx. 1.5–2px inferred; glyph-dependent.",
+      "size_scale": "20px hamburger measured; ~16–24px UI icons.",
+      "preferred_set": "First-party font-icons TTF + custom SVGs."
+    },
+    "motion": {
+      "easing": "Buttons cubic-bezier(.19,1,.22,1); mode transition cubic-bezier(.2,0,0,1); hand imagery cubic-bezier(.29,.01,.19,.99); continuous loops linear.",
+      "duration_scale": {
+        "micro": "100ms button text color; 200ms fill/border/padding",
+        "normal": "300ms testimonial swaps; 420ms Human/Agent view transition",
+        "macro": "2s hand transform; portrait shader 2.5s in / .6s out; footer ring 30s linear loop"
+      },
+      "entrance_pattern": "Local CSS/DOM transitions, viewport-gated media, hover shader; no global fade-up recipe verified.",
+      "exit_pattern": "Reverse transitions; shader returns then disposes context.",
+      "philosophy": "Stable reading layout, expressive accents. Reduced-motion CSS exists; JS/video coverage unverified."
+    },
+    "components": {
+      "button_style": "Bold pills: lime/forest inverse primary, sage secondary, optional arrow. Desktop height/text/horizontal-padding: 46/16/16px, 69/24/24px; footer height/text 92/32px. Form submits full width. Hover fill + arrow/padding.",
+      "input_style": "54px height, 16/24px text, 14px 18px padding; pill, #e7ede5 light / #101110 dark. Short fields in two columns, selects full width, textarea rounded rectangle. Home email + CTA share capsule. In-field labels; submit states untested.",
+      "card_style": "Connected square hairline cells: image/category/title/link. Hover/focus-within inset outline + diagonal highlight; no lift. Pill tabs inside square framing.",
+      "navigation_pattern": "Lime banner → sticky centered-logo nav → category subnav → breadcrumbs. Left rail Human/Agent; theme controls rail/footer. Mobile full-height stacked menu + full-width CTAs.",
+      "modal_style": "Source-only: fixed centered overlay, black/.6 backdrop, viewport-constrained content, close button. Observed cookie panel: rounded lower-left desktop, bottom-width mobile.",
+      "list_style": "Hairline resource/legal cells; featured article + supporting stories; article metadata/TOC/sidebar; pricing rows + category pills.",
+      "component_notes": "Shared scaffold, local hierarchy. Lead capture: minimal nav, form-left/proof-right. Resources: narrative-left/form-right. External signup is a separate system."
+    },
+    "fluid_tokens": {
+      "rule": "Each [min,max] is px, linearly interpolated over viewport 375–1440px: clamp(min*1px, calc(min*1px + (max-min)*(100vw - 375px)/1065), max*1px).",
+      "ranges": {
+        "--body-l": [
+          18.0,
+          20.0
+        ],
+        "--body-m": [
+          16.0,
+          18.0
+        ],
+        "--body-s": [
+          14.0,
+          16.0
+        ],
+        "--body-xl": [
+          20.0,
+          24.0
+        ],
+        "--button-l": [
+          24.0,
+          32.0
+        ],
+        "--button-m": [
+          16.0,
+          24.0
+        ],
+        "--button-text-link": [
+          14.0,
+          16.0
+        ],
+        "--gutter": [
+          20.0,
+          60.0
+        ],
+        "--half-gutter": [
+          10.0,
+          30.0
+        ],
+        "--head-2xl": [
+          48.0,
+          90.0
+        ],
+        "--head-3xl": [
+          48.0,
+          160.0
+        ],
+        "--head-italic": [
+          32.0,
+          52.0
+        ],
+        "--head-l": [
+          24.0,
+          32.0
+        ],
+        "--head-m": [
+          18.0,
+          24.0
+        ],
+        "--head-s": [
+          16.0,
+          18.0
+        ],
+        "--head-xl": [
+          42.0,
+          60.0
+        ],
+        "--head-xs": [
+          14.0,
+          16.0
+        ],
+        "--label-l": [
+          16.0,
+          20.0
+        ],
+        "--label-m": [
+          14.0,
+          16.0
+        ],
+        "--label-s": [
+          12.0,
+          14.0
+        ],
+        "--space-2xl": [
+          80.0,
+          120.0
+        ],
+        "--space-3xl": [
+          120.0,
+          160.0
+        ],
+        "--space-default": [
+          60.0,
+          80.0
+        ],
+        "--space-gutter": [
+          20.0,
+          60.0
+        ],
+        "--space-half-gutter": [
+          10.0,
+          30.0
+        ],
+        "--space-l": [
+          40.0,
+          60.0
+        ],
+        "--space-m": [
+          24.0,
+          40.0
+        ],
+        "--space-s": [
+          16.0,
+          24.0
+        ],
+        "--space-xl": [
+          60.0,
+          80.0
+        ],
+        "--space-xs": [
+          8.0,
+          16.0
+        ]
+      },
+      "fixed": {
+        "--body-xs": "14px",
+        "--button-s": "16px",
+        "--button-xs": "15px",
+        "--head-2xs": "14px",
+        "--head-mobile": "48px",
+        "--label-xs": "12px",
+        "--space-2xs": "8px",
+        "--space-3xs": "4px",
+        "--space-none": "0px"
+      },
+      "focus_border": "#ccff00 in both themes"
+    }
+  },
+  "design_style": {
+    "aesthetic": {
+      "mood": [
+        "confident",
+        "technical",
+        "energetic",
+        "controlled"
+      ],
+      "visual_metaphor": "Precision grid meets biological/robotic frontier: gorilla/machine hands, crosshairs, terminal, neon.",
+      "era_influence": "Contemporary AI infrastructure with drafting/retro-terminal cues.",
+      "genre": "Enterprise developer marketing; editorial scale, technical ornament.",
+      "personality_traits": [
+        "assertive",
+        "systematic",
+        "playful",
+        "ambitious"
+      ],
+      "adjectives": [
+        "sage",
+        "electric",
+        "gridded",
+        "broad-typographic",
+        "tactile"
+      ]
+    },
+    "visual_language": {
+      "complexity": "Moderate; rich isolated heroes.",
+      "ornamentation": "Grids, dots, crosses, rail comets, raster scenes.",
+      "whitespace_usage": "Broad statements in spacious bands; denser evidence below.",
+      "visual_weight_distribution": "Heavy heading → lime anchor → imagery/prose.",
+      "focal_strategy": "Dominant hero, alternating evidence, broad closing CTA.",
+      "contrast_level": "Strong type/accent, subtle surfaces.",
+      "texture_usage": "Local dots/halftone, rendered materials; no universal grain/noise."
+    },
+    "composition": {
+      "hierarchy_method": "Scale, weight, bands, shared edges, selective lime.",
+      "balance_type": "Symmetric heroes; asymmetric editorial/forms.",
+      "flow_direction": "Vertical, with comparisons and alternating splits.",
+      "grouping_strategy": "Contiguous border cells and shared fill.",
+      "negative_space_role": "Isolate claims, reveal grid, frame heavy type."
+    },
+    "imagery": {
+      "photo_treatment": "Grayscale logos; natural portraits on lime; branded customer compositions and UI captures. Archival thumbnails retain colors.",
+      "illustration_style": "Pre-rendered gorilla/robot cutouts, sculptures, diagrams; company hero looping video.",
+      "graphic_elements": "Crosses, dots, arrows, connectors, gorilla emblem, terminal symbols.",
+      "pattern_usage": "Local dot/cross fields; stronger summit symbol pattern.",
+      "image_shape": "Full-bleed rectangles, square portraits, 16:9 videos, transparent overlapping cutouts."
+    },
+    "interaction_feel": {
+      "feedback_style": "Color/border/arrow; bold selected pills.",
+      "hover_behavior": "Portrait halftone; other cards outline/highlight; translated imagery.",
+      "transition_personality": "Quick controls, slow smooth decoration; no spring signature.",
+      "loading_style": "Lazy media/Lottie; no general skeleton verified. Broken demo images excluded.",
+      "microinteraction_density": "Moderate navigation/tabs/hero/media; low reading content."
+    },
+    "brand_voice_in_ui": {
+      "tone": "Confident, technical, occasionally playful/competitive.",
+      "formality": "Conversational business; formal legal.",
+      "cta_style": "Short imperatives: demo/trial/access; event countdown urgency.",
+      "empty_state_approach": "Unverified; use destination convention.",
+      "error_tone": "Branded 404: centered plain heading + site shell. Infrastructure 403 excluded."
+    }
+  },
+  "visual_effects": {
+    "overview": {
+      "effect_intensity": "moderate",
+      "performance_tier": "CSS/DOM baseline; local SVG/video and WebGL.",
+      "fallback_strategy": "Shader failure retains image; context released after exit. Reduced-motion CSS disables some loops/transitions; full JS/video behavior unverified.",
+      "primary_technology": [
+        "CSS",
+        "SVG",
+        "video/Wistia",
+        "native WebGL 1",
+        "Lottie SVG (source)"
+      ]
+    },
+    "background_effects": {
+      "type": "Grid/dot fields, rail comets; company video hero",
+      "technology": "CSS pseudo-elements/keyframes + media",
+      "params": {
+        "palette": [
+          "#ccff00",
+          "#cdd4cb",
+          "#d7ded4",
+          "#001408"
+        ],
+        "speed": "Rail loops 5.3–6.3s",
+        "density": "Sparse rail trails, local dots",
+        "glow": "0 0 16.893px 2.413px #ccff00",
+        "blend_mode": "normal"
+      }
+    },
+    "particle_systems": {
+      "enabled": false,
+      "note": "No particle engine; rail comets are CSS."
+    },
+    "3d_elements": {
+      "enabled": false,
+      "note": "Fur/metal/stone and cinematic glow baked into raster/video; shader is a flat quad."
+    },
+    "shader_effects": {
+      "enabled": true,
+      "type": "custom-GLSL halftone portrait transition",
+      "description": "Company ProfileCard hover verified: portrait filters/pixelates/fades into wandering black crosses on lime.",
+      "technology": "WebGL 1 / GLSL, requestAnimationFrame, textured TRIANGLE_STRIP quad.",
+      "params": {
+        "uniforms": [
+          "uImage",
+          "uResolution",
+          "uCellSize",
+          "uMin",
+          "uMax",
+          "uProgress",
+          "uTime",
+          "uDpr"
+        ],
+        "vertex_manipulation": "Pass-through aPosition → vUv",
+        "fragment_output": "Grayscale → block sampling → alpha fade → crosses",
+        "noise_type": "Custom time/phase wandering; noise family unverified.",
+        "distortion": "Cell size 10→25, min 0, max 1→.4; 30fps target; in easeOutQuad 2.5s, out easeInQuad .6s. Continuous cell wandering while hovered."
+      }
+    },
+    "scroll_effects": {
+      "parallax": {
+        "enabled": false
+      },
+      "scroll_triggered_animations": {
+        "enabled": true,
+        "trigger_points": "Source Lottie component: prefetch rootMargin 200px 0px 400px 0px; visibility -60px 0px 0% 0px; intro middle -30% 0px -30% 0px.",
+        "animation_type": "Source-only Lottie SVG visibility play/pause; optional intro + loop. CSS sticky nav/panel stacking.",
+        "scrub_behavior": "Playback gating; no scrub/GSAP verified."
+      },
+      "scroll_morphing": {
+        "enabled": false
+      }
+    },
+    "text_effects": {
+      "type": "typewriter + Human/Agent transition",
+      "technology": "DOM, CSS, View Transition API",
+      "params": {
+        "split_strategy": "Characters; whole layout for mode",
+        "animation_per_unit": "Typing/deleting; cursor step-end blink; mode size/color/transform",
+        "stagger": "Typing interval unmeasured; cursor .8s; mode .42s"
+      },
+      "description": "Cycling italic homepage subline; mode becomes document-like."
+    },
+    "cursor_effects": {
+      "enabled": false,
+      "note": "Native cursor; no trail."
+    },
+    "image_effects": {
+      "type": "Portrait shader (see shader_effects); hand translation",
+      "technology": "CSS + PNGs; WebGL for portraits",
+      "params": {
+        "hover_transform": "Hands: translate, 2s cubic-bezier(.29,.01,.19,.99)",
+        "filter_pipeline": "Grayscale logos; portrait pipeline above",
+        "reveal_animation": "Local hover; no global clip reveal verified"
+      }
+    },
+    "glassmorphism_neumorphism": {
+      "enabled": true,
+      "style": "Local frosted nav; no neumorphism",
+      "params": {
+        "blur_radius": "10px subnav/language picker; source GradientCard",
+        "transparency": "80% nav fill, ~60% rail-control fill",
+        "border_treatment": "Theme-grid hairline",
+        "shadow_type": "Mostly none; see elevation"
+      }
+    },
+    "canvas_drawings": {
+      "enabled": true,
+      "type": "Portrait shader; Wistia seek-bar UI",
+      "params": {
+        "draw_method": "drawArrays(TRIANGLE_STRIP,0,4)",
+        "animation_loop": "30fps target; dispose context after exit",
+        "responsiveness": "Image dimensions × devicePixelRatio (878×878 observed)",
+        "interaction": "Portrait hover"
+      },
+      "note": "Same effect as shader_effects, not an additional generative canvas."
+    },
+    "svg_animations": {
+      "enabled": true,
+      "type": "Footer rotation; source Lottie SVG",
+      "params": {
+        "animation_method": "CSS transforms/keyframes; Lottie SVG",
+        "duration": "Ring 30s linear infinite; pieces 1.5s hover rotation"
+      },
+      "note": "No verified path morph, stroke-draw or universal filter stack."
+    },
+    "composite_notes": "Keep CSS comets, DOM typing, prerecorded hero media, SVG rotation and portrait WebGL distinct. Mode change is user-triggered, not scroll-driven."
+  },
+  "variants": {
+    "agent_mode": {
+      "evidence": "Toggle/render verified.",
+      "appearance": "Black/lime document with literal Markdown notation; decorative media hidden.",
+      "tokens": {
+        "background": "#000000",
+        "foreground": "#ccff00",
+        "font_size": "16px",
+        "line_height": "1.5",
+        "content_width": "100ch"
+      },
+      "caveat": "CSS declares mono, but runtime heading remained Funnel."
+    },
+    "summit": {
+      "source": "https://konghq.com/events/conferences/api-ai-summit",
+      "appearance": "Black/lime/bright-green, symbol/pixel pattern, branded hero graphic, countdown; event-only."
+    },
+    "insomnia_css": {
+      "evidence": "Source-only palette; route HTML fetched, later browser 403. Whole-route purple styling unverified.",
+      "primary": "#684fea",
+      "primary_hover": "#5438e7",
+      "link": "#9783fd",
+      "gradient": "linear-gradient(-90deg,#aa50ff,#684fea)",
+      "card": "#242529",
+      "border": "#35363a"
+    },
+    "signup_redirect": {
+      "source": "https://konghq.com/products/kong-konnect/register",
+      "destination": "https://signin.cloud.konghq.com/u/signup",
+      "appearance": "Pale page, raised white form card, 4px outlined inputs, 20px heading, social login, lime-on-black submit.",
+      "scope": "External auth landing only; not marketing tokens."
+    }
+  }
+}

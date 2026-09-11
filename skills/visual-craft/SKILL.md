@@ -83,6 +83,9 @@ Design DNA profiles extracted from reference sites live under `references/spec/`
   with blueprint grids, dot-matrix typography, and a white/near-black/amber palette.
 - [Zed](references/spec/zed.json): editorial developer-tool marketing with paper
   textures, hairline grids, blue accents, serif headings, and keyboard-inspired controls.
+- [Kong](references/spec/kong.json): sage and electric-lime infrastructure marketing,
+  rail grids, heavy Funnel type, pill controls, light/dark and Agent variants.
+  Includes page-family differences and verified portrait shaders.
 - [Minshot](references/spec/minshot.json): quiet native-tool landing, 880px
   single column, Chinese system typography, blue pill CTA, real screenshot and
   stacked pricing panels. Use for concise desktop-utility marketing. Preserve
