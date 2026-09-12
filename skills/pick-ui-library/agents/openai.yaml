@@ -1,0 +1,5 @@
+interface:
+  display_name: "Pick UI Library"
+  short_description: "Opinionated library picks for frontend tasks"
+policy:
+  allow_implicit_invocation: false

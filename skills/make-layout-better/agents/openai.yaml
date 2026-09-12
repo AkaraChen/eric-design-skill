@@ -1,0 +1,3 @@
+interface:
+  display_name: "Layout Cleanup"
+  short_description: "Structure, grouping, alignment and adaptive layout"

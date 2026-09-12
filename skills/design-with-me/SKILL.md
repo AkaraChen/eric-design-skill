@@ -39,25 +39,58 @@ and permitted.
 ## Make the conversation visible with HTML wireframes
 
 Open [the runnable wireframe example](references/wireframe.html) when producing
-this stage. It places two simple TodoMVC proposals side by side for discussing structure.
-See [example instructions](references/examples.md) for running both artifacts.
+this stage. It shows one axis (where the filter lives) as three switchable
+TodoMVC wireframe variants with a picker. See
+[example instructions](references/examples.md) for running both artifacts.
 
 When asked for sketches, deliver an actual viewable artifact. Prefer a standalone
 HTML file with minimal CSS and JavaScript: grayscale, simple borders, realistic
 copy, and enough hierarchy to understand the interaction. Skip framework setup
 unless the task already needs it.
 
-- Show the same real scenario across alternatives. Side-by-side comparison is
-  useful **at this wireframe stage**, when the user is choosing an approach.
+### Name the axis before drawing
+
+Unstructured side-by-side comparison teaches nothing: the user flips between
+proposals, sees no real choice, and the run is wasted. Before drawing, pick
+**one primary axis** that the alternatives differ on — an interaction-model
+question from the discussion, such as where a control lives, how the flow is
+sequenced, what is grouped with what, or what is exposed versus collapsed.
+Secondary choices follow from the axis position rather than varying on their
+own; varying every dimension at once produces alternatives the user cannot
+attribute to anything.
+
+Two to four variants is the useful range. Name each after its position on the
+axis ("Bottom filter", "Top filter"), never "Option A". Restate the axis in one
+line above the artifact so the comparison is readable at a glance.
+
+### Build the variants into one artifact
+
+- Show the same real scenario across variants, one per axis position. A picker
+  (URL param or switcher) beats columns: it keeps each variant full-size and
+  forces the user to judge them one at a time. Side-by-side columns are
+  acceptable only when the variants are genuinely small, such as a form.
 - Make the important steps clickable, or show a short sequence of frames when
   progression matters more than interaction. Include the resulting state, not
   just the creation form. Clearly identify simulated execution and data.
 - Put a brief, concrete discussion point beside the sketch: what decision this
   version tests and what consequence deserves attention. Avoid a long design
   essay around a small artifact.
+- Every variant clears the same floor regardless of style: the important
+  actions are reachable, the state after acting is visible, nothing relies on
+  decoration a wireframe does not have. Where a direction only works by
+  breaking that floor, say so and drop the direction.
 - Provide the preview link and check it in a browser. Iterate on the artifact
   from the user's feedback. Carry forward accepted structure and record unresolved
   assumptions briefly in the conversation.
+
+### Promote one, retire the rest
+
+When the user picks a variant, that position becomes the accepted structure the
+next stage implements; discard the other variants rather than carrying them
+forward. Asked for another round instead, keep the same axis and offer new
+positions around the direction the user leaned toward. Never mark a favourite
+yourself — if asked directly, answer from how often the screen is used and the
+product's stakes, not from which variant you enjoyed drawing.
 
 ## Turn the accepted structure into real components
 
@@ -88,7 +121,7 @@ Use the [React preview source](references/ui-preview/src/main.tsx) and its
 [theme and layout CSS](references/ui-preview/src/style.css) as a concrete example.
 Run it using the [example instructions](references/examples.md) to inspect the
 A/B proposal tabs and independent PC/mobile controls outside the product UI.
-The same alternatives shown side by side in the sketch appear one at a time here.
+The same variants compared through the sketch's picker appear one at a time here.
 Adapt the presentation pattern to the
 target project; do not copy this example's task domain or stack by default.
 

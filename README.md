@@ -9,6 +9,28 @@ Collaborative UI and visual design skills, with the vendored Design DNA dependen
 - [visual-craft](skills/visual-craft/SKILL.md): visual direction, design profiles, and execution details.
 - [design-dna](skills/design-dna/SKILL.md): extract and apply design DNA, pinned from [zanwei/design-dna](https://github.com/zanwei/design-dna).
 
+## Imported skills
+
+The following skills are adapted from [jakubkrehel/skills](https://github.com/jakubkrehel/skills) (renamed and reorganized to fit this collection; `variant` was folded into `design-with-me`'s wireframe stage):
+
+| Skill | Upstream origin |
+| --- | --- |
+| [make-typography-clean](skills/make-typography-clean/SKILL.md) | `better-typography` |
+| [make-layout-better](skills/make-layout-better/SKILL.md) | `better-layout` |
+| [write-usable-copy](skills/write-usable-copy/SKILL.md) | `better-writing` |
+| [ui-polish](skills/ui-polish/SKILL.md) | `better-ui` |
+| [color-system](skills/color-system/SKILL.md) | `better-colors` |
+| [ui-audit](skills/ui-audit/SKILL.md) | `better-interface` |
+| [change-review](skills/change-review/SKILL.md) | `interface-review` |
+| [ui-stress-test](skills/ui-stress-test/SKILL.md) | `break` |
+| [explain-interface](skills/explain-interface/SKILL.md) | `explain-interface` |
+
+Also imported, from [emilkowalski/skills](https://github.com/emilkowalski/skills):
+
+| Skill | Upstream origin |
+| --- | --- |
+| [pick-ui-library](skills/pick-ui-library/SKILL.md) | `pick-ui-library` (verbatim) |
+
 ## Structure
 
 ```text
