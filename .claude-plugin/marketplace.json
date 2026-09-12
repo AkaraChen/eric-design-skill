@@ -1,0 +1,36 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "eric-design-skill",
+  "owner": {
+    "name": "AkaraChen"
+  },
+  "metadata": {
+    "description": "Collaborative UI and visual design skills",
+    "version": "0.1.0"
+  },
+  "plugins": [
+    {
+      "name": "eric-design",
+      "source": "./",
+      "description": "Collaborative UI and visual design skills for wireframes, audits, animation, and visual craft.",
+      "version": "0.1.0",
+      "author": {
+        "name": "AkaraChen",
+        "url": "https://github.com/AkaraChen"
+      },
+      "homepage": "https://github.com/AkaraChen/eric-design-skill",
+      "repository": "https://github.com/AkaraChen/eric-design-skill",
+      "category": "design",
+      "keywords": [
+        "design",
+        "ui",
+        "frontend",
+        "typography",
+        "color",
+        "animation",
+        "visual-craft",
+        "audit"
+      ]
+    }
+  ]
+}

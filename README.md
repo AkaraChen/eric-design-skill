@@ -8,27 +8,30 @@ and values that other skills load while working, not something you run alone.
 
 ## Workflows
 
-- [design-with-me](skills/workflows/design-with-me/SKILL.md): collaborative design from a vague idea to HTML wireframes and real component previews, with separate proposal and device switches.
-- [ui-audit](skills/workflows/ui-audit/SKILL.md): cross-discipline UI review (clarity, layout, copy, typography, color, polish) that consolidates one ranked verdict.
-- [change-review](skills/workflows/change-review/SKILL.md): diff/PR-scoped UI review; resolves the change scope and hands findings to `ui-audit`.
-- [ui-stress-test](skills/workflows/ui-stress-test/SKILL.md): renders one component under every state and scenario on a throwaway page and marks what breaks.
-- [explain-interface](skills/workflows/explain-interface/SKILL.md): explains how an effect on someone else's site was built.
+- [design-with-me](skills/design-with-me/SKILL.md): collaborative design from a vague idea to HTML wireframes and real component previews, with separate proposal and device switches.
+- [ui-audit](skills/ui-audit/SKILL.md): cross-discipline UI review (clarity, layout, copy, typography, color, polish) that consolidates one ranked verdict.
+- [change-review](skills/change-review/SKILL.md): diff/PR-scoped UI review; resolves the change scope and hands findings to `ui-audit`.
+- [ui-stress-test](skills/ui-stress-test/SKILL.md): renders one component under every state and scenario on a throwaway page and marks what breaks.
+- [explain-interface](skills/explain-interface/SKILL.md): explains how an effect on someone else's site was built.
 - [design-dna](skills/design-dna/SKILL.md): extract design DNA from references, then generate a design from the profile.
-- [animation/animate](skills/animation/animate/SKILL.md): build one animation from scratch, decision by decision.
-- [animation/find-animation-opportunities](skills/animation/find-animation-opportunities/SKILL.md): sweep an interface for moments that deserve motion and propose exact recipes.
-- [animation/improve-animations](skills/animation/improve-animations/SKILL.md): audit a codebase's motion and produce prioritized implementation plans.
-- [animation/review-animations](skills/animation/review-animations/SKILL.md): critique animation code against a craft bar.
-- [animation/animation-vocabulary](skills/animation/animation-vocabulary/SKILL.md): reverse-lookup a vague motion description into its exact term.
+- [animate](skills/animate/SKILL.md): build one animation from scratch, decision by decision.
+- [find-animation-opportunities](skills/find-animation-opportunities/SKILL.md): sweep an interface for moments that deserve motion and propose exact recipes.
+- [improve-animations](skills/improve-animations/SKILL.md): audit a codebase's motion and produce prioritized implementation plans.
+- [review-animations](skills/review-animations/SKILL.md): critique animation code against a craft bar.
+- [animation-vocabulary](skills/animation-vocabulary/SKILL.md): reverse-lookup a vague motion description into its exact term.
+- [text-to-lottie](skills/text-to-lottie/SKILL.md): author Lottie/Bodymovin JSON for the Skia Skottie player from text, SVG, logos, type, loaders, and UI motion.
+- [humanizer](skills/humanizer/SKILL.md): detect AI writing tells and rewrite published prose (blog, README, LinkedIn) so it reads like a specific person wrote it.
+- [design-system](skills/design-system/SKILL.md): three-layer design tokens, component specs, and brand-compliant slide generation.
 - [pick-ui-library](skills/pick-ui-library/SKILL.md): opinionated library picks for a named frontend task.
 
 ## Principles
 
-- [make-layout-better](skills/principles/make-layout-better/SKILL.md): grouping, alignment, reading order, disclosure cues, breakpoints, RTL.
-- [write-usable-copy](skills/principles/write-usable-copy/SKILL.md): verb-first buttons, error phrasing, empty states, voice consistency.
-- [make-typography-clean](skills/principles/make-typography-clean/SKILL.md): type scale, line-height, wrapping, truncation, OpenType details.
-- [color-system](skills/principles/color-system/SKILL.md): ramps, semantic tokens, contrast measurement.
-- [ui-polish](skills/principles/ui-polish/SKILL.md): concentric radii, elevation, motion values, icon treatment.
-- [visual-craft](skills/principles/visual-craft/SKILL.md): visual direction selection and execution rules (anti-slop, craft checklist, design DNA specs).
+- [make-layout-better](skills/make-layout-better/SKILL.md): grouping, alignment, reading order, disclosure cues, breakpoints, RTL.
+- [write-usable-copy](skills/write-usable-copy/SKILL.md): verb-first buttons, error phrasing, empty states, voice consistency. Product UI copy; published prose belongs to `humanizer`.
+- [make-typography-clean](skills/make-typography-clean/SKILL.md): type scale, line-height, wrapping, truncation, OpenType details.
+- [color-system](skills/color-system/SKILL.md): ramps, semantic tokens, contrast measurement.
+- [ui-polish](skills/ui-polish/SKILL.md): concentric radii, elevation, motion values, icon treatment.
+- [visual-craft](skills/visual-craft/SKILL.md): visual direction selection and execution rules (anti-slop, craft checklist, design DNA specs).
 
 ## Vendored skills
 
@@ -37,11 +40,17 @@ The following skills are vendored verbatim from [emilkowalski/skills](https://gi
 | Skill | Upstream origin |
 | --- | --- |
 | [pick-ui-library](skills/pick-ui-library/SKILL.md) | `pick-ui-library` |
-| [animation/animate](skills/animation/animate/SKILL.md) | `animate` |
-| [animation/review-animations](skills/animation/review-animations/SKILL.md) | `review-animations` |
-| [animation/improve-animations](skills/animation/improve-animations/SKILL.md) | `improve-animations` |
-| [animation/find-animation-opportunities](skills/animation/find-animation-opportunities/SKILL.md) | `find-animation-opportunities` |
-| [animation/animation-vocabulary](skills/animation/animation-vocabulary/SKILL.md) | `animation-vocabulary` |
+| [animate](skills/animate/SKILL.md) | `animate` |
+| [review-animations](skills/review-animations/SKILL.md) | `review-animations` |
+| [improve-animations](skills/improve-animations/SKILL.md) | `improve-animations` |
+| [find-animation-opportunities](skills/find-animation-opportunities/SKILL.md) | `find-animation-opportunities` |
+| [animation-vocabulary](skills/animation-vocabulary/SKILL.md) | `animation-vocabulary` |
+
+[text-to-lottie](skills/text-to-lottie/SKILL.md) is vendored verbatim from [diffusionstudio/lottie](https://github.com/diffusionstudio/lottie) (`skills/text-to-lottie`), pinned as the `vendor/diffusionstudio-lottie` submodule.
+
+[humanizer](skills/humanizer/SKILL.md) is vendored verbatim from [Aboudjem/humanizer-skill](https://github.com/Aboudjem/humanizer-skill) (`skills/humanizer`), pinned as the `vendor/humanizer-skill` submodule. It rewrites published prose; it does not replace `write-usable-copy` for product UI strings.
+
+[design-system](skills/design-system/SKILL.md) is vendored verbatim from [nextlevelbuilder/ui-ux-pro-max-skill](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill) (`.claude/skills/design-system`), pinned as the `vendor/ui-ux-pro-max-skill` submodule.
 
 The principle skills and `ui-audit`/`change-review` are adapted from
 [jakubkrehel/skills](https://github.com/jakubkrehel/skills), renamed and
@@ -51,39 +60,91 @@ into `design-with-me`'s wireframe stage; the accessibility domain dropped).
 ## Structure
 
 ```text
+.claude-plugin/          plugin.json + marketplace.json
+plugin.json              portable Agent Plugins manifest (Codex / ChatGPT)
+.codex-plugin/plugin.json
+.agents/plugins/marketplace.json
 skills/
-  workflows/
-    design-with-me/
-    ui-audit/
-      references/clarity.md
-    change-review/
-    ui-stress-test/
-    explain-interface/
-  principles/
-    visual-craft/
-      references/ (craft.md, spec/, normalize.css, …)
-    make-layout-better/
-    write-usable-copy/
-    make-typography-clean/
-    color-system/
-    ui-polish/
+  design-with-me/
+  ui-audit/references/clarity.md
+  change-review/
+  ui-stress-test/
+  explain-interface/
+  visual-craft/references/
+  make-layout-better/
+  write-usable-copy/
+  make-typography-clean/
+  color-system/
+  ui-polish/
   pick-ui-library -> ../vendor/emilkowalski-skills/skills/pick-ui-library
-  animation/
-    animate -> ../../vendor/emilkowalski-skills/skills/animate
-    review-animations -> ../../vendor/emilkowalski-skills/skills/review-animations
-    improve-animations -> ../../vendor/emilkowalski-skills/skills/improve-animations
-    find-animation-opportunities -> ../../vendor/emilkowalski-skills/skills/find-animation-opportunities
-    animation-vocabulary -> ../../vendor/emilkowalski-skills/skills/animation-vocabulary
+  animate -> ../vendor/emilkowalski-skills/skills/animate
+  review-animations -> ../vendor/emilkowalski-skills/skills/review-animations
+  improve-animations -> ../vendor/emilkowalski-skills/skills/improve-animations
+  find-animation-opportunities -> ../vendor/emilkowalski-skills/skills/find-animation-opportunities
+  animation-vocabulary -> ../vendor/emilkowalski-skills/skills/animation-vocabulary
+  text-to-lottie -> ../vendor/diffusionstudio-lottie/skills/text-to-lottie
+  humanizer -> ../vendor/humanizer-skill/skills/humanizer
+  design-system -> ../vendor/ui-ux-pro-max-skill/.claude/skills/design-system
   design-dna -> ../vendor/design-dna
 vendor/
   design-dna/
   emilkowalski-skills/
+  diffusionstudio-lottie/
+  humanizer-skill/
+  ui-ux-pro-max-skill/
 ```
 
 Initialize the dependencies after cloning:
 
 ```sh
 git submodule update --init --recursive
+```
+
+## Install as a plugin
+
+This repository is both the skill source and a single plugin named `eric-design`.
+Every skill lives at `skills/<name>/SKILL.md`.
+
+Vendored skills (`design-dna`, `pick-ui-library`, the animation set,
+`text-to-lottie`, `humanizer`, and `design-system`) live in git submodules. Clone
+or refresh with `--recurse-submodules` (or run the command above) before
+expecting those skills to resolve. Marketplace installs that do not initialize
+submodules will ship those folders empty.
+
+### Claude Code
+
+```sh
+claude plugin marketplace add AkaraChen/eric-design-skill
+claude plugin install eric-design@eric-design-skill
+```
+
+Local check without installing:
+
+```sh
+claude --plugin-dir .
+```
+
+Then invoke a skill as `/eric-design:design-with-me`. `claude plugin validate .`
+checks the marketplace catalog. Runtime discovery of the 21 skills can be
+inspected with `claude --plugin-dir . plugin details eric-design`. Validating
+`.claude-plugin/plugin.json` warns that vendored skill entries are symlinks;
+Claude follows those symlinks when the plugin loads.
+
+### Codex
+
+```sh
+codex plugin marketplace add AkaraChen/eric-design-skill
+codex plugin add eric-design@eric-design-skill
+```
+
+A checkout of this repo also exposes the plugin through
+`.agents/plugins/marketplace.json`. Restart Codex after adding the marketplace,
+then enable `eric-design`. Invoke skills as `$design-with-me`.
+
+### Grok Build
+
+```sh
+grok plugin install AkaraChen/eric-design-skill --trust
 ```
 
 All design references and profiles live inside the skills. `references/legacy.md`

@@ -4,3 +4,12 @@
 [submodule "vendor/emilkowalski-skills"]
 	path = vendor/emilkowalski-skills
 	url = https://github.com/emilkowalski/skills
+[submodule "vendor/diffusionstudio-lottie"]
+	path = vendor/diffusionstudio-lottie
+	url = https://github.com/diffusionstudio/lottie.git
+[submodule "vendor/humanizer-skill"]
+	path = vendor/humanizer-skill
+	url = https://github.com/Aboudjem/humanizer-skill.git
+[submodule "vendor/ui-ux-pro-max-skill"]
+	path = vendor/ui-ux-pro-max-skill
+	url = https://github.com/nextlevelbuilder/ui-ux-pro-max-skill.git
