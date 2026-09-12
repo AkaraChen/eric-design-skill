@@ -111,7 +111,7 @@ system's surfaces, typography, spacing, and controls.
 - Use local mock data and simulated execution to make the flow reviewable unless
   real integration is requested. Scope the implementation so these components can
   become the final implementation; do not build a separate disposable imitation.
-- Where available, use `ui-clarity` for information and interaction correctness and
+- Where available, use `ui-audit` for information and interaction correctness and
   `visual-craft` for visual execution. This skill owns the collaboration workflow;
   it does not require either companion skill to be installed.
 
@@ -157,6 +157,12 @@ state preservation across preview switches. Inspect actual pixels for overflow,
 clipping, readable content, and usable controls. Run relevant project checks when
 implementing components; report any browser or integration checks you could not
 perform.
+
+Before handing any demo to the user, audit it yourself with `ui-audit`. Run the
+clarity questions over every line of UI you built, then the layout, copy,
+typography, color and polish domains, and fix what the audit confirms before
+presenting. The user judges design decisions; they should not be the first
+person to see a control with no purpose or an error that names no fix.
 
 Return a working preview link and a short account of material changes or limits.
 Invite feedback on the concrete decision this version exposes. Update the same

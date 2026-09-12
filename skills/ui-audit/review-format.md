@@ -8,6 +8,7 @@ State the exact scope, stack and styling conventions, the project convention doc
 
 | Domain | Evidence inspected | Result |
 | --- | --- | --- |
+| Clarity | Added lines of UI reviewed against the four clarity questions | Findings count or `Clear` |
 
 Include every domain listed under `ui-audit`'s **Use domain skills as the sources of truth**. `Clear` means inspected with no actionable finding; `Not reviewed` must explain why.
 

@@ -1,3 +1,6 @@
 [submodule "vendor/design-dna"]
 	path = vendor/design-dna
 	url = https://github.com/zanwei/design-dna
+[submodule "vendor/emilkowalski-skills"]
+	path = vendor/emilkowalski-skills
+	url = https://github.com/emilkowalski/skills

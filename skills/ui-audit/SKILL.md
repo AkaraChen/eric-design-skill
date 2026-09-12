@@ -1,15 +1,39 @@
 ---
 name: ui-audit
-description: Combines all of the domain skills into a single review across layout, writing, typography, color and UI polish.
+description: Combines the domain skills into a single review across clarity, layout, writing, typography, color and UI polish.
 ---
 
 # Interface review
 
 This skill runs a cross-discipline review. It routes the interface to each domain skill, collects their evidence and consolidates one ranked verdict.
 
-Orchestration is all it owns. Structure belongs to `make-layout-better`, copy to `write-usable-copy`, type to `make-typography-clean`, color to `color-system`, visual polish and motion to `ui-polish`. Never duplicate or override their rules here.
+Orchestration is all it owns. Clarity belongs to the clarity principles below, structure to `make-layout-better`, copy to `write-usable-copy`, type to `make-typography-clean`, color to `color-system`, visual polish and motion to `ui-polish`. Never duplicate or override their rules here.
 
 Change-scoped review of uncommitted work, branches and pull requests belongs to `change-review`, which resolves the scope and classifies findings before handing the review back.
+
+## Clarity domain
+
+Build the smallest interface that helps the user understand an outcome and take the right next action. Clarity owns usefulness, disclosure, and cognitive load; the other domains own how the result looks and reads.
+
+Review every added line of UI — copy, control, field, status, metadata, or decorative element — against four questions:
+
+1. What user decision or action does this help?
+2. Is this the clearest user-facing concept, or an implementation detail leaking through?
+3. Does this reveal data this user should not see?
+4. Can it be removed, summarized, or disclosed only when needed?
+
+If there is no concrete user benefit, do not render it. Show only what helps the user understand the current outcome, choose a next action, avoid a mistake, or recover from one, in language the user already recognizes. Hide internal identifiers, raw enums and payloads, storage or provider details, permission machinery, system topology, debug data, stack traces, and operational metadata unless the user's task explicitly requires them. Authorization is still mandatory: progressive disclosure must never expose data the user cannot access.
+
+Keep the interface quiet: prefer a toast over scattered inline errors when context is not needed to recover; do not turn the UI into a dashboard merely because data exists; do not expose fields just because the API returns them; do not add labels, badges, cards, metrics, or controls to look more complete; do not use the product as a showcase for design-system details or clever interactions. Prefer one clear outcome and next action over a dense presentation of state.
+
+The full principles live in [references/clarity.md](references/clarity.md); read it before making or reviewing UI changes.
+
+Clarity findings to watch for:
+
+- UI added merely to expose available data.
+- Visual polish offered as evidence that the UI is useful.
+- Information hidden that an informed or safe user decision requires.
+- Progressive disclosure used to bypass permissions.
 
 ## Evidence, not taste
 
@@ -49,7 +73,8 @@ Before reviewing, confirm that every owning skill below is available. Load and a
 
 Review in this order so foundational failures are not hidden by polish:
 
-1. `make-layout-better`
+1. Clarity (this file's **Clarity domain**)
+2. `make-layout-better`
 3. `write-usable-copy`
 4. `make-typography-clean`
 5. `color-system`
@@ -77,19 +102,13 @@ Within a severity, rank by how many places the finding reaches and how much one 
 
 **Escalation triggers.** Once the owning skill confirms one of these, it is `HIGH` on sight, never averaged down because the surface is minor:
 
-- An interactive control with no accessible name.
-- A keyboard-reachable control with no visible focus indicator.
-- A control or path reachable by pointer but not by keyboard.
-- Motion or auto-playing content that ignores `prefers-reduced-motion`.
-- Content or a control clipped, overlapped, or unreachable at 320px width or 200% zoom.
-- Body or control text whose rendered contrast pair fails its required ratio.
-- State or meaning carried by color alone.
+- UI rendered with no concrete user benefit, where the clarity questions find no decision or action it supports.
+- Data exposed that the user should not see, or disclosure that bypasses authorization.
 - A destructive action with no confirmation, undo, or distinct treatment.
+- An error that names no way to recover from it.
 - Truncated content with no way to reach the full value.
 - Content or a control reachable only past a scroll edge or behind a disclosure that has no visible cue.
-- An error that names no way to recover from it.
 - A semantic color used against its meaning, such as the danger hue on a non-destructive action.
-- A state change carried by motion alone, with no color, icon, or label left behind when the animation does not run.
 
 Triggers rank above every other finding. When more fire than the cap allows, list them first and say how many the cap excluded. A cap may shorten a report; it may never be why a blocker went unreported.
 
@@ -124,6 +143,7 @@ Treat a review request as read-only. Do not edit source unless the user also ask
 | Mistake | Fix |
 | --- | --- |
 | Six disconnected domain reports | One ranked findings table |
+| UI kept because it looks finished | Run the clarity questions; no user benefit, no render |
 | Visual claim inferred only from source | Inspect the rendered state, or mark it not verified |
 | Silent gaps in coverage | Show which domains and states were actually inspected |
 | Missing owning skill treated as covered | Mark the domain `Not reviewed` and name the skill |

@@ -1,12 +1,12 @@
 ---
 name: visual-craft
-description: Define visual direction and execute it with consistent typography, color, spacing, and motion. Use when designing, implementing, or reviewing visual direction — landing pages, app styling, icons, typography, composition, motion, headings, page overscroll, tokens, anti-slop, or when choosing a direction from a design DNA spec for the chosen visual direction. Use ui-clarity separately for UI correctness, disclosure, and cognitive load.
+description: Define visual direction and execute it with consistent typography, color, spacing, and motion. Use when designing, implementing, or reviewing visual direction — landing pages, app styling, icons, typography, composition, motion, headings, page overscroll, tokens, anti-slop, or when choosing a direction from a design DNA spec for the chosen visual direction. Use ui-audit separately for UI correctness, disclosure, and cognitive load.
 ---
 
 # Visual Craft
 
-Use this skill for visual direction and flair in web/app UI. `$ui-clarity` owns
-whether the interface is useful, what users see, and what stays hidden. Design guidance, profiles, and assets live in this skill's `references/`; shared UI guidance is owned by `$ui-clarity`.
+Use this skill for visual direction and flair in web/app UI. `ui-audit` owns
+whether the interface is useful, what users see, and what stays hidden. Design guidance, profiles, and assets live in this skill's `references/`; shared UI guidance is owned by `ui-audit`.
 
 ## Workflow
 
@@ -17,8 +17,8 @@ whether the interface is useful, what users see, and what stays hidden. Design g
 3. If the user did not specify a style or visual direction, do not pick one for them — build a style menu first (see [Picking a style](#picking-a-style)).
 4. When a design DNA profile fits the task, read the matching JSON under `references/spec/` and derive colors, type, spacing, shape, elevation, and motion from its tokens instead of inventing values.
 5. For frontend implementation details (styling boundaries, class helpers, feature folders), also use `$eric-frontend`.
-6. When adding or reviewing UI, also use `$ui-clarity` and read
-   [`references/ui.md`](references/ui.md) before styling it.
+6. When adding or reviewing UI, also use `ui-audit` and read
+   [`references/clarity.md`](../ui-audit/references/clarity.md) before styling it.
 7. When implementing or reviewing visual styling, also read
    [`references/craft.md`](references/craft.md): tokens, anti-slop tells,
    concentric radii, interruptible motion, wrapping, favicon, and the finish
@@ -99,7 +99,7 @@ When suggesting a design style or visual direction, list that folder, read the s
 - Do not commit to a single style the user never asked for; show the options first.
 - Do not turn the style previews into full pages or real implementations.
 - Do not let visual flair decide what data or controls users see; that belongs to
-  `$ui-clarity`.
+  `ui-audit`.
 - Do not sacrifice app usability for visual flair; that trade is only allowed on landings.
 - Do not mix icon libraries or Phosphor variants arbitrarily within one surface.
 - Do not treat `references/craft.md` as a visual language; it is execution
