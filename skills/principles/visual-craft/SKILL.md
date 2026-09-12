@@ -18,7 +18,7 @@ whether the interface is useful, what users see, and what stays hidden. Design g
 4. When a design DNA profile fits the task, read the matching JSON under `references/spec/` and derive colors, type, spacing, shape, elevation, and motion from its tokens instead of inventing values.
 5. For frontend implementation details (styling boundaries, class helpers, feature folders), also use `$eric-frontend`.
 6. When adding or reviewing UI, also use `ui-audit` and read
-   [`references/clarity.md`](../ui-audit/references/clarity.md) before styling it.
+   [`references/clarity.md`](../workflows/ui-audit/references/clarity.md) before styling it.
 7. When implementing or reviewing visual styling, also read
    [`references/craft.md`](references/craft.md): tokens, anti-slop tells,
    concentric radii, interruptible motion, wrapping, favicon, and the finish

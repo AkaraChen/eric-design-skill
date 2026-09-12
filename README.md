@@ -8,11 +8,11 @@ and values that other skills load while working, not something you run alone.
 
 ## Workflows
 
-- [design-with-me](skills/design-with-me/SKILL.md): collaborative design from a vague idea to HTML wireframes and real component previews, with separate proposal and device switches.
-- [ui-audit](skills/ui-audit/SKILL.md): cross-discipline UI review (clarity, layout, copy, typography, color, polish) that consolidates one ranked verdict.
-- [change-review](skills/change-review/SKILL.md): diff/PR-scoped UI review; resolves the change scope and hands findings to `ui-audit`.
-- [ui-stress-test](skills/ui-stress-test/SKILL.md): renders one component under every state and scenario on a throwaway page and marks what breaks.
-- [explain-interface](skills/explain-interface/SKILL.md): explains how an effect on someone else's site was built.
+- [design-with-me](skills/workflows/design-with-me/SKILL.md): collaborative design from a vague idea to HTML wireframes and real component previews, with separate proposal and device switches.
+- [ui-audit](skills/workflows/ui-audit/SKILL.md): cross-discipline UI review (clarity, layout, copy, typography, color, polish) that consolidates one ranked verdict.
+- [change-review](skills/workflows/change-review/SKILL.md): diff/PR-scoped UI review; resolves the change scope and hands findings to `ui-audit`.
+- [ui-stress-test](skills/workflows/ui-stress-test/SKILL.md): renders one component under every state and scenario on a throwaway page and marks what breaks.
+- [explain-interface](skills/workflows/explain-interface/SKILL.md): explains how an effect on someone else's site was built.
 - [design-dna](skills/design-dna/SKILL.md): extract design DNA from references, then generate a design from the profile.
 - [animation/animate](skills/animation/animate/SKILL.md): build one animation from scratch, decision by decision.
 - [animation/find-animation-opportunities](skills/animation/find-animation-opportunities/SKILL.md): sweep an interface for moments that deserve motion and propose exact recipes.
@@ -23,12 +23,12 @@ and values that other skills load while working, not something you run alone.
 
 ## Principles
 
-- [make-layout-better](skills/make-layout-better/SKILL.md): grouping, alignment, reading order, disclosure cues, breakpoints, RTL.
-- [write-usable-copy](skills/write-usable-copy/SKILL.md): verb-first buttons, error phrasing, empty states, voice consistency.
-- [make-typography-clean](skills/make-typography-clean/SKILL.md): type scale, line-height, wrapping, truncation, OpenType details.
-- [color-system](skills/color-system/SKILL.md): ramps, semantic tokens, contrast measurement.
-- [ui-polish](skills/ui-polish/SKILL.md): concentric radii, elevation, motion values, icon treatment.
-- [visual-craft](skills/visual-craft/SKILL.md): visual direction selection and execution rules (anti-slop, craft checklist, design DNA specs).
+- [make-layout-better](skills/principles/make-layout-better/SKILL.md): grouping, alignment, reading order, disclosure cues, breakpoints, RTL.
+- [write-usable-copy](skills/principles/write-usable-copy/SKILL.md): verb-first buttons, error phrasing, empty states, voice consistency.
+- [make-typography-clean](skills/principles/make-typography-clean/SKILL.md): type scale, line-height, wrapping, truncation, OpenType details.
+- [color-system](skills/principles/color-system/SKILL.md): ramps, semantic tokens, contrast measurement.
+- [ui-polish](skills/principles/ui-polish/SKILL.md): concentric radii, elevation, motion values, icon treatment.
+- [visual-craft](skills/principles/visual-craft/SKILL.md): visual direction selection and execution rules (anti-slop, craft checklist, design DNA specs).
 
 ## Vendored skills
 
@@ -52,18 +52,21 @@ into `design-with-me`'s wireframe stage; the accessibility domain dropped).
 
 ```text
 skills/
-  design-with-me/
-    SKILL.md
-  ui-audit/
-    SKILL.md
-    references/clarity.md
-  visual-craft/
-    references/
-      craft.md
-      index.md
-      legacy.md
-      normalize.css
-      spec/
+  workflows/
+    design-with-me/
+    ui-audit/
+      references/clarity.md
+    change-review/
+    ui-stress-test/
+    explain-interface/
+  principles/
+    visual-craft/
+      references/ (craft.md, spec/, normalize.css, …)
+    make-layout-better/
+    write-usable-copy/
+    make-typography-clean/
+    color-system/
+    ui-polish/
   pick-ui-library -> ../vendor/emilkowalski-skills/skills/pick-ui-library
   animation/
     animate -> ../../vendor/emilkowalski-skills/skills/animate
