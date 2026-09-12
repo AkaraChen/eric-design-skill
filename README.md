@@ -30,6 +30,11 @@ Also imported, from [emilkowalski/skills](https://github.com/emilkowalski/skills
 | Skill | Upstream origin |
 | --- | --- |
 | [pick-ui-library](skills/pick-ui-library/SKILL.md) | `pick-ui-library` (verbatim) |
+| [animation/animate](skills/animation/animate/SKILL.md) | `animate` (verbatim; React Native `animate-expo` reference removed) |
+| [animation/review-animations](skills/animation/review-animations/SKILL.md) | `review-animations` (verbatim) |
+| [animation/improve-animations](skills/animation/improve-animations/SKILL.md) | `improve-animations` (verbatim) |
+| [animation/find-animation-opportunities](skills/animation/find-animation-opportunities/SKILL.md) | `find-animation-opportunities` (verbatim) |
+| [animation/animation-vocabulary](skills/animation/animation-vocabulary/SKILL.md) | `animation-vocabulary` (verbatim) |
 
 ## Structure
 
