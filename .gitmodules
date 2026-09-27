@@ -10,6 +10,3 @@
 [submodule "vendor/humanizer-skill"]
 	path = vendor/humanizer-skill
 	url = https://github.com/Aboudjem/humanizer-skill.git
-[submodule "vendor/ui-ux-pro-max-skill"]
-	path = vendor/ui-ux-pro-max-skill
-	url = https://github.com/nextlevelbuilder/ui-ux-pro-max-skill.git

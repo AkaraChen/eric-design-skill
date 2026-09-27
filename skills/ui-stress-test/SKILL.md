@@ -8,9 +8,9 @@ disable-model-invocation: true
 
 This skill takes one component and renders it on a fresh page under every scenario that can actually reach it. That page is the deliverable: a visual report the user scrolls through, every state side by side, with the breaks marked. A component built against one happy path looks finished right up until real content arrives.
 
-It observes rather than judges. A finding here is something that visibly broke on the page, named in the vocabulary of the domain skill that owns the fix. Reviewing code against a standard is `change-review` and `ui-audit`; exploring design alternatives is `design-with-me`.
+It observes rather than judges. A finding here is something that visibly broke on the page, named in the vocabulary of the domain skill that owns the fix. Reviewing code against a standard is `change-review` and `ui-audit`.
 
-Where `design-with-me` insists on the real page, this skill isolates on purpose. You are not judging how the component looks in context. You are checking whether it defends itself when the content is worst-case.
+This skill isolates the component on purpose. You are not judging how the component looks in context. You are checking whether it defends itself when the content is worst-case.
 
 The whole run is build, look once, report: minutes, not a session. The work is rendering an existing component with different props, and nothing in it justifies instrumentation, browser debugging or a second pass.
 

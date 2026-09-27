@@ -8,7 +8,6 @@ and values that other skills load while working, not something you run alone.
 
 ## Workflows
 
-- [design-with-me](skills/design-with-me/SKILL.md): collaborative design from a vague idea to HTML wireframes and real component previews, with separate proposal and device switches.
 - [ui-audit](skills/ui-audit/SKILL.md): cross-discipline UI review (clarity, layout, copy, typography, color, polish) that consolidates one ranked verdict.
 - [change-review](skills/change-review/SKILL.md): diff/PR-scoped UI review; resolves the change scope and hands findings to `ui-audit`.
 - [ui-stress-test](skills/ui-stress-test/SKILL.md): renders one component under every state and scenario on a throwaway page and marks what breaks.
@@ -21,7 +20,6 @@ and values that other skills load while working, not something you run alone.
 - [animation-vocabulary](skills/animation-vocabulary/SKILL.md): reverse-lookup a vague motion description into its exact term.
 - [text-to-lottie](skills/text-to-lottie/SKILL.md): author Lottie/Bodymovin JSON for the Skia Skottie player from text, SVG, logos, type, loaders, and UI motion.
 - [humanizer](skills/humanizer/SKILL.md): detect AI writing tells and rewrite published prose (blog, README, LinkedIn) so it reads like a specific person wrote it.
-- [design-system](skills/design-system/SKILL.md): three-layer design tokens, component specs, and brand-compliant slide generation.
 - [pick-ui-library](skills/pick-ui-library/SKILL.md): opinionated library picks for a named frontend task.
 
 ## Principles
@@ -50,12 +48,10 @@ The following skills are vendored verbatim from [emilkowalski/skills](https://gi
 
 [humanizer](skills/humanizer/SKILL.md) is vendored verbatim from [Aboudjem/humanizer-skill](https://github.com/Aboudjem/humanizer-skill) (`skills/humanizer`), pinned as the `vendor/humanizer-skill` submodule. It rewrites published prose; it does not replace `write-usable-copy` for product UI strings.
 
-[design-system](skills/design-system/SKILL.md) is vendored verbatim from [nextlevelbuilder/ui-ux-pro-max-skill](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill) (`.claude/skills/design-system`), pinned as the `vendor/ui-ux-pro-max-skill` submodule.
-
 The principle skills and `ui-audit`/`change-review` are adapted from
 [jakubkrehel/skills](https://github.com/jakubkrehel/skills), renamed and
-reorganized for this collection (`better-*` → the names above; `variant` folded
-into `design-with-me`'s wireframe stage; the accessibility domain dropped).
+reorganized for this collection (`better-*` → the names above; the accessibility
+domain dropped).
 
 ## Structure
 
@@ -65,7 +61,6 @@ plugin.json              portable Agent Plugins manifest (Codex / ChatGPT)
 .codex-plugin/plugin.json
 .agents/plugins/marketplace.json
 skills/
-  design-with-me/
   ui-audit/references/clarity.md
   change-review/
   ui-stress-test/
@@ -84,14 +79,12 @@ skills/
   animation-vocabulary -> ../vendor/emilkowalski-skills/skills/animation-vocabulary
   text-to-lottie -> ../vendor/diffusionstudio-lottie/skills/text-to-lottie
   humanizer -> ../vendor/humanizer-skill/skills/humanizer
-  design-system -> ../vendor/ui-ux-pro-max-skill/.claude/skills/design-system
   design-dna -> ../vendor/design-dna
 vendor/
   design-dna/
   emilkowalski-skills/
   diffusionstudio-lottie/
   humanizer-skill/
-  ui-ux-pro-max-skill/
 ```
 
 Initialize the dependencies after cloning:
@@ -106,7 +99,7 @@ This repository is both the skill source and a single plugin named `eric-design`
 Every skill lives at `skills/<name>/SKILL.md`.
 
 Vendored skills (`design-dna`, `pick-ui-library`, the animation set,
-`text-to-lottie`, `humanizer`, and `design-system`) live in git submodules. Clone
+`text-to-lottie`, and `humanizer`) live in git submodules. Clone
 or refresh with `--recurse-submodules` (or run the command above) before
 expecting those skills to resolve. Marketplace installs that do not initialize
 submodules will ship those folders empty.
@@ -124,8 +117,8 @@ Local check without installing:
 claude --plugin-dir .
 ```
 
-Then invoke a skill as `/eric-design:design-with-me`. `claude plugin validate .`
-checks the marketplace catalog. Runtime discovery of the 21 skills can be
+Then invoke a skill as `/eric-design:ui-audit`. `claude plugin validate .`
+checks the marketplace catalog. Runtime discovery of the 19 skills can be
 inspected with `claude --plugin-dir . plugin details eric-design`. Validating
 `.claude-plugin/plugin.json` warns that vendored skill entries are symlinks;
 Claude follows those symlinks when the plugin loads.
@@ -139,7 +132,7 @@ codex plugin add eric-design@eric-design-skill
 
 A checkout of this repo also exposes the plugin through
 `.agents/plugins/marketplace.json`. Restart Codex after adding the marketplace,
-then enable `eric-design`. Invoke skills as `$design-with-me`.
+then enable `eric-design`. Invoke skills as `$ui-audit`.
 
 ### Grok Build
 

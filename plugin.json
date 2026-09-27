@@ -2,7 +2,7 @@
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "eric-design",
   "version": "0.1.0",
-  "description": "Collaborative UI and visual design skills for wireframes, audits, animation, and visual craft.",
+  "description": "Collaborative UI and visual design skills for audits, animation, and visual craft.",
   "author": {
     "name": "AkaraChen",
     "url": "https://github.com/AkaraChen"
@@ -24,13 +24,13 @@
       "interface": {
         "displayName": "Eric Design",
         "shortDescription": "Collaborative UI and visual design skills",
-        "longDescription": "Use Eric Design to collaborate on product UI from a vague idea through HTML wireframes and component previews, audit and stress-test interfaces, review UI diffs, pick a visual direction, and improve motion.",
+        "longDescription": "Use Eric Design to audit and stress-test interfaces, review UI diffs, pick a visual direction, and improve motion.",
         "developerName": "AkaraChen",
         "category": "Developer Tools",
         "capabilities": ["Read", "Write"],
         "websiteURL": "https://github.com/AkaraChen/eric-design-skill",
         "defaultPrompt": [
-          "Use $design-with-me to work through this feature with me, using HTML wireframes and real component previews as the design becomes clear.",
+          "Use $visual-craft to define and apply a visual direction for this interface.",
           "Audit this interface with $ui-audit.",
           "Review the current UI change with $change-review."
         ]

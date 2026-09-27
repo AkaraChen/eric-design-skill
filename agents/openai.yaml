@@ -1,4 +1,4 @@
 interface:
   display_name: "Eric Design"
   short_description: "Collaborative UI and visual design skills"
-  default_prompt: "Use $design-with-me to work through this feature with me, using HTML wireframes and real component previews as the design becomes clear."
+  default_prompt: "Use $visual-craft to define and apply a visual direction for this interface."
