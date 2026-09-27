@@ -8,6 +8,7 @@ and values that other skills load while working, not something you run alone.
 
 ## Workflows
 
+- [create-design-system](skills/create-design-system/SKILL.md): identify the app and target page or interface from context or ask the user, then build it with a creative direction inspired by a random alphanumeric string.
 - [ui-audit](skills/ui-audit/SKILL.md): cross-discipline UI review (clarity, layout, copy, typography, color, polish) that consolidates one ranked verdict.
 - [change-review](skills/change-review/SKILL.md): diff/PR-scoped UI review; resolves the change scope and hands findings to `ui-audit`.
 - [ui-stress-test](skills/ui-stress-test/SKILL.md): renders one component under every state and scenario on a throwaway page and marks what breaks.
@@ -61,6 +62,7 @@ plugin.json              portable Agent Plugins manifest (Codex / ChatGPT)
 .codex-plugin/plugin.json
 .agents/plugins/marketplace.json
 skills/
+  create-design-system/
   ui-audit/references/clarity.md
   change-review/
   ui-stress-test/
@@ -118,7 +120,7 @@ claude --plugin-dir .
 ```
 
 Then invoke a skill as `/eric-design:ui-audit`. `claude plugin validate .`
-checks the marketplace catalog. Runtime discovery of the 19 skills can be
+checks the marketplace catalog. Runtime discovery of the 20 skills can be
 inspected with `claude --plugin-dir . plugin details eric-design`. Validating
 `.claude-plugin/plugin.json` warns that vendored skill entries are symlinks;
 Claude follows those symlinks when the plugin loads.
