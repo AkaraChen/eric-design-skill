@@ -1,5 +1,6 @@
 ---
 name: visual-craft
+disable-model-invocation: true
 description: Define visual direction and execute it with consistent typography, color, spacing, and motion. Use when designing, implementing, or reviewing visual direction — landing pages, app styling, icons, typography, composition, motion, headings, page overscroll, tokens, anti-slop, or when choosing a direction from a design DNA spec for the chosen visual direction. Use ui-audit separately for UI correctness, disclosure, and cognitive load.
 ---
 

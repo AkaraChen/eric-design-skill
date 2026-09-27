@@ -2,3 +2,6 @@ interface:
   display_name: "Visual Craft"
   short_description: "Shape visual direction and refine interface details"
   default_prompt: "Use $visual-craft to create a distinctive visual direction with coherent typography, color, and spacing."
+
+policy:
+  allow_implicit_invocation: false
