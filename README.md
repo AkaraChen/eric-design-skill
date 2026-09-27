@@ -8,6 +8,9 @@ and values that other skills load while working, not something you run alone.
 
 ## Workflows
 
+- [vibe-design](skills/vibe-design/SKILL.md): guide creation, independent critique, generated imagery, and optional video one stage at a time, pausing for feedback and suggesting the next step.
+- [add-visual-personality](skills/add-visual-personality/SKILL.md): add generated images and optional shaders or 3D effects, using existing services or the user's choice; generate looping video only when requested.
+- [deepen-design](skills/deepen-design/SKILL.md): iteratively refine a design using independent screenshot critiques from a user-selected model until the critic scores it at least 9/10.
 - [create-design-system](skills/create-design-system/SKILL.md): identify the app and target page or interface from context or ask the user, then build it with a creative direction inspired by a random alphanumeric string.
 - [ui-audit](skills/ui-audit/SKILL.md): cross-discipline UI review (clarity, layout, copy, typography, color, polish) that consolidates one ranked verdict.
 - [change-review](skills/change-review/SKILL.md): diff/PR-scoped UI review; resolves the change scope and hands findings to `ui-audit`.
@@ -62,6 +65,9 @@ plugin.json              portable Agent Plugins manifest (Codex / ChatGPT)
 .codex-plugin/plugin.json
 .agents/plugins/marketplace.json
 skills/
+  vibe-design/
+  add-visual-personality/
+  deepen-design/
   create-design-system/
   ui-audit/references/clarity.md
   change-review/
@@ -120,7 +126,7 @@ claude --plugin-dir .
 ```
 
 Then invoke a skill as `/eric-design:ui-audit`. `claude plugin validate .`
-checks the marketplace catalog. Runtime discovery of the 20 skills can be
+checks the marketplace catalog. Runtime discovery of the 23 skills can be
 inspected with `claude --plugin-dir . plugin details eric-design`. Validating
 `.claude-plugin/plugin.json` warns that vendored skill entries are symlinks;
 Claude follows those symlinks when the plugin loads.
