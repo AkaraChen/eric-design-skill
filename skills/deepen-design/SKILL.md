@@ -9,6 +9,14 @@ description: Improve an existing design through repeated screenshot critiques by
 
 Replace `[critic model]` below with the model the user specifies. If they have not specified one, ask which model to use. If that model is unavailable for subagents, ask the user to choose an available model.
 
+## Independent critic context
+
+The critique must run in a separate subagent, never as self-critique or role-play in the implementing agent's conversation. Create a new subagent for every iteration with no inherited conversation history. Never resume the previous critic or send it a follow-up critique request.
+
+Give the subagent only the current design screenshots and the same fixed critic prompt. Do not pass source code, implementation details, previous feedback, scores, or the completion threshold. Verify each screenshot shows the intended, fully rendered view before handing it over.
+
+When the user says to use your own model, use that model in a fresh subagent; this does not mean the main agent should evaluate its own work. If independent subagents are unavailable, report that limitation rather than presenting self-critique as independent review.
+
 ## Prompt
 
 I want you to improve this design. To figure out what to focus on, use a [critic model] subagent as a design critic.
